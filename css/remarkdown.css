@@ -65,9 +65,10 @@
 [data-rmd] strong::before, [data-rmd] strong::after, [data-rmd~=strong-star] strong::before, [data-rmd~=strong-star] strong::after { content: "**"; }
 
 [data-rmd~=strong-underscore] strong::before, [data-rmd~=strong-underscore] strong::after { content: "__"; }
-
+/*
 [data-rmd] a::before, [data-rmd~=a-bracket] a::before { content: "["; }
 [data-rmd] a::after, [data-rmd~=a-bracket] a::after { content: "]"; }
+*/
 
 [data-rmd~=a-showurl] a[href]::before { content: "["; }
 [data-rmd~=a-showurl] a[href]::after { content: "](" attr(href) ")"; word-break: break-all; }

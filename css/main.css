@@ -7,7 +7,7 @@
   opacity: .6;
 }
 [data-rmd] :not(a)::before, [data-rmd] :not(a)::after {
-  color: #205080;
+  color: #666633;
 }
 
 /* Our own font-family. Also setting one for code elements */
@@ -56,7 +56,7 @@ body {
 
 @media (min-width: 901px) {
   html {
-    background-color: #EEE;
+    background-color: #CCCC99;
   }
   body {
     background-color: white;
@@ -74,7 +74,7 @@ body {
 }
 
 a {
-  color: #F02050;
+  color: #990033;
   text-decoration: none;
 }
 a:hover {
@@ -82,7 +82,7 @@ a:hover {
 }
 a:focus, a:active {
   color: white;
-  background-color: #F02050;
+  background-color: #990033;
 }
 
 nav {
