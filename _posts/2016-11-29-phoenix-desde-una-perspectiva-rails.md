@@ -2,7 +2,7 @@
 layout: post
 title:  "Phoenix para desarrolladores Rails"
 category: articles
-tags: programming
+tags: programming talk español
 location: La Plata
 ---
 
