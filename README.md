@@ -1,6 +1,6 @@
 # Agradecimientos
 
-La estructura de este sitio web realizado en *Jekyll* fue copiada del excelente [blog de Christopher Adams][http://christopheradams.io] y adaptado a mis necesidades personales.
+La estructura de este sitio web realizado en *Jekyll* fue copiada del excelente blog http://christopheradams.io y adaptada a mis necesidades personales.
 
 ## Instructiones para copiarlo
 
