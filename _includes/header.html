@@ -3,11 +3,14 @@
     <span class="site-title">
       <a href="{{ "/" | prepend: site.url }}">{{ site.title }}</a>
     </span>
-    <a href="{{ "/about" | prepend: site.url }}">About</a>
-    <a href="{{ "/indexes" | prepend: site.url }}">Index</a>
-    <a href="{{ "/feed.xml" | prepend: site.url }}">Feed</a>
+    <a href="{{ "/about" | prepend: site.url }}">About</a>&nbsp
+    <a href="{{ "/indexes" | prepend: site.url }}">Articles</a>&nbsp
+    <a href="{{ "/feed.xml" | prepend: site.url }}">Feed</a>&nbsp
     {% if site.github_username %}
-    <a href="https://github.com/{{ site.github_username }}" title="Github">Github</a>
+    <a href="https://github.com/{{ site.github_username }}" title="Github">Github</a>&nbsp
+    {% endif %}
+    {% if site.linkedin_username %}
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">LinkedIn</a>&nbsp
     {% endif %}
     {% if site.twitter_username %}
     <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">Twitter</a>
