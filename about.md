@@ -9,6 +9,8 @@ title: About
 * * *
 {% endfor %}
 
+<img src="../img/nica.jpg"/>
+
 Nicanor Perera is a software developer with more than <span id="years-of-experience">7</span> years of experience, who lives and works in La Plata (Buenos Aires, Argentina). Nicanor started his career as a freelance, while he studied computer science in *La Plata's National University*.
 
 Nicanor developed dozens of projects until 2012, when he started to work as a web programmer in [Xaver](http://www.xaver.com.ar) and specialized in Rails technologies.
