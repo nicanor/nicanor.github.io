@@ -7,21 +7,17 @@ location: La Plata
 ---
 
 
-# Usando una guía de estilos en Ruby
-
-> Clean code always looks like it was written by someone who cares.
+> El código limpio siempre se ve como si hubiera sido escrito por alguien al que le importaba
 
 Como programadores, debemos entender al código como una forma de comunicación con otros desarrolladores. El código está destinado a ser mantenido por otra persona, no sólo por compañeros de desarrollo en el presente sino también por miembros del equipo en el futuro.
 
 El código suele ser más fácil de escribir que de leer. Incluso el código escrito por uno mismo suele ser más dificil de leer luego de que no se lo mira por un tiempo, y muchas veces es más difícil reusar software de otra persona que escribirlo uno mismo, por el hecho de no entender cómo funciona.
 
-> Desarrollar es más acerca de trabajar en equipo que lo que uno imagina.
-
 Escribir código en los lenguajes de programación tradicionales consiste en decirle a la computadora qué hacer. Pero los modernos y expresivos lenguajes de programación nos permiten escribir código dirigido a personas, es decir, código que exprese a otros seres humanos cómo queremos que la computadora se comporte.
 
-Hoy en día es importante que el código comunique su propósito, ya que desarrollar está más relacionado con trabajar en equipo que lo que solemos considerar.
+> Hoy en día es importante que el código comunique su propósito, ya que desarrollar está más relacionado con trabajar en equipo que lo que solemos considerar.
 
-A la hora de trabajar en un equipo de desarrollo, es importante seguir una **guía de estilos**. Una guía de estilos es acerca de **consistencia** en la forma en que escribimos código. Ser consistentes nos impulsa a escribir código prolijo y fàcil de mantener y compartir, al mismo tiempo que mejora la comunicación con nuestros compañeros y nos permite enfocarnos en lo importante. 
+A la hora de trabajar en un equipo de desarrollo, es importante seguir una **guía de estilos**. Una guía de estilos es acerca de **consistencia**, y ser consistentes nos impulsa a escribir código prolijo y fácil de mantener y compartir, al mismo tiempo que mejora la comunicación con nuestros compañeros y nos permite enfocarnos en lo importante. 
 
 
 ##### Una guía de estilos define entre otras cosas:
@@ -89,6 +85,16 @@ def keep_evens
   end
   return result_array
 end
+
+
+def calculate_passengers_number(rooms)
+  total = 0
+  rooms.each do |room|
+    total += room[:adults_number].to_i + room[:children_ages].size
+  end
+  total
+end
+
 ```
 
 Es decir, inicializar una variable con algún valor, realizar una computación para todos los elementos de una computación, y en cada iteración modificar la variable original, y finalmente retornar como resultado dicha variable.
@@ -99,6 +105,11 @@ Esa forma de escribir código suele ser señal de que el código puede ser refac
 ``` ruby
 def even_members
   my_array.select {|item| item.even?}
+end
+
+# Aclaración: +sum+ es un método de Rails
+def passengers_number(rooms)
+  rooms.sum {|room| room[:adults_number].to_i + room[:children_ages].size}
 end
 ```
 
