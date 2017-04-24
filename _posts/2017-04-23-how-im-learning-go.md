@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How I'm learning Go"
+title:  "The way I'm learning Go"
 category: articles
 tags: programming english golang
 location: La Plata
