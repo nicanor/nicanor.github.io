@@ -70,13 +70,13 @@ For every iteration of testing and programming, you will have a completelly test
 If we run the test suite now, the test will pass, and in order to continue we should add a new test.
 
 
-#### The result
+### The result
 
 Working this way was very interesting for learning, and it was very funny.
 The final code was very clean, and I finished with a very reliable code.
 And I am using this gem in production for my [website][acordes-totales]. 
 
-#### The complete algorithm:
+### The complete algorithm:
 
 <!-- Every day you get closer and closer -->
 <!-- But this is not the algorithm either -->

@@ -1,38 +1,10 @@
-<div data-rmd="h1-underline">
-<h1>
-  <a href="{{ include.post.url | prepend: site.url }}">
-    <span class="post-title">{{ include.post.title }}</span>
-  </a>
-</h1>
+<div class="content">
+  <h1>{{ include.post.title }}</h1>
+
+  <p class="details">
+    {{ include.post.date | date_to_string }}
+  </p>
+
+  {{ content }}
   </div>
-<p>
-{% if include.post.description %}
-<span class="description">
-  {{ include.post.description }}
-{% endif %}
-</span>
-  (<span class="details">
-    {{ include.post.date | date_to_string }}{% if include.post.location %},
-    {{ include.post.location }}{% endif %}
-  </span>)
-  {% if include.post.author %}
-  by
-  {{ include.post.author }}
-  {% endif %}
-</p>
-{{ include.post.content }}
-<p>
-  <a href="{{ site.url }}/{{ include.post.category }}">
-  {{ include.post.category }}
-  </a>
-  {% for tag in include/post/tags %}
-  <a href="/indexes/#{{ tag | slugify | }}">
-    {{ tag }}
-  </a>
-  {% endfor %}
-  {% if include.post.link %}
-  <a href="{{ include.post.link }}">
-    link
-  </a>
-  {% endif %}
-</p>
+</main>

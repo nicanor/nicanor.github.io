@@ -6,7 +6,6 @@ tags: programming talk español
 location: La Plata
 ---
 
-
 > El código limpio siempre se ve como si hubiera sido escrito por alguien al que le importaba
 
 Como programadores, debemos entender al código como una forma de comunicación con otros desarrolladores. El código está destinado a ser mantenido por otra persona, no sólo por compañeros de desarrollo en el presente sino también por miembros del equipo en el futuro.
@@ -17,10 +16,10 @@ Escribir código en los lenguajes de programación tradicionales consiste en dec
 
 > Hoy en día es importante que el código comunique su propósito, ya que desarrollar está más relacionado con trabajar en equipo que lo que solemos considerar.
 
-A la hora de trabajar en un equipo de desarrollo, es importante seguir una **guía de estilos**. Una guía de estilos es acerca de **consistencia**, y ser consistentes nos impulsa a escribir código prolijo y fácil de mantener y compartir, al mismo tiempo que mejora la comunicación con nuestros compañeros y nos permite enfocarnos en lo importante. 
+A la hora de trabajar en un equipo de desarrollo, es importante seguir una **guía de estilos**. Una guía de estilos es acerca de **consistencia**, y ser consistentes nos impulsa a escribir código prolijo y fácil de mantener y compartir, al mismo tiempo que mejora la comunicación con nuestros compañeros y nos permite enfocarnos en lo importante.
 
 
-##### Una guía de estilos define entre otras cosas:
+### Una guía de estilos define entre otras cosas:
 
 * Cómo y dónde usar comentarios
 * Cómo identar el código
@@ -33,7 +32,7 @@ A la hora de trabajar en un equipo de desarrollo, es importante seguir una **gu�
 
 Una guía de estilos popular entre desarrolladores de Ruby es la [guía de estilos de Ruby de bbatsov](https://github.com/bbatsov/ruby-style-guide).
 
-##### Algunos consejos que nos da esta guía son:
+### Algunos consejos que nos da esta guía son:
 
 * Identar con 2 espacios  
 * Limitar lineas a 80 caractéres
@@ -52,7 +51,7 @@ Una guía de estilos popular entre desarrolladores de Ruby es la [guía de estil
 
 ## Ruby tips
 
-#### ¿qué hace? vs ¿qué es?
+### ¿qué hace? vs ¿qué es?
 
 Muchos programadores estamos acostumbrados a pensar a los métodos como una serie de pasos a ejecutar que finalmente retornan un resultado. Pero ruby es un lenguaje muy expresivo. Salvo que explicitamente queramos expresar que un método realiza una computación, es una buena idea que nombremos a los métodos no pensando _¿qué hace?_, sino _¿qué es?_. Ejemplo:
 
@@ -71,7 +70,7 @@ end
 
 
 
-#### Funciones de alto orden 
+### Funciones de alto orden
 
 Ruby cuenta con funciones de alto orden para colecciones, como `select`, `map`, `inject`, `any?`, `all?`, entre otras. Es importante conocer estas funciones para escribir código más corto y expresivo.
 
@@ -81,7 +80,7 @@ Es muy común ver a programadores escribir estructuras de código como las sigui
 def keep_evens
   result_array = []
   for num in my_array
-    result_array << num if num % 2 == 0
+    result_array << num if num.even?
   end
   return result_array
 end
@@ -90,7 +89,8 @@ end
 def calculate_passengers_number(rooms)
   total = 0
   rooms.each do |room|
-    total += room[:adults_number].to_i + room[:children_ages].size
+    total += room[:adults_number].to_i +
+      room[:children_ages].size
   end
   total
 end
@@ -109,13 +109,16 @@ end
 
 # Aclaración: +sum+ es un método de Rails
 def passengers_number(rooms)
-  rooms.sum {|room| room[:adults_number].to_i + room[:children_ages].size}
+  rooms.sum do |room|
+    room[:adults_number].to_i +
+    room[:children_ages].size
+  end
 end
 ```
 
 
 
-#### Usar notación **&**
+### Usar notación **&**
 
 ``` ruby
 # En lugar de:
@@ -127,7 +130,7 @@ end
 Explicación [aquí](http://blog.thoughtfolder.com/2008-02-25-a-detailed-explanation-of-ruby-s-symbol-to-proc.html).
 
 
-#### Usar funciones específicas de colecciones
+### Usar funciones específicas de colecciones
 
 ``` ruby
 # En lugar de:
@@ -152,7 +155,7 @@ Explicación [aquí](http://blog.thoughtfolder.com/2008-02-25-a-detailed-explana
 ```
 
 
-#### El orden de las condiciones de los if es importante
+### El orden de las condiciones de los if es importante
 
 Estas estructuras de control son más fácil de leer cuando comienzan con la condición positiva.
 
@@ -186,7 +189,7 @@ Es importante al escribir un programa, quey haya un espacio que contenga la info
 
 
 
-#### Comentarios
+### Comentarios
 
 > Code can only tell you how the program works; comments can tell you why it works
 
@@ -201,13 +204,13 @@ Un comentario ocasional para clarificar está bien, pero si nos encontramos escr
 -----------
 
 
-#### Palabras finales:
+### Palabras finales:
 
 Las guías de estilos son una herramienta muy importante a la hora de trabajar en equipo, especialmente si queremos contribuir a proyectos de software libre. En estos casos, no ajustarse a una guía de estilos implica casi siempre que la contribución sea rechazada.
 
 Considero que leer una guía de estilos me ha ayudado mucho a mejorar la forma en que escribo código. Usarlas es mi mejor recomendación. Sin más para agregar, espero que este artículo te haya sido de ayuda. Exitos! Y a trabajar en equipo!
 
-##### Lecturas interesantes:
+### Lecturas interesantes:
 
 * [Why coding style matters?](https://www.smashingmagazine.com/2012/10/why-coding-style-matters/)
 * [Why use a style guide?](http://www.codereadability.com/why-use-a-style-guide/)

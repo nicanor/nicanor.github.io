@@ -16,21 +16,21 @@ El viernes 25 de noviembre preparé una charla introductoria al lenguaje de prog
 Para hablar de Elixir y Phoenix, antes tengo que explicar brevemente qué es esto de la programación funcional.
 
 
-#### Sin efectos secundarios
+### Sin efectos secundarios
 
 En la programación funcional no existen los efectos secundarios. No hay variables globales. Los valores que retorna una función dependen únicamente de sus parámetros de entrada. A partir de los mismos parámetros, una función retorna siempre el mismo resultado.
 
 Al eliminar los efectos secundarios se puede predecir el comportamiento de un programa mucho más fácilmente. Las funciones puras son muy fáciles de testear.
 
 
-#### Inmutabilidad
+### Inmutabilidad
 
 En programación funcional no existe el concepto de variable como existe en lenguajes imperativos. Cuando se pasa un dato a una función, esta no lo modifica sino que retorna un nuevo dato. Esto aplica también para estructuras de datos. Por ejemplo, agregar un dato a una lista en programación imperativa significa tomar un dato y mutar una lista. En cambio en programación funcional se toma un dato, una lista y se retorna una lista nueva.
 
 Si las estructuras de datos son inmutables, entonces se eliminan los problemas de interacción entre hilos de ejecución por mutación de datos. Esto, sumado a la ausencia de efectos secundarios hace que la programación funcional sea muy buena para implementar programas concurrentes.
 
 
-#### Transformaciones sin estado de datos inmutables
+### Transformaciones sin estado de datos inmutables
 
 La programación orientada a objetos es acerca de objetos que se envían mensajes. Estos objetos consisten en datos y comportamiento fuertemente acoplado.
 
@@ -82,7 +82,7 @@ Todas estas estructuras de datos son inmutables. Esto significa que si le agrega
 
 En elixir no tenés que preocuparte de clonar o duplicar una estructura de datos porque otra función la pueda haber mutado de una forma que no te esperabas.
 
-#### Structs
+### Structs
 
 Son una extensión construida sobre los mapas que proveen chequeos en tiempo de compilación y valores por defecto. Son lo más parecido a clases en Ruby en cuanto a su sintaxis, pero no dejan de ser una simple estructura de datos.
 
@@ -92,7 +92,7 @@ En OO, si tenemos dos strings iguales no son el mismo string. Cada uno tiene su 
 
 Si tenemos dos listas, y ambas tienen los mismos números en el mismo orden, decimos que son **la misma lista**.
 
-#### Funciones anónimas
+### Funciones anónimas
 
 En Elixir las funciones son un ciudadano de primera clase, lo que significa que pueden ser pasadas como parámetro a otras funciones, de la misma forma en que pueden serlo un entero o un string.
 
@@ -105,11 +105,11 @@ Si bien se ven similares en sintaxis, los enfoques para solucionar problemas en 
 
 La instalación de Elixir es muy sencilla y está muy bien documentada. Se debe instalar primero Erlang, y luego Elixir. Si han podido instalar Ruby alguna vez, no van a tener ninguna dificultad en instalar Elixir.
 
-#### Consola interactiva
+### Consola interactiva
 
 Al igual que Ruby, Elixir cuenta con una consola interactiva, llamada IEX (Interactive - Elixir). Una vez que instalaron Elixir, pueden acceder a la consola interactiva escribiendo *iex*.
 
-#### Match Operator
+### Match Operator
 
 El símbolo **"="** es el operador de match y muchas veces su comportamiento es similar a la asignación en Ruby, pero en la práctica son muy diferentes:
 
@@ -122,7 +122,7 @@ En caso de que lo que haya a la izquierda sea una variable, entonces se le asign
 El operador Match no es sólo usado para valores simples: es muy útil para desestructurar tipos de datos más complejos. Por ejemplo podemos hacer pattern matching en tuplas.
 
 {% highlight elixir %}
-    {a, b} = {:hello, "world"}
+{a, b} = {:hello, "world"}
 {% endhighlight %}
 
 En este caso, se inicializan los identificadores **a** y **b** con el atomo **:hello** y el string **"world"**.
@@ -134,7 +134,7 @@ El pattern matching va a fallar si ambos lados no pueden ser igualados estructur
 Más interesante, podemos hacer matching sobre valores específicos.
 
 {% highlight elixir %}
-    {:ok, result} = {:ok, 42}
+{:ok, result} = {:ok, 42}
 {% endhighlight %}
 
 En este ejemplo el lado izquierdo sólo va a matchear con el lado derecho cuando lo que haya del lado derecho sea una tupla de dos elementos cuyo primer valor sea el atomo **:ok**.
@@ -142,34 +142,34 @@ En este ejemplo el lado izquierdo sólo va a matchear con el lado derecho cuando
 
 Este potencial se puede aprovechar para tuplas, y también en listas, mapas y structs.
 
-#### Funciones
+### Funciones
 
 Ya vimos funciones anónimas así que ahora voy a hablarles de funciones nombradas. En elixir agrupamos las funciones en módulos. Los módulos se definen con la macro **"defmodule"** y las funciones con la macro **"def"**.
 
 {% highlight elixir %}
-    defmodule Math do
-      # Esto es un comentario
-      def sum(a,b) do
-        a + b
-      end
+defmodule Math do
+  # Esto es un comentario
+  def sum(a,b) do
+    a + b
+  end
 
-    end
+end
 
-    Math.sum(1,2) #=> 3
+Math.sum(1,2) #=> 3
 {% endhighlight %}
 
 Una funcion puede ser definida varias veces para distintos parametros de entrada. Elixir intentará usar cada clausula en orden hasta que la primera *matchée*.
 
 {% highlight elixir %}
-    defmodule Math do
-      def zero?(0) do
-        true
-      end
+defmodule Math do
+  def zero?(0) do
+    true
+  end
 
-      def zero?(x) when is_integer(x) do
-        false
-      end
-    end
+  def zero?(x) when is_integer(x) do
+    false
+  end
+end
 {% endhighlight %}
 
 En el ejemplo, si se envìa como parámetro **0**, va a matchear con la primera deficinión y retornará **true**.
@@ -183,18 +183,18 @@ Esto facilita el debugging y hace que las funciones sean más seguras, al no est
 
 Las funciones pueden ser escritas con esta notación:
 {% highlight elixir %}
-    defmodule Math do
-      def zero?(0), do: true  
-      def zero?(x) when is_integer(x), do: false
-    end
+defmodule Math do
+  def zero?(0), do: true  
+  def zero?(x) when is_integer(x), do: false
+end
 {% endhighlight %}
 
 Si quieren saber cual es la forma preferida, pueden leer las [guías de estilos][style-guide].
 
-#### Pipe operator
+### Pipe operator
 
 {% highlight elixir %}
-    expression |> function_call()
+  expression |> function_call()
 {% endhighlight %}
 
 El Operador Pipe es muy similar a los pipes de Unix. Lo que hace es introducir la expresión que está a la izquierda como primer argumento de la función que se llama a la derecha.
@@ -203,17 +203,14 @@ A continuación se muestra una porción de código de un programa en *Ruby On Ra
 
 {% highlight ruby %}
 class AvailabilityManager
-
-      def call(query)
-        adapted_query = Adapter.call(query)
-        xml_query     = XMLBuilder.call(adapted_query)
-        xml_response  = API.call(xml_query, :some_option)
-        response      = Parser.call(xml_response)
-
-        return response
-      end
-
-    end
+  def call(query)
+    adapted_query = Adapter.call(query)
+    xml_query     = XMLBuilder.call(adapted_query)
+    xml_response  = API.call(xml_query, :some_option)
+    response      = Parser.call(xml_response)
+    return response
+  end
+end
 {% endhighlight %}
 
 Básicamente lo que hace el método **call** es consultar sobre la disponibilidad de hoteles a una API XML externa.
@@ -223,23 +220,23 @@ Funcionamiento: Llega una consulta en formato *JSON*. **Adapter** la modifica. L
 Si escribieramos este código en Elixir, lo más probable es que usemos el operador **pipe** y el código se vea más o menos así:
 
 {% highlight elixir %}
-    defmodule AvailabilityManager do
+defmodule AvailabilityManager do
 
-      def call(query) do
-        query
-        |> Adapter.call
-        |> XMLBuilder.call
-        |> API.call(:some_option)
-        |> Parser.call
-      end
+  def call(query) do
+    query
+    |> Adapter.call
+    |> XMLBuilder.call
+    |> API.call(:some_option)
+    |> Parser.call
+  end
 
-    end
+end
 {% endhighlight %}
 
 El propósito del operador **pipe**  es hacer énfasis en los datos siendo transformados por una serie de funciones.
 
 
-#### Macros
+### Macros
 
 Elixir adopta la metaprogramación. De hecho la mayor parte de Elixir está escrita en Elixir mismo.
 https://github.com/elixir-lang/elixir
@@ -253,73 +250,73 @@ Gran parte de las funcionalidades en el núcleo de elixir están implementadas e
 *Nota: recomiendo mucho mirar el código de elixir para ver cómo está implementado.*
 
 
-#### Testing
+### Testing
 
 Elixir viene equipado con un framework de Testing llamado **ExUnit**.
 
 Podemos correr nuestros tests con el comando **mix test**.
 
 {% highlight elixir %}
-    defmodule MyTest do
-      use ExUnit.Case
+defmodule MyTest do
+  use ExUnit.Case
 
-      test "the truth" do
-        assert 1 + 1 == 2
-      end
+  test "the truth" do
+    assert 1 + 1 == 2
+  end
 
-    end
+end
 {% endhighlight %}
 
 La linea **use Exunit.Case** importa las funciones y macros necesarias para correr tests. Es común que los programas en *Elixir* tengan por lo menos una línea más de código que los programas escritos en *Ruby*. Esto es porque en *Elixir* no existe la herencia, entonces para importar funciones o macros se usan ese tipo de construcciones.
 
-{% highlight configuration %}
-    Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
-    1 tests, 0 failures
-{% endhighlight %}
+<pre class="terminal">
+Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
+1 tests, 0 failures
+</pre>
 
 A simple vista pareciera que la función **assert** simplemente verifica que la expresión de la derecha sea verdadera. En realidad **assert** no es una función, sino que es una macro. Esta macro analiza el código. En este caso entiende que la expresión es una igualdad y provee un buen reporte siempre que haya un fallo.
 
-{% highlight configuration %}
-    1) test the truth (ExampleTest)
-         test/example_test.exs:5
-         Assertion with == failed
-         code: 1 + 1 == 3
-         lhs:  2
-         rhs:  3
-         stacktrace:
-           test/example_test.exs:6
+<pre class="terminal">
+1) test the truth (ExampleTest)
+     test/example_test.exs:5
+     Assertion with == failed
+     code: 1 + 1 == 3
+     lhs:  <span class="danger">2</span>
+     rhs:  <span class="danger">3</span>
+     stacktrace:
+       test/example_test.exs:6
 
-    Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
-    1 tests, 1 failures
-{% endhighlight %}
+Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
+1 tests, <span class="danger">1 failure</span>
+</pre>
 
 
 Si lo que comparamos con strings, el test hace un **diff** de los valores a la izquierda y a la derecha.
 {% highlight elixir %}
-    assert "hola mundo lindo" == "hola bello mundo"
+assert "hola mundo lindo" == "hola bello mundo"
 {% endhighlight %}
 
-<pre>
-    1) test the truth (MundoTest)
-         test/mundo_test.exs:5
-         Assertion with == failed
-         code: "hola mundo lindo" == "hola bello mundo"
-         lhs:  "hola mundo <span style="color: red;">lindo"</span>
-         rhs:  "hola <span style="color: red;">bello"</span> mundo"
-         stacktrace:
-           test/mundo_test.exs:6
+<pre class="terminal">
+1) test the truth (MundoTest)
+     test/mundo_test.exs:5
+     Assertion with == failed
+     code: "hola mundo lindo" == "hola bello mundo"
+     lhs:  "hola mundo <span class="danger">lindo"</span>
+     rhs:  "hola <span class="danger">bello"</span> mundo"
+     stacktrace:
+       test/mundo_test.exs:6
 
-    Finished in 0.02 seconds
-    1 tests, 1 failures
+Finished in 0.02 seconds
+1 tests, <span class="danger">1 failure</span>
 </pre>
 
 
-#### Interoperabilidad con Erlang
+### Interoperabilidad con Erlang
 
 Uno de los beneficios de construir sobre la máquina virtual de *Erlang* es la gran cantidad de librerías disponibles para nosotros. Elixir tiene interoperabilidad con Erlang. Esto significa que podemos usar librerías de *Erlang* en Elixir y viceversa.
 
 
-#### Aplicaciones
+### Aplicaciones
 
 La mayoría de los paquetes de elixir son compartidos en forma de aplicación, y tienen una estructura de código similar. Esto es muy bueno porque cuando uno se familiariza con esta estructura es muy fácil encontrar dónde está definido lo que uno busca por ejemplo al analizar código de otras personas.
 
@@ -328,12 +325,12 @@ En *Elixir* y *Erlang*, una aplicación es un componente que implementa una func
 Una aplicación se crea con el comando mix **new nombre**.
 
 <pre>
-    nombre
-      ├── lib
-      │   └── nuevo.ex
-      ├── config
-      ├── test
-      └── mix.exs
+nombre
+  ├── lib
+  │   └── nuevo.ex
+  ├── config
+  ├── test
+  └── mix.exs
 </pre>
 
 Así como los archivos de *ruby* tienen la extensión **.rb**, los de *elixir* tienen la extensión **.ex**. Dentro de la carpeta **lib** es donde va a ir todo nuestro código.
@@ -342,7 +339,7 @@ También tenemos carpetas para correr tests y para archivos de configuración.
 
 En el archivo **mix.exs** se define el nombre de la aplicación, la versión de la aplicación, la versión de Elixir, y las dependencias entre otras cosas.
 
-#### Mix
+### Mix
 
 Mix es una herramienta que viene con *Elixir* y provee tareas para crear, compilar y testear tus aplicaciones, manejar sus dependencias y mucho más.
 
@@ -361,7 +358,7 @@ Ambos son frameworks MVC que se centran en la productividad. Proveen una estruct
 
 Pero **Phoenix NO es Rails**.
 
-#### Nueva aplicación
+### Nueva aplicación
 
 Si queremos usar el stack por defecto debemos instalar *postgresql*, *node.js* y *Phoenix*.
 
@@ -370,30 +367,30 @@ Para crear una aplicación *Phoenix* debemos escribir el comando **mix phoenix.n
 
 La estructura de directorios creada por Phoenix es similar a la siguiente:
 <pre>
-    phoenix_application
-      ├── lib
-      │   ├── probando
-      │   │   ├── endpoint.ex
-      │   │   └── repo.ex
-      │   └── probando.ex
-      ├── config
-      │   ├── config.ex
-      │   ├── dev.ex
-      │   ├── prod.ex
-      │   └── test.ex
-      ├── priv
-      ├── test
-      └── web
-      │    ├── channels
-      │    ├── controllers
-      │    ├── models
-      │    ├── static
-      │    ├── views
-      │    ├── templates
-      │    ├── gettext.ex
-      │    ├── router.ex
-      │    └── web.ex
-      └── mix.exs
+phoenix_application
+  ├── lib
+  │   ├── probando
+  │   │   ├── endpoint.ex
+  │   │   └── repo.ex
+  │   └── probando.ex
+  ├── config
+  │   ├── config.ex
+  │   ├── dev.ex
+  │   ├── prod.ex
+  │   └── test.ex
+  ├── priv
+  ├── test
+  └── web
+  │    ├── channels
+  │    ├── controllers
+  │    ├── models
+  │    ├── static
+  │    ├── views
+  │    ├── templates
+  │    ├── gettext.ex
+  │    ├── router.ex
+  │    └── web.ex
+  └── mix.exs
 </pre>
 
 Si miramos con detenimiento vamos a ver que tienen muchos puntos en común con la estructura de una aplicación Rails.
@@ -423,19 +420,23 @@ El ciclo de vida de petición y respuesta en Phoenix difiere mucho del enfoque q
 
 Cuando generás una aplicación, podés ver todos los plugs por los que pasa la solicitud en el archivo endpoint.ex.
 {% highlight elixir %}
-    defmodule MyApp.Endpoint do
-      use Phoenix.Endpoint, otp_app: :my_app
+defmodule MyApp.Endpoint do
+  use Phoenix.Endpoint, otp_app: :my_app
 
-      socket "/socket", MyApp.UserSocket
-      plug Plug.Static, at: "/", only: ~w(css images js)
-      plug Plug.RequestId
-      plug Plug.Logger
-      plug Plug.Parsers, parsers: [:urlencoded, :multipart, :json]
-      plug Plug.MethodOverride
-      plug Plug.Head
-      plug Plug.Session, store: :cookie
-      plug MyApp.Router
-    end
+  socket "/socket", MyApp.UserSocket
+  plug Plug.Static, at: "/",
+    only: ~w(css images js)
+
+  plug Plug.RequestId
+  plug Plug.Logger
+  plug Plug.Parsers,
+    parsers: [:urlencoded, :multipart, :json]
+
+  plug Plug.MethodOverride
+  plug Plug.Head
+  plug Plug.Session, store: :cookie
+  plug MyApp.Router
+end
 {% endhighlight %}
 
 Mientras que Rails segrega todo el middleware de Rack en una parte de la aplicación oculta a los ojos del programador, Phoenix hace todos los plugs explicitos. Tenes una mirada instantánea a simple vista de todo el ciclo de vida de la solicitud simplemente viendo los plugs en tu endpoint y tu router.
@@ -449,39 +450,37 @@ Finalmente la conexión es pasada al **router**, que por sí mismo implementa ta
 Así es como se ve un archivo de rutas sencillo en Ruby on Rails, con acciones para el indice y la vista de articulos, y con root path manejado por ese controlador.
 
 {% highlight ruby %}
-    Rails.application.routes.draw do
-      resources :articles, only: [:show, :index]
-      root to: "pages#index"
-    end
+Rails.application.routes.draw do
+  resources :articles, only: [:show, :index]
+  root to: "pages#index"
+end
 {% endhighlight %}
 
 El archivo de rutas de Phoenix es un poco más complejo.
 
 {% highlight elixir %}
-    defmodule MyWeb.Router do
-      use MyWeb.Web, :router
+defmodule MyWeb.Router do
+  use MyWeb.Web, :router
 
+  pipeline :browser do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_flash
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+  end
 
-      pipeline :browser do
-        plug :accepts, ["html"]
-        plug :fetch_session
-        plug :fetch_flash
-        plug :protect_from_forgery
-        plug :put_secure_browser_headers
-      end
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
 
-
-      pipeline :api do
-        plug :accepts, ["json"]
-      end
-
-
-      scope "/", MyWeb do
-        pipe_through :browser
-        resources "/articles", ArticleController, only: [:index, :show]
-        get "/", PageController, :index
-      end
-    end
+  scope "/", MyWeb do
+    pipe_through :browser
+    resources "/articles", ArticleController,
+      only: [:index, :show]
+    get "/", PageController, :index
+  end
+end
 {% endhighlight %}
 
 
@@ -509,14 +508,14 @@ Los **controladores** de *Phoenix* actuan como módulos intermedios. Sus funcion
 Las acciones toman los datos necesarios y realizan los pasos necesarios antes de invocar a la capa de vista y renderizar un template o retornar una respuesta JSON.
 
 {% highlight elixir %}
-    defmodule MyWeb.ArticleController do
-      use MyWeb.Web, :controller
+defmodule MyWeb.ArticleController do
+  use MyWeb.Web, :controller
 
-      def show(conn, %{"id" => id}) do
-        article = Repo.get!(MyWeb.Article, id)
-        render(conn, "show.html", article: article)
-      end
-    end
+  def show(conn, %{"id" => id}) do
+    article = Repo.get!(MyWeb.Article, id)
+    render(conn, "show.html", article: article)
+  end
+end
 {% endhighlight %}
 
 Los controladores de Phoenix están construidos sobre el paquete **Plug** y ellos mismos son plugs.
@@ -525,11 +524,11 @@ Los controladores de Phoenix están construidos sobre el paquete **Plug** y ello
 Las acciones de Rails parecieran mucho más simples que las de phoenix:
 
 {% highlight ruby %}
-    class ArticlesController < ApplicationController
-      def show
-        @article = Article.find(params[:id])
-      end           
-    end
+class ArticlesController < ApplicationController
+  def show
+    @article = Article.find(params[:id])
+  end
+end
 {% endhighlight %}
 
 Y esto es porque Phoenix favorece la forma explícita de escribir código.
@@ -549,19 +548,22 @@ Convención sobre configuracion es algo bueno, pero hay un punto en el que el co
 La programación funcional y el contrato con *Plug* hace que sea muy sencillo testear los controladores de forma aislada. Simplemente es necesario pasar una conexión:
 
 {% highlight elixir %}
-    test "sends 404 when article is not found" do
-      conn = MyController.show(conn(), %{"id" => "not-found"})
-      assert conn.status == 404
-    end
+test "sends 404 when article is not found" do
+  conn = MyController.show(
+    conn(),
+    %{"id" => "not-found"}
+  )
+  assert conn.status == 404
+end
 {% endhighlight %}
 
 Y suele ser trivial hacer tests de integración de tu endpoint entero. :
 
 {% highlight elixir %}
-    test "shows articles" do
-      conn = get conn(), "/articles/123"
-      assert %{id: "123"} = json_response(conn, :ok)
-    end
+test "shows articles" do
+  conn = get conn(), "/articles/123"
+  assert %{id: "123"} = json_response(conn, :ok)
+end
 {% endhighlight %}
 
 ## Vistas
@@ -569,13 +571,13 @@ Y suele ser trivial hacer tests de integración de tu endpoint entero. :
 *Phoenix* separa templates de vistas. Las vistas de *phoenix* tienen dos trabajos: renderizar los templates y proveer funciones que puedan ser usadas por los mismos.
 
 {% highlight elixir %}
-    defmodule MyWeb.ArticleView do
-      use MyWeb.Web, :view
+defmodule MyWeb.ArticleView do
+  use MyWeb.Web, :view
 
-      def title do
-        "Funcional |> Concurrente |> Divertido"
-      end
-    end
+  def title do
+    "Funcional |> Concurrente |> Divertido"
+  end
+end
 {% endhighlight %}
 
 Si en *Rails* se han preguntado alguna vez dónde poner lógica de vistas, o si usar decorators o presenters, en *Phoenix* no tienen que preguntárselo más. La vista es el lugar indicado para ese tipo de lógica.
@@ -586,12 +588,15 @@ Los templates son archivos a los que pasamos datos para formar respuestas HTTP c
 
 **EEx** es el sistema de templates por defecto de *Phoenix* y es muy similar a *ERB* de *Ruby*. De hecho es parte de *elixir* mismo.
 
-{% highlight elixir %}
-    <h2><%= @article.title %></h2>
-    <p><%= @article.description %></p>
+{% highlight erb %}
+<h2><%= @article.title %></h2>
+<p><%= @article.description %></p>
 
-    <%= link "Editar", to: article_path(@conn, :edit, @article) %>
-    <%= link "Volver", to: article_path(@conn, :index) %>
+<%= link "Editar",
+  to: article_path(@conn, :edit, @article) %>
+
+<%= link "Volver",
+  to: article_path(@conn, :index) %>
 {% endhighlight %}
 
 Los templates de Phoenix son precompilados, lo que los hace extremadamente rápidos.
@@ -599,8 +604,8 @@ Los templates de Phoenix son precompilados, lo que los hace extremadamente rápi
 De hecho cuando miramos la consola de una aplicación en ejecución, es común ver informes como estos:
 
 {% highlight configuration %}
-    [info] GET /
-    [info] Sent 200 in 396µs
+[info] GET /
+[info] Sent 200 in 396µs
 {% endhighlight %}
 
 La letra griega µ (Mu) significa microsegundo. O sea millonésimas de segundo. Es muy común que una vista *Phoenix* responda entre 2 y 3 ordenes de magnitud más rápido que una aplicación Rails.
@@ -629,31 +634,31 @@ Más info: https://hexdocs.pm/ecto/Ecto.html
 Cada migración es una nueva versión de una base de datos. En Rails cada vez que corrés una migración, esta actualiza un archivo llamado *schema*. Una migración rails se ve así:
 
 {% highlight ruby %}
-    class CreateArticles < ActiveRecord::Migration[5.0]
-      def change
-        create_table :articles do |t|
-          t.string :name
-          t.text :description        
-          t.timestamps
-        end
-      end
+class CreateArticles < ActiveRecord::Migration[5.0]
+  def change
+    create_table :articles do |t|
+      t.string :name
+      t.text :description        
+      t.timestamps
     end
+  end
+end
 {% endhighlight %}
 
 En Phoenix en cambio, el programador es el encargado de definir explícitamente cómo quiere mapear los datos de la base de datos a estructuras de Elixir. Las migraciones en Phoenix se definen de forma muy similar a las de Rails:
 
 {% highlight elixir %}
-    defmodule MyWeb.Repo.Migrations.CreateArticle do
-      use Ecto.Migration
+defmodule MyWeb.Repo.Migrations.CreateArticle do
+  use Ecto.Migration
 
-      def change do
-        create table(:articles) do
-          add :title, :string
-          add :description, :string
-          timestamps
-        end
-      end
+  def change do
+    create table(:articles) do
+      add :title, :string
+      add :description, :string
+      timestamps
     end
+  end
+end
 {% endhighlight %}
 
 
@@ -662,21 +667,21 @@ En Phoenix en cambio, el programador es el encargado de definir explícitamente 
 Un modelo de *Phoenix* es simplemente un *struct* de *Elixir*. Estas estructuras no tienen estado y son super livianas. Son fáciles de comparar y compartir. El *schema* debe ser definido explicitamente.
 
 {% highlight elixir %}
-    defmodule MyWeb.Article do
-      use MyWeb.Web, :model
+defmodule MyWeb.Article do
+  use MyWeb.Web, :model
 
-      schema "articles" do
-        field :name, :string
-        field :description, :string
-        timestamps()
-      end
+  schema "articles" do
+    field :name, :string
+    field :description, :string
+    timestamps()
+  end
 
-      def changeset(struct, params \\ %{}) do
-        struct
-        |> cast(params, [:name, :description])
-        |> validate_required([:name])
-      end
-    end
+  def changeset(struct, params \\ %{}) do
+    struct
+    |> cast(params, [:name, :description])
+    |> validate_required([:name])
+  end
+end
 {% endhighlight %}
 
 Cuando se traen objetos de la base de datos en *Rails*, la operación tiene que hacer trabajo extra al instanciar cada uno de los objetos.

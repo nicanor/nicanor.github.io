@@ -16,6 +16,12 @@ In this post I'll show you how to implement a simple filter in vanilla javascrip
   <option value="blue">Blue</option>
 </select>
 
+<style>
+#colorful-animals-list li {
+  margin-bottom:0px;
+}
+</style>
+
 <ul id="colorful-animals-list">
   <li data-color="blue"  style="color:blue;">Blue Bird</li>
   <li data-color="blue"  style="color:blue;">Blue Cat</li>
@@ -77,7 +83,7 @@ And we want to be able to filter animals by color (because otherwise it would be
 <!-- This algorithm can't find Jesus. -->
 <!-- Keep looking for the algorithm. -->
 
-#### The algorithm:
+### The algorithm:
 
 For hiding the elements, we will change their <code>display</code> property to <code>none</code>.
 
@@ -99,7 +105,9 @@ And add an event listener for that select input, so that it triggers the <code>R
 Here is the complete code:
 
 ``` javascript
-var elements = document.getElementById('colorful-animals-list').children,
+var elements = document.
+      getElementById('colorful-animals-list').
+      children,
     length   = elements.length,
     select   = document.getElementById('color-select');
 
@@ -107,7 +115,9 @@ Refresh = function () {
   var selected_color = select.value;
   for (var i = 0; i < length; i++) {
     elements[i].style.display =
-      (!selected_color || elements[i].dataset.color === selected_color) ? '' : 'none';
+      (!selected_color ||
+       elements[i].dataset.color === selected_color
+      ) ? '' : 'none';
   }
 };
 

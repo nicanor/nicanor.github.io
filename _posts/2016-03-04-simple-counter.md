@@ -29,7 +29,7 @@ In this post I'll show you how to implement a counter that starts when the user 
 
   function StartCounter() {
 
-    var units = [ 
+    var units = [
     49877536490, // gallinas
      2676365000, // patos
      1375940758, // cerdos
@@ -43,7 +43,7 @@ In this post I'll show you how to implement a counter that starts when the user 
     ];
 
     var bySecond = 4;
-    for (var i = 0; i < quantities.length; ++i){ 
+    for (var i = 0; i < quantities.length; ++i){
       velocities[i] = units[i] / 365 / 24 / 60 / 60 / bySecond;
     }
     setInterval(UpdateCounter, 1000 / bySecond);
@@ -75,17 +75,17 @@ In this post I'll show you how to implement a counter that starts when the user 
 I wanted to have a counter on my [website][servegano] so the visitors would have a feeling about the number of animals killed by humans for food in the world every minute. And I wanted to implement this counter in [vanilla][vanilla] Javascript. I already had the number of animals killed by year, by species:
 
 {% highlight html %}
-<ul class="counter"><!-- counter -->
-  <li><span id="counter-0">0</span> chickens</li>  <!-- 49.877.536.490 -->
-  <li><span id="counter-1">0</span> ducks</li>     <!--  2.676.365.000 -->
-  <li><span id="counter-2">0</span> pigs</li>      <!--  1.375.940.758 -->
-  <li><span id="counter-3">0</span> turkeys</li>   <!--    635.382.008 -->
-  <li><span id="counter-4">0</span> sheeps</li>    <!--    564.785.251 -->
-  <li><span id="counter-5">0</span> goats</li>     <!--    402.611.664 -->
-  <li><span id="counter-6">0</span> cows</li>      <!--    301.275.455 -->
-  <li><span id="counter-7">0</span> buffalos</li>  <!--     23.199.336 -->
-  <li><span id="counter-8">0</span> horses</li>    <!--      5.018.470 -->
-  <li><span id="counter-9">0</span> camelids</li>  <!--      1.501.799 -->
+<ul class="counter">
+  <li><span id="counter-0">0</span> chickens</li>
+  <li><span id="counter-1">0</span> ducks</li>
+  <li><span id="counter-2">0</span> pigs</li>
+  <li><span id="counter-3">0</span> turkeys</li>
+  <li><span id="counter-4">0</span> sheeps</li>
+  <li><span id="counter-5">0</span> goats</li>
+  <li><span id="counter-6">0</span> cows</li>
+  <li><span id="counter-7">0</span> buffalos</li>
+  <li><span id="counter-8">0</span> horses</li>
+  <li><span id="counter-9">0</span> camelids</li>
 </ul>  
 {% endhighlight %}
 
@@ -94,7 +94,7 @@ I wanted to have a counter on my [website][servegano] so the visitors would have
 <!-- But you are getting closer every time. -->
 <!-- Keep looking for the algorithm. -->
 
-#### The algorithm
+### The algorithm
 
 
 {% highlight javascript %}
@@ -104,7 +104,7 @@ var velocities =  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
 
 function StartCounter() {
 
-  var units = [ 
+  var units = [
   49877536490, // chickens
    2676365000, // ducks
    1375940758, // pigs
@@ -118,8 +118,9 @@ function StartCounter() {
   ];
 
   var bySecond = 4;
-  for (var i = 0; i < quantities.length; ++i){ 
-    velocities[i] = units[i] / 365 / 24 / 60 / 60 / bySecond;
+  for (var i = 0; i < quantities.length; ++i){
+    velocities[i] = units[i] /
+      365 / 24 / 60 / 60 / bySecond;
   }
   setInterval(UpdateCounter, 1000 / bySecond);
 }
@@ -140,14 +141,16 @@ function UpdateCounter() {
       num = Math.floor(num / 1000);
     }
     str = num + str;
-    document.getElementById("counter-" + i).innerHTML = str;
+    document.
+      getElementById("counter-" + i).
+      innerHTML = str;
   }
 }
 
 {% endhighlight %}
 
 
-#### Explanation
+### Explanation
 
 The function <code>setInterval</code> executes a function after waiting a specified number of milliseconds, and repeats the execution of that function continuously.
 
@@ -158,7 +161,7 @@ The function <code>StartCounter</code> calculates and initializes the <code>velo
 That's it! Check out the [repo][gh] for more info.
 
 
-#### Side notes
+### Side notes
 
 The counter shows the number of animals killed in the world by the meat, dairy and egg industries, since you opened this webpage. This does not include the billions of fish and other aquatic animals killed annually.
 

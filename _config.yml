@@ -1,6 +1,7 @@
 title: nicanor.github.io
-description: "Nicanor Perera"
+description: "Nicanor Perera's personal website"
 author: "Nicanor Perera"
+author_description: "Experienced and enthusiastic web developer."
 exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock]
 gems: ["jekyll-paginate", "jekyll-feed"]
 
