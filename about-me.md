@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About me
+id: about
 ---
 
 <img src="../img/nica.jpg"/>
