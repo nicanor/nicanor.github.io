@@ -1,5 +1,7 @@
 # Nicanor Perera's personal website
 
+Visit the [website](https://nicanor.github.io/).
+
 ## Instructions for copying this website
 
 ```sh
