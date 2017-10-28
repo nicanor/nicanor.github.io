@@ -4,7 +4,7 @@ title: About me
 id: about
 ---
 
-<img src="../img/nica.jpg"/>
+<img style="width:100%;" src="../img/nica.jpg"/>
 
 Hi. My name is Nicanor Perera and I'm a *Ruby on Rails* developer with more than
 <code id="years-of-experience"></code> years of experience.
