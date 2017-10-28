@@ -18,9 +18,11 @@ document.getElementById("years-of-experience").innerHTML = yearsOfExperience;
 </script>
 
 Born in Argentina and living in New Zealand since May 2017.
+With a computer science degree from [La Plata's National University](http://info.unlp.edu.ar/carreras-de-grado-lic-en-informatica/).
 Currently working for [Harmoney](http://harmoney.co.nz).
 Previously worked for [Snappler](http://snappler.com/)
 and [Xaver](http://www.xaver.com.ar) as a web developer.
+
 
 Always interested in new technologies.
 Nowadays feeling very enthusiastic about [Elixir][elixir] and [Phoenix][phoenix].

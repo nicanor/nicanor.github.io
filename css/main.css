@@ -769,6 +769,16 @@ a.navigation-isActive {
 
 /* Específico */
 
+.more-articles {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+p.details {
+  font-size: 1em;
+  color: #444;
+}
+
 pre.terminal {
   margin-left: 20px;
   margin-right: 20px;

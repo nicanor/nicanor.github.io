@@ -74,7 +74,7 @@ If we run the test suite now, the test will pass, and in order to continue we sh
 
 Working this way was very interesting for learning, and it was very funny.
 The final code was very clean, and I finished with a very reliable code.
-And I am using this gem in production for my [website][acordes-totales]. 
+And I am using this gem in production for my [website][acordes-totales].
 
 ### The complete algorithm:
 
@@ -84,7 +84,6 @@ And I am using this gem in production for my [website][acordes-totales].
 
 ``` ruby
 class Translator
-
   def call(group_of_words)
     group_of_words.split(' ').map do |word|
       translate_word(word)
@@ -120,9 +119,8 @@ class Translator
       ''
     end
   end
-
 end
-``` 
+```
 
 Check out the [repo][gh] and analize the commits if you want to see how I did it testing function by function.
 

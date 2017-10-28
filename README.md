@@ -1,8 +1,6 @@
-# Agradecimientos
+# Nicanor Perera's personal website
 
-La estructura de este sitio web realizado en *Jekyll* fue copiada del excelente blog http://christopheradams.io y adaptada a mis necesidades personales.
-
-## Instructiones para copiarlo
+## Instructions for copying this website
 
 ```sh
 gem install jekyll bundler

@@ -3,13 +3,11 @@ description: "Nicanor Perera's personal website"
 author: "Nicanor Perera"
 author_description: "Experienced and enthusiastic web developer."
 exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock]
-gems: ["jekyll-paginate", "jekyll-feed"]
+plugins: ["jekyll-feed"]
 
 url: https://nicanor.github.io
 
 permalink: /:categories/:year/:month/:title/
-paginate_path: "/blog/page:num/"
-paginate: 10
 
 email: nicanorperera@gmail.com
 github_username: nicanor
