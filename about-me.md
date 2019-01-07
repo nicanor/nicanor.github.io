@@ -8,7 +8,7 @@ id: about
 
 <img style="width:100%;" src="../img/nica.jpg"/>
 
-Hi. My name is Nicanor Perera and I'm a *Ruby on Rails* developer with more than
+Hi. My name is Nicanor Perera and I'm an Argentinian *Ruby on Rails* developer with more than
 <code id="years-of-experience"></code> years of experience.
 
 <script>
@@ -20,11 +20,11 @@ var yearsOfExperience = timeSince(new Date('2010-01-01'));
 document.getElementById("years-of-experience").innerHTML = yearsOfExperience;
 </script>
 
-Born in Argentina and living in New Zealand since May 2017, where I worked for [Harmoney](http://harmoney.co.nz) as a Rails developer.
-Previously worked for [Snappler](http://snappler.com/)
+I'm currently working for [Brandkit](https://www.brandkit.io/) as a Rails developer.
+I previously worked for [Harmoney](http://harmoney.co.nz), [Snappler](http://snappler.com/)
 and [Xaver](http://www.xaver.com.ar) also as a Rails developer.
 
-With a computer science degree from [La Plata's National University](http://info.unlp.edu.ar/carreras-de-grado-lic-en-informatica/).
+I have a [degree](http://info.unlp.edu.ar/carreras-de-grado-lic-en-informatica/) in computer science (*La Plata's National University*).
 
 Always interested in new technologies.
 Nowadays feeling very enthusiastic about [Elixir][elixir] and [Phoenix][phoenix].

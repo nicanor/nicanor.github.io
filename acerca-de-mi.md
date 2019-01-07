@@ -24,11 +24,15 @@ Me recibí de
 [Licenciado en Informática](http://info.unlp.edu.ar/carreras-de-grado-lic-en-informatica/)
 en la _Universidad Nacional de La Plata_.
 
-Mi último trabajo fue como desarrollador Ruby on Rails en
-[Harmoney](http://harmoney.co.nz), una empresa de _prestamos peer to peer_
-localizada en Auckland, Nueva Zelanda, donde vivo actualmente.
+Actualmente trabajo para [Brandkit](https://www.brandkit.io/) como desarrollador Ruby on Rails.
+Brandkit es una plataforma de [manejo digital de assets](https://www.brandkit.io/pages/why-dam)
+localizada en Nueva Zelanda.
 
-Antes trabajé para [Snappler](http://snappler.com/) durante 3 años como
+Mi anterior trabajo fue como desarrollador Ruby on Rails en
+[Harmoney](http://harmoney.co.nz), una empresa de _prestamos peer to peer_
+localizada en Auckland, Nueva Zelanda, donde viví por 1 año.
+
+Previamente trabajé para [Snappler](http://snappler.com/) durante 3 años como
 desarrollador Ruby on Rails y en [Xaver](http://www.xaver.com.ar) como desarrollador web.
 
 Siempre estoy interesado en nuevas tecnologías. Hoy en día estoy muy interesado
