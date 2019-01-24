@@ -3,7 +3,7 @@ layout: post
 title:  "Una forma divertida de aprender Golang"
 category: articles
 tags: programming español golang
-location: La Plata
+location: La Plata, Argentina
 visible: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "The way I'm learning Go"
 category: articles
 tags: programming english golang
-location: La Plata
+location: La Plata, Argentina
 visible: false
 ---
 

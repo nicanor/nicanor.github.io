@@ -3,7 +3,7 @@ layout: post
 title:  "Usando una guía de estilos en Ruby"
 category: articles
 tags: programming talk español
-location: La Plata
+location: La Plata, Argentina
 visible: true
 ---
 

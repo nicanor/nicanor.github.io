@@ -3,7 +3,7 @@ layout: post
 title:  "Rendimiento Phoenix vs Rails"
 category: articles
 tags: programming español elixir phoenix rails
-location: Auckland, New Zealand
+location: La Plata, Argentina
 visible: true
 ---
 
