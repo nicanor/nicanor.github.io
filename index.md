@@ -7,7 +7,7 @@ id: home
 <div class="hero">
   <div class="hero-inner">
     <img class="hero-logo" src="/img/code.png" alt="">
-    <h1>{{ site.title }}</h1>
+    <h1>{{ site.author }}</h1>
     <p>{{ site.description }}</p>
   </div>
 </div>
