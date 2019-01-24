@@ -4,6 +4,7 @@ title:  "Usando una guía de estilos en Ruby"
 category: articles
 tags: programming talk español
 location: La Plata
+visible: true
 ---
 
 > El código limpio siempre se ve como si hubiera sido escrito por alguien al que le importaba

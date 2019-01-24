@@ -4,8 +4,8 @@ title:  "Phoenix para desarrolladores Rails"
 category: articles
 tags: programming talk español
 location: La Plata
+visible: true
 ---
-
 
 El viernes 25 de noviembre preparé una charla introductoria al lenguaje de programación *Elixir* y al framework web *Phoenix* desde la perspectiva de un programador *Rails*. Esta charla se dió en el marco de la Ruby Meetup organizada por [la_plata.rb][laplatarb]. A continuación podrán leer el contenido de la charla completa, con código incluído. Si les interesa ver las diapositivas originales, pueden encontrarlas
 [aquí][diapositivas].

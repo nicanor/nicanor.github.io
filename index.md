@@ -1,6 +1,6 @@
 ---
 layout: default
-description: "Nicanor Perera contributions website"
+description: "Opiniones y experiencias de Nicanor Perera - Programador"
 id: home
 ---
 
@@ -12,16 +12,17 @@ id: home
   </div>
 </div>
 
-
 <div class="articles">
-	<div class="articles-inner">
-		<h2>Articles</h2>
-		<ul>
+  <div class="articles-inner">
+    <h2>Artículos</h2>
+    <ul>
       {% for article in site.categories.articles %}
-				<li>
-					<a href="{{ article.url }}"> {{ article.title }}</a>
-				</li>
-			{% endfor %}
-		</ul>
-	</div>
+        {% if article.visible == true %}
+          <li>
+            <a href="{{ article.url }}"> {{ article.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </div>

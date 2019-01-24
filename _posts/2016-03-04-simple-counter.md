@@ -4,6 +4,7 @@ title:  "Simple counter for my website"
 category: articles
 tags: programming
 location: "La Plata"
+visible: false
 ---
 
 In this post I'll show you how to implement a counter that starts when the user loads the page. Something like this.

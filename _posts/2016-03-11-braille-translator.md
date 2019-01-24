@@ -4,6 +4,7 @@ title:  "Braille translator in ruby (with TDD)"
 category: articles
 tags: programming
 location: La Plata
+visible: false
 ---
 
 This post is about *Test Driven Development* in Ruby, and how to implement it even in small projects.

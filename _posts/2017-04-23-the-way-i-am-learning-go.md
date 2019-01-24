@@ -4,6 +4,7 @@ title:  "The way I'm learning Go"
 category: articles
 tags: programming english golang
 location: La Plata
+visible: false
 ---
 
 A few weeks ago I began to learn the [Go language](https://golang.org/), and so

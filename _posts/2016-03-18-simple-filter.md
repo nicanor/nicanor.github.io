@@ -4,6 +4,7 @@ title:  "Simple vanilla javascript filter"
 category: articles
 tags: programming
 location: La Plata
+visible: false
 ---
 
 In this post I'll show you how to implement a simple filter in vanilla javascript, like this one:
