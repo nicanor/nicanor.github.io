@@ -135,18 +135,132 @@ Lo primero que van a notar es que la sintaxis se parece mucho a la de Ruby.
 * no hace falta poner puntos y comas al final de la línea,
 * no hace falta poner return al final: Al igual que en Ruby, toda expresión retorna un valor. La ultima expresión es lo que retorna la función.
 
-Y también van a notar algunas diferencias.
-* Hay un do, que en ruby no está.
-* No hay clases. Elixir no es un lenguaje orientado a Objetos.
+----
 
-¿Cuantos de ustedes han programado en lenguajes funcionales?
-¿Cuantos no saben lo que es un lenguaje funcional?
+Pero Elixir se parece más a Erlang que a Ruby. Elixir no es un lenguaje Orientado a Objetos. No hay clases, no hay herencia, no hay *new* ni *initialize*, no hay variables de instancia, no hay objetos.
 
-No se preocupen, nadie sabe.
-Definir programación orientada a objetos o programación funcional es como definir el arte.
-Todos tienen su opinión sobre estas definiciones y todos piensan que tienen razón.
+Y esto no es un capricho. Erlang fue diseñado con la concurrencia en mente, y es muy difícil implementar concurrencia cuando tenemos **estado mutable** distribuido por toda nuestra aplicación.
 
-No voy a definir programación funcional. Pero les voy a hablar de separación inmutabilidad, funciones puras, funciones como dato de primer orden, etc...
+El estado mutable es aquel que cambia a través del tiempo.
+El tiempo es una fuente de complejidad, porque agrega muchas partes en movimiento a nuestro sistema.
+Terminamos con varias piezas de datos cambiando a distintos intervalos.
+
+Es por eso que no queremos que el estado mutable sea una primitiva del lenguaje, sino una abstracción a la que acudimos cuando la necesitamos. Y lo hacemos de forma explícita.
+
+Los objetos acoplan
+
+* representación de datos
+* lógica de programa
+* organización de código
+* manejo de estado y
+* polimorfismo por herencia.
+
+En Elixir todas estas cuestiones son tenidas en cuenta por separado.
+
+``` ruby
+  # Ruby
+  "HOLA MUNDO".downcase #=> "hola mundo"
+```
+
+``` elixir
+  # Elixir
+  String.downcase("HOLA MUNDO") #=> "hola mundo"
+```
+
+En Ruby, `"HOLA MUNDO"` es un objeto de clase String.
+Este objeto define el método downcase. El objeto sabe como ponerse en minúsculas.
+Decimos que la representación de datos está acoplada a la lógica de programa.
+
+En Elixir en cambio el string `"HOLA MUNDO"` no es un objeto. Es un valor.
+
+Y los valores no tienen comportamiento.
+No saben cómo ponerse en minúsculas.
+No saben cómo calcular su largo.
+No saben cómo concatenarse con otro string.
+
+En Elixir los valores son simples.
+Y también son inmutables.
+
+"HOLA" no es una cajita donde guardo un valor.
+Ni es un puntero a un valor.
+"HOLA" es el valor en sí mismo.
+Los valores nunca se modifican.
+
+Si llamas una función para poner
+
+Los que hacen cosas no son los valores, sino que son las funciones.
+
+La función *downcase* recibe como parametro el valor `"HOLA MUNDO"` y retorna un nuevo valor.
+
+``` elixir
+  # Elixir
+  a = "HOLA"
+  String.downcase(a) #=> "hola"
+  a #=> "HOLA"
+```
+
+
+
+
+Vamos a ver el ejemplo de la suma.
+Tanto en Ruby como en Elixir se escriben igual, pero conceptualmente funcionan diferente:
+
+``` ruby
+  # Ruby
+  2 + 2  #=> "4"
+```
+
+``` elixir
+  # Elixir
+  2 + 2  #=> "4"
+```
+
+En Ruby, tengo el objeto con valor 2, que sabe como sumar (tiene definido el método `+`), y a este método se le pasa como parámetro otro objeto.
+
+``` ruby
+  # Ruby
+  2.+(2)  #=> "4"
+```
+
+En Elixir en cambio los valores son ingenuos. Un 2 no sabe sumar. Para sumar dos valores necesitás si o si una función, a la que se le pasan como parámetros dos valores inmutables y retorna un nuevo valor inmutable.
+
+``` elixir
+  # Elixir
+  Kernel.+(2, 2)  #=> "4"
+```
+
+¿Qué nos retorna la siguiente expresión?
+
+``` ruby
+  # Ruby
+  "Hola".equals?("Hola")
+```
+
+False.
+Son objetos diferentes.
+Tienen diferentes object_id.
+Por más que ambos estén conformados por las mismas letras en el mismo orden, no podemos decir que sean el mismo string.
+
+En Elixir en cambio no existe el concepto de `equals?`, porque no existe el concepto de `object_id`.
+
+``` elixir
+  # Elixir
+  "Hola" == "Hola" #=> true
+```
+
+"Hola" ocupa 4 bytes y nada más.
+
+``` elixir
+  # Elixir
+  byte_size("Hola") #=> 4
+```
+
+No arrastran consigo nada más que a sí mismo. No tienen clase, ni métodos, ni variables de instancia.
+Si tienen las mismas letras en el mismo orden, decimos que son el mismo string.
+Todos los valores en Elixir son identificables, son fáciles de crear y son fáciles de compartir.
+
+
+----
 
 ## Datos separados de comportamiento
 
