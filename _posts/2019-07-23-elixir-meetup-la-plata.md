@@ -4,14 +4,64 @@ title:  "Elixir La Plata Primera Edición"
 category: articles
 tags: programming talk español
 location: La Plata
-visible: false
+visible: true
 ---
 
-Bienvenidos a todos, mi nombre es Nicanor Perera y les doy la bienvenida a la primera Edición de Elixir Meetup La Plata.
-Gracias a Snappler por organizar el evento y brindar el espacio.
+Bienvenidos a todos!
+
+Hace casi 3 años dí una charla sobre Phoenix y Elixir en La Colmena.
+
+_[Preguntar si alguno fue a esa charla]_
+
+En ese momento trabajaba para Snappler, y estaba muy entusiasmado por la charla.
+
+Joao accedió a darme el día libre para perfeccionar la charla y las diapositivas.
+
+Esa charla fue muy bien recibida, pero fue la charla de un inexperto. Hace varios años que era un programador, pero hace muy poco tiempo que estaba empezando a conocer Elixir.
+
+Hace más de 9 años que uso Rails en mi trabajo y hace más de 3 años que uso Phoenix para mis proyectos personales, y sigo igual de entusiasmado que cuando dí esa primera charla.
+
+Lo que les traigo hoy no es más la charla de un inexperto. Viene cargada con todo lo que aprendí durante estos años, que no han hecho más que confiramr lo que ya pensaba: que Elixir y Phoenix son herramientas increíbles.
+
+Hoy quiero compartir lo que he aprendido en estos años con ustedes.
+
+---
+
+Comienzo con unas preguntas:
+
+_Preguntar quienes saben lo que es Elixir,
+quienes han escrito alguna linea de código
+y quienes lo han usado en producción.
+
+Preguntar también quienes son programadores Rails,
+y los que no lo sean, preguntar qué hacen_
+
+
+Elixir es un lenguaje de programación diseñado para desarrollar aplicaciones escalables y mantenibles.
+
+Corre sobre la máquina virtual de Erlang (de la misma forma en que Java corre sobre la JVM,
+y ruby corre sobre YARV).
+
+Esta máquina virtual fue especialmente diseñada para construir sistemas distribuidos y tolerantes a fallos.
+
+Fue creada para resolver los problemas de la telefonía movil (Mencionar cuales son estos problemas)
+El 90% de internet corre sobre esta máquina virtual. (explicarlo mejor)
+
+Es usada por Heroku para su routing interno.
+Es usada por Whatsapp para ...
+Es usada por (...)
+
+Es realmente poderosa.
+
+Elixir tiene un framework web llamado Phoenix.
+Idea 1: La programación web tiene muchos problemas en común con la telefonía. Elixir y Phoenix son excelentes para la programación web.
+Idea 2: Phoenix puede darles una ventaja competitiva tanto a ustedes (programadores) como a sus clientes.
+Idea 3: Cuando tenés todo este poder al alcance de tu mano te animás a más.
+
+------------
 
 Esta primera edición la armamos con 3 objetivos.
-* El primero es motivarlos a aprender Elixir. (si aún no lo están)
+* El primero es motivarlos a aprender Elixir.
 * El segundo es darles las herramientas para poder arrancar cuanto antes.
 * El tercero es crear comunidad. Voy a hablarles de eso más adelante.
 
@@ -21,17 +71,15 @@ Entre charla y charla vamos a jugar a las cartas, y al final vamos a compartir u
 
 ----------
 
-Elixir es un lenguaje (...)
-Corre sobre la Maquina Virtual de Erlang (BEAM)
 
-Voy a ...
+
 
 ## ¿Por qué aprender un lenguaje nuevo?
 
-* Es divertido.
 * Te hace mejor programador Ruby.
 * Es una herramienta más on your toolbelt.
 * El software avanza muy rápido y no hay que quedarse atrás.
+* Es divertido.
 
 Aprender un lenguaje nuevo es una inversión para el futuro.
 Llegar a sentirse cómodo con un lenguaje lleva tiempo y esfuerzo.
@@ -49,14 +97,23 @@ Hay problemas para los que Elixir no es la mejor opción.
 * Si necesitan sacar una aplicación muy rápido, quizás la mejor opción sea Go.
 * Si necesitan que sea compatible con la máquina virtual de Java, quizás la mejor opción sea Clojure.
 
-Erlang y Elixir son candidatos ideales para un grupo particular de problemas.
-Aquellos que se benefician de paralelismo, tolerancia a fallos, .....
+Esta charla la voy a dar con la idea de que Erlang y Elixir son candidatos ideales para los problemas de la web:
+Les voy a enumerar algunas cosas para las que son buenos:
+- Chats en tiempo real. Yo escribo, e inmediatamente le llega el mensaje a la otra persona, sin recargar la página (websockets)
+- Notificaciones en tiempo real, por ejemplo cuando alguien me puso me gusta.
+- Herramientas colaborativas con muchas personas conectadas al mismo tiempo
+- Ver quienes están conectados, y cuando se conecta o desconecta alguien. (Presence)
+- Background Jobs que corren durante tiempo prolongado, sin necesidad de instalar Redis ni usar una gema como sidekiq. Y cuando terminan me envían una notificación en tiempo real.
+- Un buscador que le pegue a varios 3rd parties y retorne resultados a medida que van llegando. Productor consumidor, o streaming.
+- Streaming de videos.
+- Hacer streaming a la base de datos, trabajar los datos y crear un reporte CSV en tiempo real, y enviarselo al usuario a través de HTTP streaming.
+- Tareas chron, que se ejecuten cada cierto período de tiempo.
+- Tener 2 millones de personas conectadas en una misma computadora
 
-Casi todos los sistemas web entran en este tipo de problemas. [Explicar mejor]
+Todo esto sin usar 3d parties.
 
-Hoy voy a defender la idea de que Elixir y su framework web, Phoenix son excelentes para la programación web.
+Hoy voy a defender la idea de que Elixir y el framework web Phoenix son excelentes para la programación web.
 
-Voy a empezar la charla de atrás hacia adelante.
 
 ## Un vistazo a Elixir
 
