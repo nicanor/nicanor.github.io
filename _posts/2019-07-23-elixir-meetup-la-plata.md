@@ -7,27 +7,43 @@ location: La Plata
 visible: true
 ---
 
-Bienvenidos a todos!
+# Bienvenida y objetivos
 
-Hace casi 3 años dí una charla sobre Phoenix y Elixir en La Colmena.
+Hola a todos.
 
-_[Preguntar si alguno fue a esa charla]_
+¿Cómo andan?
 
-En ese momento trabajaba para Snappler, y estaba muy entusiasmado por la charla.
+Primero que nada, muchas gracias por venir y muchas gracias a Snappler por prestarnos el lugar y ayudarnos a organizar el evento.
 
-Joao accedió a darme el día libre para perfeccionar la charla y las diapositivas.
+Mi nombre es Nicanor, y les doy la bienvenida a la primera meetup de Elixir en La Plata.
 
-Esa charla fue muy bien recibida, pero fue la charla de un inexperto. Hace varios años que era un programador, pero hace muy poco tiempo que estaba empezando a conocer Elixir.
+Varias personas ya me conocen. En Noviembre de 2016, dí una charla sobre Phoenix y Elixir en La Colmena.
+¿Alguno fue a esa charla?
 
-Hace más de 9 años que uso Rails en mi trabajo y hace más de 3 años que uso Phoenix para mis proyectos personales, y sigo igual de entusiasmado que cuando dí esa primera charla.
+En ese momento trabajaba para Snappler, y estaba super entusiasmado por dar la charla.
+Si bien recién empezaba a conocer estas tecnologías, la charla fue muy bien recibida.
+Hace más de 9 años que uso Rails en mi trabajo y hace más de 3 años que uso Phoenix para mis proyectos personales.
 
-Lo que les traigo hoy no es más la charla de un inexperto. Viene cargada con todo lo que aprendí durante estos años, que no han hecho más que confiramr lo que ya pensaba: que Elixir y Phoenix son herramientas increíbles.
+En estos años han pasado muchas cosas en Elixir.
+Ahora Elixir tiene soporte para releases, que es una herramienta invaluable para hacer deployment.
+Ahora Elixir tiene un formateador automático de código, que mejora la calidad del código y el trabajo en equipo.
+Ahora Phoenix te incentiva a organizar tu código en contextos, lo que ayuda a desacoplar código en celulas independientes.
+La comunidad ha crecido muchísimo.
+Hoy en día, en Github, hay 3 veces más repositorios en Elixir que en Erlang.
 
-Hoy quiero compartir lo que he aprendido en estos años con ustedes.
+Y yo, 3 años después, sigo igual de entusiasmado que cuando dí esa primera charla.
+
+Nuestros objetivos hoy son contagiarles nuestro entusiasmo, compartir lo que hemos aprendido en estos años con ustedes, ayudarlos a dar los primeros pasos con estas tecnologías y generar comunidad. Si nos sale bien, vamos a haber puesto las bases para que este sea el primero de muchos eventos de este tipo.
+
+Hoy tenemos 2 charlas.
+
+La primera la voy a dar yo, voy a hablarles de Erlang, Elixir, Phoenix, por qué existen, por qué son como son y cómo nos podemos beneficiar de estas tecnologías. La primera charla que dí hablé de muchos temas muy superficialmente. Hoy voy a ser un poco más selectivo, y le voy a dedicar un poco más de tiempo a esos temas que considero importantes.
+
+La segunda la va a dar Federico y va a enfocarse en cómo aprender Elixir, y ayudarlos a dar los primeros pasos.
 
 ---
 
-Comienzo con unas preguntas:
+## Comienzo con unas preguntas:
 
 _Preguntar quienes saben lo que es Elixir,
 quienes han escrito alguna linea de código
@@ -37,83 +53,53 @@ Preguntar también quienes son programadores Rails,
 y los que no lo sean, preguntar qué hacen_
 
 
-Elixir es un lenguaje de programación diseñado para desarrollar aplicaciones escalables y mantenibles.
+## Máquina virtual de Erlang
 
-Corre sobre la máquina virtual de Erlang (de la misma forma en que Java corre sobre la JVM,
-y ruby corre sobre YARV).
+Elixir es un lenguaje de programación dinámico, diseñado para desarrollar aplicaciones escalables y mantenibles.
+Corre sobre la máquina virtual de Erlang.
 
-Esta máquina virtual fue especialmente diseñada para construir sistemas distribuidos y tolerantes a fallos.
+Esta máquina virtual fue creada para resolver los problemas de la telefonía.
+Específicamente de equipos de conmutación, que son necesarios para la operación de llamadas telefónicas.
 
-Fue creada para resolver los problemas de la telefonía movil (Mencionar cuales son estos problemas)
-El 90% de internet corre sobre esta máquina virtual. (explicarlo mejor)
+Los lenguajes que usaban no cumplían con los requisitos, y decidieron crear un lenguaje nuevo.
+Necesitaban un lenguaje con alta capacidad de concurrencia, de alta disponibilidad, tolerante a fallos y de baja latencia y con soporte para programación distribuída. Y crearon Erlang.
 
-Es usada por Heroku para su routing interno.
-Es usada por Whatsapp para ...
-Es usada por (...)
+La concurrencia es un problema difícil.
+Muchos lenguajes no tienen buen soporte para concurrencia.
 
-Es realmente poderosa.
+Hay distintas estrategias para abordar este problema.
+Algunos lenguajes, como rust, afrontan este problema con threads.
+Otros como Go, lo hacen a través de rutinas y canales.
 
-Elixir tiene un framework web llamado Phoenix.
-Idea 1: La programación web tiene muchos problemas en común con la telefonía. Elixir y Phoenix son excelentes para la programación web.
-Idea 2: Phoenix puede darles una ventaja competitiva tanto a ustedes (programadores) como a sus clientes.
-Idea 3: Cuando tenés todo este poder al alcance de tu mano te animás a más.
+La forma en que implementaron concurrencia en Erlang fue a través de procesos ligeros.
+Estos procesos no son threads de sistema operativo, sino que son procesos que maneja la máquina virtual de Erlang.
+Son muy ligeros, muy fáciles de crear y muy fáciles de destruir.
 
-------------
+Los procesos de la máquina virtual de Erlang son tan ligeros, que en una misma computadora puede haber cientos de miles de procesos vivos al mismo tiempo.
 
-Esta primera edición la armamos con 3 objetivos.
-* El primero es motivarlos a aprender Elixir.
-* El segundo es darles las herramientas para poder arrancar cuanto antes.
-* El tercero es crear comunidad. Voy a hablarles de eso más adelante.
+Es el caso de Whatsapp, cuya infraestructura está implementada en Erlang.
+Cada computadora en la que corre el servidor de *Whatsapp* puede manejar **2 millones de conexiones** al mismo tiempo.
+*Whatsapp* tiene **500 millones de usuarios activos por día** y sólo **50 ingenieros**.
 
-Entre charla y charla vamos a jugar a las cartas, y al final vamos a compartir unas pizzas.
+Estos procesos funcionan de forma aislada y se comunican entre ellos a través de mensajes.
+En computadoras con varios núcleos, estos procesos pueden correr de forma paralela.
+Si tenemos una computadora con 32 nucleos, y tenemos 32 procesos, es posible que en un momento dado cada proceso corra sobre un núcleo diferente.
 
-¿Alguna pregunta?
+La máquina virtual de Erlang aprovecha la capacidad de la computadora al máximo.
 
-----------
+Y eso es importante, porque cada año las computadoras vienen con más núcleos.
+Y eso aplica también para las computadores que usamos de servidor.
 
+## Elixir
 
+En 2010, José Valim estaba trabajando en mejorar la velocidad de Rails en sistemas de múltiples núcleos, ya que las máquinas que usaba en producción cada vez venían con más núcleos.
 
+Como cuenta él, toda la experiencia fue muy frustrante. Rails no proveía las herramientas apropiadas para resolver problemas de concurrencia. Ahí fue cuando José comenzó a mirar otras tecnologías y eventualmente se topó con la Máquina Virtual de Erlang.
 
-## ¿Por qué aprender un lenguaje nuevo?
+José comenzó a usar *Erlang*, y se dio cuenta que Erlang era una base sólida para resolver los problemas que él quería resolver.
+Pero también notó que extrañaba algunas construcciones que estaban presentes en otros lenguajes.
 
-* Te hace mejor programador Ruby.
-* Es una herramienta más on your toolbelt.
-* El software avanza muy rápido y no hay que quedarse atrás.
-* Es divertido.
-
-Aprender un lenguaje nuevo es una inversión para el futuro.
-Llegar a sentirse cómodo con un lenguaje lleva tiempo y esfuerzo.
-Van a tardar unos meses hasta tomar confianza de que pueden arrancar un proyecto de un cliente con Elixir.
-
-## ¿Por qué aprender Elixir?
-
-Pregunta válida. Hay muchos lenguajes interesantes para aprender.
-¿Por qué voy a usar mi tiempo en aprender Elixir, si puedo aprender Rust, Go, Clojure u otro lenguaje?
-
-Voy a contestar eso en un rato. Pero por lo pronto, les adelanto que Elixir no es la bala de plata.
-Hay problemas para los que Elixir no es la mejor opción.
-
-* Para una aplicación que requiera uso intensivo de la CPU, quizás la mejor opción sea Rust.
-* Si necesitan sacar una aplicación muy rápido, quizás la mejor opción sea Go.
-* Si necesitan que sea compatible con la máquina virtual de Java, quizás la mejor opción sea Clojure.
-
-Esta charla la voy a dar con la idea de que Erlang y Elixir son candidatos ideales para los problemas de la web:
-Les voy a enumerar algunas cosas para las que son buenos:
-- Chats en tiempo real. Yo escribo, e inmediatamente le llega el mensaje a la otra persona, sin recargar la página (websockets)
-- Notificaciones en tiempo real, por ejemplo cuando alguien me puso me gusta.
-- Herramientas colaborativas con muchas personas conectadas al mismo tiempo
-- Ver quienes están conectados, y cuando se conecta o desconecta alguien. (Presence)
-- Background Jobs que corren durante tiempo prolongado, sin necesidad de instalar Redis ni usar una gema como sidekiq. Y cuando terminan me envían una notificación en tiempo real.
-- Un buscador que le pegue a varios 3rd parties y retorne resultados a medida que van llegando. Productor consumidor, o streaming.
-- Streaming de videos.
-- Hacer streaming a la base de datos, trabajar los datos y crear un reporte CSV en tiempo real, y enviarselo al usuario a través de HTTP streaming.
-- Tareas chron, que se ejecuten cada cierto período de tiempo.
-- Tener 2 millones de personas conectadas en una misma computadora
-
-Todo esto sin usar 3d parties.
-
-Hoy voy a defender la idea de que Elixir y el framework web Phoenix son excelentes para la programación web.
-
+Fue ahí que decidió crear Elixir, en un intento de traer novedosas herramientas por encima de la máquina virtual de Erlang.
 
 ## Un vistazo a Elixir
 
@@ -121,31 +107,57 @@ Antes de arrancar con las partes más técnicas, vamos a echar un vistazo a cóm
 
 ``` elixir
 defmodule Math do
+  # Esto es un comentario
   def sum(a, b) do
     a + b
   end
-  ...
+
+  def duplicate(a) do
+    2 * a
+  end
 end
 
-Math.sum(1, 2) #=> 3
+Math.sum(1,2) #=> 3
+Math.duplicate(5) #=> 10
 ```
 
 Lo primero que van a notar es que la sintaxis se parece mucho a la de Ruby.
-* Las funciones se definen con def,
-* no hace falta poner puntos y comas al final de la línea,
-* no hace falta poner return al final: Al igual que en Ruby, toda expresión retorna un valor. La ultima expresión es lo que retorna la función.
+
+* Hay números,
+* hay booleanos,
+* hay strings,
+* hay símbolos (que en elixir se llaman átomos),
+* hay arreglos (que en elixir se llaman listas),
+* hay hashes (que en elixir se llaman maps),
+* hay rangos,
+* hay fechas
+
+* al igual que en Ruby, no hace falta poner puntos y comas al final de la línea,
+* al igual que en Ruby, toda expresión retorna un valor
+* al igual que en Ruby, la última expresión es lo que retorna la función (no hace falta usar **return**)
+
+Hay muchas construcciones parecidas, y esto es porque José Valim se baso fuertemente en la sintaxis de Ruby.
+Si les gusta Ruby por ser un lenguajes Expresivo, Elegante, Flexible, Simple, fácil de leer y de entender, y que les permite hacer mucho con poco código, entonces por las mismas razones les va a encantar Elixir.
 
 ----
 
-Pero Elixir se parece más a Erlang que a Ruby. Elixir no es un lenguaje Orientado a Objetos. No hay clases, no hay herencia, no hay *new* ni *initialize*, no hay variables de instancia, no hay objetos.
+Pero Elixir se parece más a Erlang que a Ruby.
 
-Y esto no es un capricho. Erlang fue diseñado con la concurrencia en mente, y es muy difícil implementar concurrencia cuando tenemos **estado mutable** distribuido por toda nuestra aplicación.
+Elixir no es un lenguaje Orientado a Objetos. No hay clases, no hay herencia, no hay *new* ni *initialize*, no hay variables de instancia, no hay variables globales, no hay objetos. No hay estado mutable oculto.
+
+Y esto no es un capricho.
+
+Erlang fue diseñado con la concurrencia en mente, y es muy difícil implementar concurrencia cuando tenemos **estado mutable** distribuido por toda nuestra aplicación.
+
+### Estado mutable
 
 El estado mutable es aquel que cambia a través del tiempo.
 El tiempo es una fuente de complejidad, porque agrega muchas partes en movimiento a nuestro sistema.
 Terminamos con varias piezas de datos cambiando a distintos intervalos.
 
-Es por eso que no queremos que el estado mutable sea una primitiva del lenguaje, sino una abstracción a la que acudimos cuando la necesitamos. Y lo hacemos de forma explícita.
+Es por eso que si estamos diseñando un lenguaje concurrente, no queremos que el estado mutable sea una primitiva del lenguaje, sino una abstracción a la que acudimos cuando la necesitamos. Y lo hacemos de forma explícita.
+
+### Acoplamiento
 
 Los objetos acoplan
 
@@ -159,38 +171,99 @@ En Elixir todas estas cuestiones son tenidas en cuenta por separado.
 
 ``` ruby
   # Ruby
-  "HOLA MUNDO".downcase #=> "hola mundo"
+  "HOLA".downcase #=> "hola"
 ```
 
 ``` elixir
   # Elixir
-  String.downcase("HOLA MUNDO") #=> "hola mundo"
+  String.downcase("HOLA") #=> "hola"
 ```
 
-En Ruby, `"HOLA MUNDO"` es un objeto de clase String.
-Este objeto define el método downcase. El objeto sabe como ponerse en minúsculas.
+En Ruby, `"HOLA"` es un objeto de clase String, que define el método `downcase`.
+El objeto `"HOLA"` sabe como ponerse en minúsculas.
 Decimos que la representación de datos está acoplada a la lógica de programa.
 
-En Elixir en cambio el string `"HOLA MUNDO"` no es un objeto. Es un valor.
+En Elixir en cambio el string `"HOLA"` no es un objeto. Es un valor.
 
 Y los valores no tienen comportamiento.
-No saben cómo ponerse en minúsculas.
-No saben cómo calcular su largo.
-No saben cómo concatenarse con otro string.
+
+* No saben cómo ponerse en minúsculas.
+* No saben cómo calcular su largo.
+* No saben cómo concatenarse con otro valor.
+
+No arrastran consigo nada más que a sí mismos.
+No tienen un puntero a sus métodos ni a su clase, ni a sus ancestros, ni tampoco variables de instancia.
+
+`"Hola"` no es una cajita donde guardo un valor. Ni es un puntero a un valor.
+`"Hola"` es el valor en sí mismo.
+
+La lógica de programa la definen las funciones, no los valores.
 
 En Elixir los valores son simples.
-Y también son inmutables.
+Son fáciles de crear y son fáciles de compartir.
 
-"HOLA" no es una cajita donde guardo un valor.
-Ni es un puntero a un valor.
-"HOLA" es el valor en sí mismo.
+
+### Identidad
+
+¿Qué nos retorna la siguiente expresión?
+
+``` ruby
+  # Ruby
+  "Hola".equal?("Hola")
+```
+
+Nos retorna `false`.
+
+
+``` ruby
+  # Ruby
+  a = "Hola"
+  b = "Hola"
+  a.object_id #=> 70227497266080
+  b.object_id #=> 70227497236260
+```
+
+Como pueden ver, tienen diferentes `object_id`. Son objetos diferentes.
+Por más que ambos estén conformados por las mismas letras en el mismo orden, no podemos decir que sean el mismo string.
+Son objetos guardados en distintas posiciones de memoria.
+
+En Elixir en cambio no existe el concepto de `equal?`, porque no existe el concepto de `object_id`.
+
+``` elixir
+  # Elixir
+  "Hola" == "Hola" #=> true
+```
+
+Si dos strings tienen las mismas letras en el mismo orden, decimos que son el mismo valor.
+La identidad de un valor está dada por el valor en sí mismo.
+Decimos que los valores en Elixir son identificables por sí mismos.
+
+Y esto aplica también para las estructuras de datos.
+
+``` elixir
+  # Elixir
+  [1, 2, 3] == [1, 2, 3] #=> true
+```
+
+Si tenemos la lista `[1, 2, 3]` en nuestra computadora, y la lista `[1, 2, 3]` en una computadora en China, decimos que son la misma lista.
+
+Lo que define a un valor no es su posición en la memoria.
+
+En elixir nos abstraemos de la memoria. No necesitamos proteger una porción de memoria con locks, semáforos o monitores.
+No tenemos punteros. No tenemos valores por referencia. Eso facilita implementar sistemas concurrentes.
+
+
+### Valores inmutables
+
+Y también son inmutables.
 Los valores nunca se modifican.
 
-Si llamas una función para poner
-
-Los que hacen cosas no son los valores, sino que son las funciones.
-
-La función *downcase* recibe como parametro el valor `"HOLA MUNDO"` y retorna un nuevo valor.
+``` ruby
+  # Ruby
+  a = "HOLA"
+  a.downcase! #=> "nil"
+  a #=> "hola"
+```
 
 ``` elixir
   # Elixir
@@ -199,436 +272,76 @@ La función *downcase* recibe como parametro el valor `"HOLA MUNDO"` y retorna u
   a #=> "HOLA"
 ```
 
+Si los datos son inmutables, entonces se eliminan los problemas de interacción entre hilos de ejecución por mutación de datos. Es mucho más fácil implementar un sistema concurrente.
 
-
-
-Vamos a ver el ejemplo de la suma.
-Tanto en Ruby como en Elixir se escriben igual, pero conceptualmente funcionan diferente:
-
-``` ruby
-  # Ruby
-  2 + 2  #=> "4"
-```
-
-``` elixir
-  # Elixir
-  2 + 2  #=> "4"
-```
-
-En Ruby, tengo el objeto con valor 2, que sabe como sumar (tiene definido el método `+`), y a este método se le pasa como parámetro otro objeto.
-
-``` ruby
-  # Ruby
-  2.+(2)  #=> "4"
-```
-
-En Elixir en cambio los valores son ingenuos. Un 2 no sabe sumar. Para sumar dos valores necesitás si o si una función, a la que se le pasan como parámetros dos valores inmutables y retorna un nuevo valor inmutable.
-
-``` elixir
-  # Elixir
-  Kernel.+(2, 2)  #=> "4"
-```
-
-¿Qué nos retorna la siguiente expresión?
-
-``` ruby
-  # Ruby
-  "Hola".equals?("Hola")
-```
-
-False.
-Son objetos diferentes.
-Tienen diferentes object_id.
-Por más que ambos estén conformados por las mismas letras en el mismo orden, no podemos decir que sean el mismo string.
-
-En Elixir en cambio no existe el concepto de `equals?`, porque no existe el concepto de `object_id`.
-
-``` elixir
-  # Elixir
-  "Hola" == "Hola" #=> true
-```
-
-"Hola" ocupa 4 bytes y nada más.
-
-``` elixir
-  # Elixir
-  byte_size("Hola") #=> 4
-```
-
-No arrastran consigo nada más que a sí mismo. No tienen clase, ni métodos, ni variables de instancia.
-Si tienen las mismas letras en el mismo orden, decimos que son el mismo string.
-Todos los valores en Elixir son identificables, son fáciles de crear y son fáciles de compartir.
-
-
-----
-
-## Datos separados de comportamiento
-
-* En Ruby tenemos clases y métodos.
-* En Elixir tenemos módulos y funciones.
-
-Explicar que en objetos mezclamos los datos con el comportamiento. Y es un problema. Hay estado. Queriamos una banana, y tenemos un gorila agarrando una banana.
-
-Explicar que en funcional los datos son simples. No tienen comportamiento. Simplemente son.
-Son identificables. Son compartibles. Son fáciles de crear. Se definen a sí mismos.
-
-Un 1, o un 2, pueden sumar?
-No! el 1 es un 1, es un 1, es un 1
-
-Una funcion es un mapeo de valores de un conjunto a valores de otro conjunto.
-
-## Inmutabilidad
-
-En Elixir trabajamos con constantes.
-
-En programación funcional no existe el concepto de variable como existe en lenguajes imperativos.
-Piensen en las variables no como "espacio para poner valores", sino mas bien "nombres de valores".
-
-En elixir no tenemos punteros. Nos abstraemos de la memoria. No nos importa dónde está el valor de memoria.
-
-``` ruby
-a = "hola"
-b = "hola"
-a.equals?(b)
-```
-Los valores a las funciones se pasan por valor, no por referencia.
-
-Cuando se pasa un dato a una función, esta no lo modifica sino que retorna un nuevo dato. Esto aplica también para estructuras de datos. Por ejemplo, agregar un dato a una lista en programación imperativa significa tomar un dato y mutar una lista. En cambio en programación funcional se toma un dato, una lista y se retorna una lista nueva.
-
-`[Explicar con algun ejemplo]`
-
-Si las estructuras de datos son inmutables, entonces se eliminan los problemas de interacción entre hilos de ejecución por mutación de datos. Esto, sumado a la ausencia de efectos secundarios hace que la programación funcional sea muy buena para implementar programas concurrentes.
-
-
-## Menos efectos secundarios
-
-En elixir no hay variables. Por lo tanto, no hay variables globales.
-
-Los valores que retorna una función dependen únicamente de sus parámetros de entrada. A partir de los mismos parámetros, una función retorna siempre el mismo resultado.
-
-Al eliminar los efectos secundarios se puede predecir el comportamiento de un programa mucho más fácilmente. Las funciones puras son muy fáciles de testear.
-
-
-
-### Transformaciones sin estado de datos inmutables
-
-La programación orientada a objetos es acerca de objetos que se envían mensajes. Estos objetos consisten en datos y comportamiento fuertemente acoplado.
-
-La programación funcional desacopla los datos del comportamiento (las funciones).
-
-En programación orientada a objetos, suele ocurrir que existan algunos bugs que sólo ocurren cuando un objeto está en un estado en particular. Reproducir el problema puede ser complicado porque de entrada no se sabe cual es el estado (todo está oculto dentro de un objeto). Y una vez que se descifra puede ser difícil reproducirlo, porque quizás sólo ocurre luego de que lo activa una cadena particular de eventos.
-
-En programación funcional se pasan los datos a través de un conjunto de funciones y los datos nunca mutan. La salida de una función es la entrada de la función siguiente. Cuando ocurre un error es más fácil descifrar qué pasa y dónde pasa. La mutación significa pérdida de información, y no hay mutación en programación funcional.
-
-# Erlang
-
-Erlang es un lenguaje de programación concurrente y funcional. Corre sobre una máquina virtual llamada BEAM. Fue desarrollado por Ericsson y diseñado desde las bases para escribir aplicaciones **escalables**, **tolerantes a fallos**, **distribuídas**, **de tiempo real** y **de alta disponibilidad**. Absolutamente todo en el lenguaje, la máquina virtual y las librerías reflejan ese propósito, lo que hace que *Erlang* sea la mejor plataforma para desarrollar este tipo de software.
-
-Como *Erlang* fue creado con la concurrencia en mente es naturalmente bueno para usar sistemas con múltiples núcleos.
-
-La creación, gestión y comunicación de procesos es sencilla en Erlang, mientras que en muchos lenguajes, los hilos se consideran un apartado complicado y propenso a errores. En *Erlang* toda concurrencia es explícita.
-
-En *Erlang* todo es un proceso. Los procesos de *Erlang* no son procesos de Sistema Operativo, sino que son procesos de la Máquina Virtual. Son muy livianos (300B). Tan livianos que una computadora relativamente buena puede tener millones de procesos corriendo concurrentemente.
-
-La creación y destrucción de procesos es una operación liviana. Los procesos están isolados entre sí.  Los procesos no comparten recursos. Hacen lo que tienen que hacer o fallan.
-
-La única manera en que pueden interactuar entre sí es a través del pasaje de mensajes. Los procesos tienen nombres únicos. Si conoces su nombre, entonces podés enviarles mensajes. Además, un proceso puede supervisar a otros procesos. Si un proceso falla, el proceso supervisor puede revivirlo en un estado seguro.
-
-En *Erlang* existe el concepto de HotSwapping: se puede actualizar código ejecutandose en producción sin tener que detener el programa en funcionamiento.
-
-Estas características hacen que *Erlang* sea un sistema tolerante a fallos y que nunca detenga su ejecución.
-
-# Elixir
-
-José Valim, y es uno de los programadores detrás de Plataformatec. Es un conocido contribuidor en la comunidad Ruby on Rails.
-
-En 2010, José Valim estaba trabajando en mejorar la velocidad de Rails en sistemas de múltiples núcleos, ya que las máquinas que usaba en producción cada vez venían con más núcleos.
-
-Como cuenta él, toda la experiencia fue muy frustrante. Rails no proveía las herramientas apropiadas para resolver problemas de concurrencia. Ahí fue cuando José comenzó a mirar otras tecnologías y eventualmente se topó con la Máquina Virtual de Erlang.
-
-José comenzó a usar *Erlang* más y más, y notó que extrañaba algunas construcciones que estaban presentes en otros lenguajes. Fue ahí que decidió crear Elixir, en un intento de traer novedosas herramientas por encima de la máquina virtual de Erlang.
-
-
-Elixir es un lenguaje funcional y dinámico diseñado para construir aplicaciones mantenibles y escalables y es usado exitosamente en desarrollo web y en el dominio del [software embebido][nerves].
-
-
-## Tipos de datos
-
-En elixir podemos encontrar tipos de datos como **enteros**, **flotantes**, **rangos**, **booleanos**, **binarios** (los strings se implementan como binarios codificados en UTF8), **átomos** (son constantes para los que su nombre es su propio valor. Son similares a los simbolos en Ruby).
-
-Y también estructuras de datos como **tuplas** (Es una conjunto de elementos ordenados), **listas** y **mapas** (conjunto de claves-valor, similares a los hashes en Ruby).
-
-Todas estas estructuras de datos son inmutables. Esto significa que si le agregan un elemento a una lista, o tupla, o eliminan un elemento de un mapa, no están en realidad modificando la estructura, sino que están retornando una estructura nueva.
-
-En elixir no tenés que preocuparte de clonar o duplicar una estructura de datos porque otra función la pueda haber mutado de una forma que no te esperabas.
-
-### Structs
-
-Son una extensión construida sobre los mapas que proveen chequeos en tiempo de compilación y valores por defecto. Son lo más parecido a clases en Ruby en cuanto a su sintaxis, pero no dejan de ser una simple estructura de datos.
-
-En elixir los datos son muy eficientes y baratos. Y las estructuras de datos también, ya que son valores agregados.
-
-En OO, si tenemos dos strings iguales no son el mismo string. Cada uno tiene su propio *object_id*. En programación funcional no existe tal diferenciación. Los valores son **fáciles de fabricar**, **identificables**, **comparables**, **compartibles** y **se definen por sí mismos**.
-
-Si tenemos dos listas, y ambas tienen los mismos números en el mismo orden, decimos que son **la misma lista**.
-
-### Funciones anónimas
-
-En Elixir las funciones son un ciudadano de primera clase, lo que significa que pueden ser pasadas como parámetro a otras funciones, de la misma forma en que pueden serlo un entero o un string.
-
-
-## Elixir & Ruby
-
-Elixir tiene muchas contrucciones parecidas a Ruby. Y tiene mucho sentido, porque José Valim se inspiró fuertemente en la sintaxis de Ruby para crear Elixir.
-
-Si bien se ven similares en sintaxis, los enfoques para solucionar problemas en un lenguaje y otro son diferentes. De hecho, Elixir en ese sentido se parece mucho más a *Erlang* que a Ruby.
-
-La instalación de Elixir es muy sencilla y está muy bien documentada. Se debe instalar primero Erlang, y luego Elixir. Si han podido instalar Ruby alguna vez, no van a tener ninguna dificultad en instalar Elixir.
-
-### Consola interactiva
-
-Al igual que Ruby, Elixir cuenta con una consola interactiva, llamada IEX (Interactive - Elixir). Una vez que instalaron Elixir, pueden acceder a la consola interactiva escribiendo *iex*.
-
-### Match Operator
-
-El símbolo **"="** es el operador de match y muchas veces su comportamiento es similar a la asignación en Ruby, pero en la práctica son muy diferentes:
-
-Si la expresión de la izquierda no es igual en valor o en estructura, la operación retorna error.
-
-En caso de que lo que haya a la izquierda sea una variable, entonces se le asigna el resultado de la derecha.
-
-**2 = x** retorna error porque los lados no matchean: las variables son asignadas sólo cuando están en el lado izquierdo.
-
-El operador Match no es sólo usado para valores simples: es muy útil para desestructurar tipos de datos más complejos. Por ejemplo podemos hacer pattern matching en tuplas.
-
-{% highlight elixir %}
-{a, b} = {:hello, "world"}
-{% endhighlight %}
-
-En este caso, se inicializan los identificadores **a** y **b** con el atomo **:hello** y el string **"world"**.
-
-A esto se lo llama pattern matching. El patrón de la derecha encaja estructuralmente con el de la izquierda
-
-El pattern matching va a fallar si ambos lados no pueden ser igualados estructuralmente. Por ejemplo si las tuplas tienen diferentes tamaños, o de un lado tengo una tupla y del otro una lista, entonces la operación Match va a fallar.
-
-Más interesante, podemos hacer matching sobre valores específicos.
-
-{% highlight elixir %}
-{:ok, result} = {:ok, 42}
-{% endhighlight %}
-
-En este ejemplo el lado izquierdo sólo va a matchear con el lado derecho cuando lo que haya del lado derecho sea una tupla de dos elementos cuyo primer valor sea el atomo **:ok**.
-
-
-Este potencial se puede aprovechar para tuplas, y también en listas, mapas y structs.
 
 ### Funciones
 
-Ya vimos funciones anónimas así que ahora voy a hablarles de funciones nombradas. En elixir agrupamos las funciones en módulos. Los módulos se definen con la macro **"defmodule"** y las funciones con la macro **"def"**.
+Cuando se pasa parámetros por referencia hacemos que sea posible que la función modifique el dato.
+Y en ruby, los métodos tienen acceso al estado interno del objeto.
 
-{% highlight elixir %}
-defmodule Math do
-  # Esto es un comentario
-  def sum(a,b) do
-    a + b
-  end
+En cambio, en Elixir, los parámetros de las funciones se pasan por valor, no por referencia.
+Recuerden que en Elixir nos importa qué valor es. No donde está.
+Pasar parámetros por valor hace que sea fácil implementar funciones puras.
 
-end
+Una función pura es aquella en la que los valores que retorna dependen únicamente de los parámetros de entrada.
+Ante los mismos parámetros, una función pura retorna siempre el mismo resultado.
 
-Math.sum(1,2) #=> 3
-{% endhighlight %}
+Si una funcion depende sólo de sus parámetros de entrada es mucho más sencillo predecir su comportamiento.
+Y es mucho más facil de testearla. Y es mucho más fácil razonar sobre la función.
 
-Una funcion puede ser definida varias veces para distintos parametros de entrada. Elixir intentará usar cada clausula en orden hasta que la primera *matchée*.
+----- Acá me quedé -----
 
-{% highlight elixir %}
-defmodule Math do
-  def zero?(0) do
-    true
-  end
+No siempre podemos escapar de los efectos secundarios. Eventualmente vamos a querer escribir algo en pantalla, o acceder a una base de datos o a un servidor.
 
-  def zero?(x) when is_integer(x) do
-    false
-  end
-end
-{% endhighlight %}
+En programación funcional se pasan los datos a través de secuencias de funciones y los datos nunca mutan. La salida de una función es la entrada de la función siguiente. Cuando ocurre un error es más fácil descifrar qué pasa y dónde pasa. La mutación significa pérdida de información, y no hay mutación en programación funcional.
 
-En el ejemplo, si se envìa como parámetro **0**, va a matchear con la primera deficinión y retornará **true**.
+Les ha pasado en Ruby, tener un bug que sólo ocurren cuando un objeto está en un estado en particular.
 
-Si le mando el valor **5**, va a intentar matchear con la primera definición pero no va a poder, porque **0** no matchea con **5**. Luego va a matchear con la segunda, lo que le asigna el valor **5** a la variable **x**. Y la función retorna **false**.
+Reproducir el problema puede ser complicado porque no siempre es facil decifrar el estado internos de un objeto.
+Y una vez que se lo hace puede ser difícil reproducirlo, porque quizás sólo ocurre luego de que lo activa una cadena particular de eventos.
 
+En programación funcional se pasan los datos a través de un conjunto de funciones y los datos nunca mutan. La salida de una función es la entrada de la función siguiente. Cuando ocurre un error es más fácil descifrar qué pasa y dónde pasa. La mutación significa pérdida de información, y no hay mutación en programación funcional.
 
-La macro **when** define una guarda, que me permite definir condiciónes extras. En este caso, el parámetro que se envía a la función tiene que ser obligatoriamente un número entero. Si mando algo que no sea un número, por ejemplo el string **"hola"**. Elixir va a lanzar un error que dirá algo similar a **"la función zero? no existe para "hola"**.
+## Procesos
 
-Esto facilita el debugging y hace que las funciones sean más seguras, al no estar definidas para valores no permitidos.
+Como les dije hoy, la mutación no es una primitiva del lenguaje, sino una abstracción a la cual acudimos cuando la necesitamos, y cuando lo hacemos lo hacemos explícitamente. Si tenemos que lidiar con datos que cambian con el tiempo, lo podemos hacer a través de procesos.
 
-Las funciones pueden ser escritas con esta notación:
-{% highlight elixir %}
-defmodule Math do
-  def zero?(0), do: true  
-  def zero?(x) when is_integer(x), do: false
-end
-{% endhighlight %}
+``` elixir
+  # Elixir
+  spawn(fn -> 1 + 2 end)
+  #=> #PID<0.111.0>
+```
 
-Si quieren saber cual es la forma preferida, pueden leer las [guías de estilos][style-guide].
+La función spawn es la función mas básica para crear procesos.
+Lo que devuelve es el PID, que es el identificador único de proceso.
+Los procesos son creados, hacen lo que tienen que hacer y mueren.
+Hay funciones para crearlos, hay funciones para enviar y recibir mensajes, hay funciones para linkear procesos entre sí.
 
-### Pipe operator
+Pero en la vida real, nunca usamos estas funciones directamente, sino que acudimos a abstracciones.
 
-{% highlight elixir %}
-  expression |> function_call()
-{% endhighlight %}
+Si queremos implementar un modelo de productor/consumidor, vamos a usar `GenEvent`.
+Si queremos implementar una tarea simple, vamos a usar `Task`.
+Si queremos implementar un modelo cliente/servidor, vamos a usar `Agent` o `GenServer`.
+Si queremos que un proceso supervise a otro, vamos a usar `Supervisor`.
 
-El Operador Pipe es muy similar a los pipes de Unix. Lo que hace es introducir la expresión que está a la izquierda como primer argumento de la función que se llama a la derecha.
+Un proceso puede supervisar a otro.
+Y si un proceso falla, el proceso supervisor puede revivirlo en un estado seguro.
+En elixir podemos crear arboles de supervición, que dan a la aplicación tolerancia a fallos y permiten el self-healing [mejorar]
 
-A continuación se muestra una porción de código de un programa en *Ruby On Rails* que tenemos andando en producción.
+Se que esto es mucha información.
+Pero no se preocupen. No necesitan saber todo esto para empezar a programar en Elixir y Phoenix.
 
-{% highlight ruby %}
-class AvailabilityManager
-  def call(query)
-    adapted_query = Adapter.call(query)
-    xml_query     = XMLBuilder.call(adapted_query)
-    xml_response  = API.call(xml_query, :some_option)
-    response      = Parser.call(xml_response)
-    return response
-  end
-end
-{% endhighlight %}
+Phoenix ya aprovecha por si mismo todo el poder de los procesos de Erlang en todas sus partes.
+Cada vez que recibe una petición HTML, se crea un proceso nuevo, lo que permite que miles de personas puedan acceder simultáneamente a su sitio web, sin ningún problema.
 
-Básicamente lo que hace el método **call** es consultar sobre la disponibilidad de hoteles a una API XML externa.
+[Caso 2.000.000]
 
-Funcionamiento: Llega una consulta en formato *JSON*. **Adapter** la modifica. Luego **Builder** recibe la entrada modificada y la traduce a formato *XML*. **API** recibe la consulta en *XML* y retorna una respuesta XML. **Parser** toma esa respuesta *XML*, la parsea y finalmente se retorna el resultado.
+Phoenix usa eficientemente los procesos para acceder a la base de datos, para correr los tests e incluso para compilar la aplicación. Sin necesidad de acudir a todas estas abstracciones, ya van a disfrutar de todos los beneficios que les ofrece la máquina virtual de Erlang de forma gratuita.
 
-Si escribieramos este código en Elixir, lo más probable es que usemos el operador **pipe** y el código se vea más o menos así:
+Todas estas cuestiones las pueden aprender sobre la marcha, y aún así ser sumamente productivos.
 
-{% highlight elixir %}
-defmodule AvailabilityManager do
-
-  def call(query) do
-    query
-    |> Adapter.call
-    |> XMLBuilder.call
-    |> API.call(:some_option)
-    |> Parser.call
-  end
-
-end
-{% endhighlight %}
-
-El propósito del operador **pipe**  es hacer énfasis en los datos siendo transformados por una serie de funciones.
-
-
-### Macros
-
-Elixir adopta la metaprogramación. De hecho la mayor parte de Elixir está escrita en Elixir mismo.
-https://github.com/elixir-lang/elixir
-
-La magia detrás de esto está en las macros.
-
-Una macro es una instrucción que se expande automáticamente en un conjunto de instrucciones para ejecutar una tarea en particular durante la compilación.
-
-Gran parte de las funcionalidades en el núcleo de elixir están implementadas en macros.
-
-*Nota: recomiendo mucho mirar el código de elixir para ver cómo está implementado.*
-
-
-### Testing
-
-Elixir viene equipado con un framework de Testing llamado **ExUnit**.
-
-Podemos correr nuestros tests con el comando **mix test**.
-
-{% highlight elixir %}
-defmodule MyTest do
-  use ExUnit.Case
-
-  test "the truth" do
-    assert 1 + 1 == 2
-  end
-
-end
-{% endhighlight %}
-
-La linea **use Exunit.Case** importa las funciones y macros necesarias para correr tests. Es común que los programas en *Elixir* tengan por lo menos una línea más de código que los programas escritos en *Ruby*. Esto es porque en *Elixir* no existe la herencia, entonces para importar funciones o macros se usan ese tipo de construcciones.
-
-<pre class="terminal">
-Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
-1 tests, 0 failures
-</pre>
-
-A simple vista pareciera que la función **assert** simplemente verifica que la expresión de la derecha sea verdadera. En realidad **assert** no es una función, sino que es una macro. Esta macro analiza el código. En este caso entiende que la expresión es una igualdad y provee un buen reporte siempre que haya un fallo.
-
-<pre class="terminal">
-1) test the truth (ExampleTest)
-     test/example_test.exs:5
-     Assertion with == failed
-     code: 1 + 1 == 3
-     lhs:  <span class="danger">2</span>
-     rhs:  <span class="danger">3</span>
-     stacktrace:
-       test/example_test.exs:6
-
-Finished in 0.03 seconds (0.02s on load, 0.01s on tests)
-1 tests, <span class="danger">1 failure</span>
-</pre>
-
-
-Si lo que comparamos con strings, el test hace un **diff** de los valores a la izquierda y a la derecha.
-{% highlight elixir %}
-assert "hola mundo lindo" == "hola bello mundo"
-{% endhighlight %}
-
-<pre class="terminal">
-1) test the truth (MundoTest)
-     test/mundo_test.exs:5
-     Assertion with == failed
-     code: "hola mundo lindo" == "hola bello mundo"
-     lhs:  "hola mundo <span class="danger">lindo"</span>
-     rhs:  "hola <span class="danger">bello"</span> mundo"
-     stacktrace:
-       test/mundo_test.exs:6
-
-Finished in 0.02 seconds
-1 tests, <span class="danger">1 failure</span>
-</pre>
-
-
-### Interoperabilidad con Erlang
-
-Uno de los beneficios de construir sobre la máquina virtual de *Erlang* es la gran cantidad de librerías disponibles para nosotros. Elixir tiene interoperabilidad con Erlang. Esto significa que podemos usar librerías de *Erlang* en Elixir y viceversa.
-
-
-### Aplicaciones
-
-La mayoría de los paquetes de elixir son compartidos en forma de aplicación, y tienen una estructura de código similar. Esto es muy bueno porque cuando uno se familiariza con esta estructura es muy fácil encontrar dónde está definido lo que uno busca por ejemplo al analizar código de otras personas.
-
-En *Elixir* y *Erlang*, una aplicación es un componente que implementa una funcionalidad específica y que puede ser iniciado y parado como una unidad, y además puede ser reutilizado por otros sistemas.
-
-Una aplicación se crea con el comando mix **new nombre**.
-
-<pre>
-nombre
-  ├── lib
-  │   └── nuevo.ex
-  ├── config
-  ├── test
-  └── mix.exs
-</pre>
-
-Así como los archivos de *ruby* tienen la extensión **.rb**, los de *elixir* tienen la extensión **.ex**. Dentro de la carpeta **lib** es donde va a ir todo nuestro código.
-
-También tenemos carpetas para correr tests y para archivos de configuración.
-
-En el archivo **mix.exs** se define el nombre de la aplicación, la versión de la aplicación, la versión de Elixir, y las dependencias entre otras cosas.
-
-### Mix
-
-Mix es una herramienta que viene con *Elixir* y provee tareas para crear, compilar y testear tus aplicaciones, manejar sus dependencias y mucho más.
-
-Es muy poderoso y muy rápido. Haciendo analogía con el mundo *Rails*, cumple las funciones de *Bundle* y de *Rake*.
-
-Es muy extensible y es fácil crear tus propias tareas.
-
-
-# Phoenix & Rails
+## Phoenix
 
 *Phoenix* es un framework web escrito en Elixir.
 
@@ -636,420 +349,95 @@ La mayor parte del equipo detrás de Phoenix viene de la comunidad Rails, por lo
 
 Ambos son frameworks MVC que se centran en la productividad. Proveen una estructura de directorio por defecto y generadores, ambos tienen un archivo de rutas, ambos usan bases de datos relacionales por defecto (sqlite3 en Rails y Postgresql en Phoenix). Ambos promueven mejores practicas de seguridad por defecto y vienen equipados con herramientas de testing.
 
-Pero **Phoenix NO es Rails**.
+Así se ve una vista en Phoenix:
+[codigo]
 
-### Nueva aplicación
+Así se ve un controlador
+[codigo]
 
-Si queremos usar el stack por defecto debemos instalar *postgresql*, *node.js* y *Phoenix*.
+Así se ve una migración
+[codigo]
 
-Para crear una aplicación *Phoenix* debemos escribir el comando **mix phoenix.new nombre_aplicacion**.
+Así se ven las rutas
+[codigo]
 
+Esta es la estructura de directorio de Rails y esta la de Phoenix.
 
-La estructura de directorios creada por Phoenix es similar a la siguiente:
-<pre>
-phoenix_application
-  ├── lib
-  │   ├── probando
-  │   │   ├── endpoint.ex
-  │   │   └── repo.ex
-  │   └── probando.ex
-  ├── config
-  │   ├── config.ex
-  │   ├── dev.ex
-  │   ├── prod.ex
-  │   └── test.ex
-  ├── priv
-  ├── test
-  └── web
-  │    ├── channels
-  │    ├── controllers
-  │    ├── models
-  │    ├── static
-  │    ├── views
-  │    ├── templates
-  │    ├── gettext.ex
-  │    ├── router.ex
-  │    └── web.ex
-  └── mix.exs
-</pre>
+Si vienen del mundo Rails y quieren aprender Phoenix corren con una gran ventaja.
 
-Si miramos con detenimiento vamos a ver que tienen muchos puntos en común con la estructura de una aplicación Rails.
+La mayoría de los conceptos mapea 1 a 1.
 
-Es común que los programadores *ruby* digamos que somos **programadores Rails**. Esto no ocurre así con *Phoenix*.
+[Imagen con flechitas]
 
-Si miramos con detenimiento podemos observar que la aplicación tiene un archivo mix.exs, y las carpetas lib, config y test entre otras. Esto es porque **una aplicación Phoenix es una aplicación Elixir**.
+En poco tiempo de empezar van a ser productivos.
 
-Esto significa que hay una sóla manera de construir, correr, testear y desplegar tus aplicaciones: **la manera Elixir**.
+## Websockets
 
-Al ser una aplicación elixir, contás con herramientas de **supervisión**, **tolerancia a fallos** e **introspección** en tu sistema en ejecución.
+Phoenix tiene un soporte excelente para websockets.
+Los websockets permiten comunicación ida y vuelta entre cliente y servidor, sin refrescar la página.
 
-## Plug
+Esto significa que en Phoenix es trivial implementar
 
-*Plug* es una librería escrita en *Elixir* que proporciona una especificación para crear módulos acoplables entre aplicaciones web. Estos módulos se llaman plugs.
+- Chats en tiempo real. Yo escribo, e inmediatamente le llega el mensaje a la otra persona, sin recargar la página (websockets)
+- Notificaciones en tiempo real, por ejemplo cuando alguien me puso me gusta.
+- Herramientas colaborativas con muchas personas conectadas al mismo tiempo
+- Ver quienes están conectados, y cuando se conecta o desconecta alguien. (Presence)
+- Un buscador que le pegue a varios 3rd parties y retorne resultados a medida que van llegando.
+- Hacer streaming a la base de datos, trabajar los datos y crear un reporte CSV en tiempo real, y enviarselo al usuario a través de HTTP streaming.
 
-Para esto utiliza la estructura <code>%Plug.Conn{}</code>.
+Así como Rails tiene su famoso tutorial de como hacer un blog en 15 minutos, Phoenix tiene su tutorial de cómo hacer un chat en tiempo real en 15 minutos. Pueden hacer un chat en vivo con la misma facilidad con que definen una vista y un controlador.
 
-Esta estructura tiene información de la petición y la respuesta HTTP.
+## Rendimiento
 
-En *Rails*, *Rack* separa la petición de la respuesta. En *Phoenix* en cambio, manejamos el concepto de conexión. En cada paso del ciclo de vida de la conexión interactuamos con *Plug*. La conexión comienza partiendo de un módulo llamado *Endpoint*, pasa por las *rutas* y termina en los *controladores*, que se encargan de completar el ciclo.
+Algunas personas me dicen que no tienen necesidad de alta concurrencia.
+A su sitio web entran 2 o 3 personas al mismo tiempo máximo.
 
+Igualmente hay buenas razones para usar Phoenix.
 
-## Endpoint
+Una de ellas es el rendimiento.
 
-El ciclo de vida de petición y respuesta en Phoenix difiere mucho del enfoque que Rails toma con Rack. Como regla general, explicito es mejor que implicito. Phoenix favorece la explicitud en todo el recorrido de una petición.
+En Phoenix es común ver reportes como este:
 
-Cuando generás una aplicación, podés ver todos los plugs por los que pasa la solicitud en el archivo endpoint.ex.
-{% highlight elixir %}
-defmodule MyApp.Endpoint do
-  use Phoenix.Endpoint, otp_app: :my_app
+```
+Sent 200 in 517µs
+```
 
-  socket "/socket", MyApp.UserSocket
-  plug Plug.Static, at: "/",
-    only: ~w(css images js)
+Esos son microsegundos. Eso es medio milisegundo.
 
-  plug Plug.RequestId
-  plug Plug.Logger
-  plug Plug.Parsers,
-    parsers: [:urlencoded, :multipart, :json]
+Hace poco hice una comparación informal entre una aplicación básica Phoenix y Rails.
+Y la aplicación Phoenix, con acceso a bases de datos corriendola localmente era alrededor de 7 veces más rápida.
+La pueden leer en mi página web.
 
-  plug Plug.MethodOverride
-  plug Plug.Head
-  plug Plug.Session, store: :cookie
-  plug MyApp.Router
-end
-{% endhighlight %}
+Me acuerdo que una vez logre mejorar un código para que vaya un 50% más rápido. Y lo festejé. Y para mí era una mejora increíble. Acá estoy hablando de 7 veces más rápido.
 
-Mientras que Rails segrega todo el middleware de Rack en una parte de la aplicación oculta a los ojos del programador, Phoenix hace todos los plugs explicitos. Tenes una mirada instantánea a simple vista de todo el ciclo de vida de la solicitud simplemente viendo los plugs en tu endpoint y tu router.
+Y eso es muy importante, especialmente en la web.
+Está demostrado que si una página tarda más de 100 milisegundos en cargar, afecta negativamente la atención de las personas. Hacen cambio de contexto. Hay estudios de cómo compañías multiplicaron sus conversiones simplemente reduciendo el tiempo de espera unos cuantos milisegundos.
 
-El plug **Static** sirve archivos estáticos. si no lo encuentra, pasa la conexión al siguiente plug. **RequestId** agrega el header *"x-request-id"* en caso de que no exista. Este header sirve para debugging. **Logger** guarda en los logs info de la petición. Algo como: `GET /index.html Sent 200 in 572ms`. **Parsers** toma el body de la solicitud y lo parsea en caso de que sea necesario para poder ser usado luego en los controladores. **MethodOverride** cambia el verbo post por el verbo definido en el parámetro *_method*, que puede ser *put*, *patch* o *delete*. **Head** convierte el verbo HTTP *HEAD* end un requerimiento *GET*. **Session** configura variables de sesión y almacenamiento de cookies.
+Y también es importante para el programador durante el desarrollo.
+Nosotros tenemos los mismos problemas de atención.
+Cuando corren el servidor, no tienen que esperar varios segundos para ver la página.
+Cada navegan el sitio localmente se siente inmediato, como si fuera una pagina web estática.
+Cuando corren los tests tarda segundos en lugar de minutos.
+Esto impacta positivamente en nuestra atención.
 
-Finalmente la conexión es pasada al **router**, que por sí mismo implementa también *Plug*.
+El rendimiento es importante.
 
-## Router
+E incluso si tampoco les parece importante, un sitio sencillo de bajo riesgo es un buen candidato para darle una oportunidad a Phoenix y empezar a familiarizarse con el framework.
 
-Así es como se ve un archivo de rutas sencillo en Ruby on Rails, con acciones para el indice y la vista de articulos, y con root path manejado por ese controlador.
+Y se me ocurre también que una de las razones por la que hacemos sitios web pequeños es porque no nos animamos a hacer cosas mas grandes. Elixir hace que problemas históricamente complicados sean de repente triviales.
 
-{% highlight ruby %}
-Rails.application.routes.draw do
-  resources :articles, only: [:show, :index]
-  root to: "pages#index"
-end
-{% endhighlight %}
+Y el rendimiento no es sólo velocidad, sino también memoria.
 
-El archivo de rutas de Phoenix es un poco más complejo.
+Bleacher Report hizo la transición de Rails a Elixir, y pasaron de usar 150 servidores a usar 5 servidores, y al mismo tiempo mejoraron sus tiempos de respuesta para sus 200 millones de notificaciones push diarias.
 
-{% highlight elixir %}
-defmodule MyWeb.Router do
-  use MyWeb.Web, :router
+Cuando contás con todo el poder de la máquina virtual de Erlang en tus manos, te animás a desafíos que no pensabas que estaban a tu alcance. Phoenix tiene la capacidad de darles una ventaja competitiva a sus clientes, y también a ustedes como empresa y a ustedes como programadores.
 
-  pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
-  end
+# Final
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
+La web está evolucionando. La web moderna es **altamente conectada** y necesita sistemas en tiempo real. Requiere incluir dispositivos conectados como teléfonos, relojes y sistemas embebidos. Necesita sistemas de alta disponibilidad. Sistemas escalables, tolerantes a fallos y distribuidos. Necesita sistemas que puedan aprovechar al máximo la capacidad de procesamiento de las computadoras.
 
-  scope "/", MyWeb do
-    pipe_through :browser
-    resources "/articles", ArticleController,
-      only: [:index, :show]
-    get "/", PageController, :index
-  end
-end
-{% endhighlight %}
+La programación web tiene muchos problemas en común con la telefonía. Erlang y Elixir fueron creados para resolver este tipo de problemas. *Phoenix* fue construido desde el primer día para enfrentarse a los retos de la web moderna. Las tecnologías avanzan muy rápidamente y en nuestro rubro es importante poder adaptarnos a los nuevos requerimientos.
 
+Simplemente tenemos que vencer los miedos y animarnos.
 
-Los **pipelines** son simplemente *plugs* apilados uno encima de otro con un orden y nombre específico. Por defecto, la ruta de phoenix tiene 2 pipelines. Browser y Api.
-
-
-El pipeline :browser tiene 5 plugs: **:accepts** define los formatos que va a aceptar. **:fetch_session** y**:fetch_flash** nos permiten usar la información de sesión y mensajes flash respectivamente en los controladores. Usar
-**:protect_from_forgery** y **:put_secure_browser_headers** nos protege de ataques *CSRF*
-
-Al igual que en el caso del endpoint, gracias a que definimos los plugs de forma explícita, podemos ver de un vistazo exactamente lo que está ocurriendo en nuestra aplicación.
-
-Incluso podemos crear nuestros propios *plugs*.
-
-Por ejemplo, si tuviéramos un *scope* para administradores, podríamos crear un *plug* de autentificación, que sólo permita pasar a un usuario que tenga rol administrador.
-
-Según las guías de Phoenix: **Si nos preguntamos *"¿Puedo poner esta funcionalidad en un plug?"*, usualmente la respuesta es sí.**
-
-Más info: http://www.phoenixframework.org/docs/understanding-plug
-
-
-## Controladores
-
-Los **controladores** de *Phoenix* actuan como módulos intermedios. Sus funciones, llamadas acciones, son invocadas desde un router en respuesta a una petición HTTP.
-
-Las acciones toman los datos necesarios y realizan los pasos necesarios antes de invocar a la capa de vista y renderizar un template o retornar una respuesta JSON.
-
-{% highlight elixir %}
-defmodule MyWeb.ArticleController do
-  use MyWeb.Web, :controller
-
-  def show(conn, %{"id" => id}) do
-    article = Repo.get!(MyWeb.Article, id)
-    render(conn, "show.html", article: article)
-  end
-end
-{% endhighlight %}
-
-Los controladores de Phoenix están construidos sobre el paquete **Plug** y ellos mismos son plugs.
-
-
-Las acciones de Rails parecieran mucho más simples que las de phoenix:
-
-{% highlight ruby %}
-class ArticlesController < ApplicationController
-  def show
-    @article = Article.find(params[:id])
-  end
-end
-{% endhighlight %}
-
-Y esto es porque Phoenix favorece la forma explícita de escribir código.
-
-No todos los programadores rails lo saben, pero la acción **show** de Rails llama implicitamente a **render "show.html"**. Además, todas las variables de instancia son copiadas de la instancia del controlador a la instancia de la vista, que es una capa de complejidad que pocos conocen cuando comienzan a programar en Ruby on Rails.
-
-Además de eso, los programadores deben ser concientes de todo el estado implicito de la instancia, como el hash *params* o el *request object*, y cualquier variable de instancia creada en los filtros *before_actions*.
-
-Convención sobre configuracion es algo bueno, pero hay un punto en el que el comportamiento implicito sacrifica la claridad. **Phoenix optimiza por claridad**.
-
-
-**conn** es nuestra bolsa de datos y linea de comunicación con el servidor web. Como Phoenix favorece el código explícito, **conn** es pasado como parámetro a las acciones *Phoenix* y es enviado explicitamente como parámetro a la acción *render*. En Phoenix, las acciones de un controlador **son simplemente funciones**.
-
-
-## Testing de controllers
-
-La programación funcional y el contrato con *Plug* hace que sea muy sencillo testear los controladores de forma aislada. Simplemente es necesario pasar una conexión:
-
-{% highlight elixir %}
-test "sends 404 when article is not found" do
-  conn = MyController.show(
-    conn(),
-    %{"id" => "not-found"}
-  )
-  assert conn.status == 404
-end
-{% endhighlight %}
-
-Y suele ser trivial hacer tests de integración de tu endpoint entero. :
-
-{% highlight elixir %}
-test "shows articles" do
-  conn = get conn(), "/articles/123"
-  assert %{id: "123"} = json_response(conn, :ok)
-end
-{% endhighlight %}
-
-## Vistas
-
-*Phoenix* separa templates de vistas. Las vistas de *phoenix* tienen dos trabajos: renderizar los templates y proveer funciones que puedan ser usadas por los mismos.
-
-{% highlight elixir %}
-defmodule MyWeb.ArticleView do
-  use MyWeb.Web, :view
-
-  def title do
-    "Funcional |> Concurrente |> Divertido"
-  end
-end
-{% endhighlight %}
-
-Si en *Rails* se han preguntado alguna vez dónde poner lógica de vistas, o si usar decorators o presenters, en *Phoenix* no tienen que preguntárselo más. La vista es el lugar indicado para ese tipo de lógica.
-
-## Templates
-
-Los templates son archivos a los que pasamos datos para formar respuestas HTTP completas. Para una aplicación web son documentos HTML, y para una API pueden ser respuestas JSON o XML.
-
-**EEx** es el sistema de templates por defecto de *Phoenix* y es muy similar a *ERB* de *Ruby*. De hecho es parte de *elixir* mismo.
-
-{% highlight erb %}
-<h2><%= @article.title %></h2>
-<p><%= @article.description %></p>
-
-<%= link "Editar",
-  to: article_path(@conn, :edit, @article) %>
-
-<%= link "Volver",
-  to: article_path(@conn, :index) %>
-{% endhighlight %}
-
-Los templates de Phoenix son precompilados, lo que los hace extremadamente rápidos.
-
-De hecho cuando miramos la consola de una aplicación en ejecución, es común ver informes como estos:
-
-{% highlight configuration %}
-[info] GET /
-[info] Sent 200 in 396µs
-{% endhighlight %}
-
-La letra griega µ (Mu) significa microsegundo. O sea millonésimas de segundo. Es muy común que una vista *Phoenix* responda entre 2 y 3 ordenes de magnitud más rápido que una aplicación Rails.
-
-
-
-## Ecto
-
-**Ecto** es una librería escrita en Elixir. En *Phoenix*, cumple la función que cumple *ActiveRecord* en *Rails*.
-
-Ecto tiene 4 componentes principales:
-
-**Ecto.Repo** Un repositorio es un wrapper alrededor de una base de datos. A través del repositorio podemos crear, actualizar, eliminar y realizar consultas a la base de datos.
-
-**Ecto.Schema**  Los esquemas son usados para mapear los datos de las filas de una tabla en estructuras de Elixir.
-
-**Ecto.Changeset** Los conjuntos de cambios proveen formas de filtrar, comprobar y realizar validaciones en los datos.
-
-**Ecto.Query** Las consultas son usadas para traer información de un repositorio. Los queries son seguros y evitan problemas como inyección SQL al mismo tiempo que son acoplables, permitiendo armar una consulta pieza por pieza.
-
-Más info: https://hexdocs.pm/ecto/Ecto.html
-
-
-## Migración
-
-Cada migración es una nueva versión de una base de datos. En Rails cada vez que corrés una migración, esta actualiza un archivo llamado *schema*. Una migración rails se ve así:
-
-{% highlight ruby %}
-class CreateArticles < ActiveRecord::Migration[5.0]
-  def change
-    create_table :articles do |t|
-      t.string :name
-      t.text :description        
-      t.timestamps
-    end
-  end
-end
-{% endhighlight %}
-
-En Phoenix en cambio, el programador es el encargado de definir explícitamente cómo quiere mapear los datos de la base de datos a estructuras de Elixir. Las migraciones en Phoenix se definen de forma muy similar a las de Rails:
-
-{% highlight elixir %}
-defmodule MyWeb.Repo.Migrations.CreateArticle do
-  use Ecto.Migration
-
-  def change do
-    create table(:articles) do
-      add :title, :string
-      add :description, :string
-      timestamps
-    end
-  end
-end
-{% endhighlight %}
-
-
-## Modelos
-
-Un modelo de *Phoenix* es simplemente un *struct* de *Elixir*. Estas estructuras no tienen estado y son super livianas. Son fáciles de comparar y compartir. El *schema* debe ser definido explicitamente.
-
-{% highlight elixir %}
-defmodule MyWeb.Article do
-  use MyWeb.Web, :model
-
-  schema "articles" do
-    field :name, :string
-    field :description, :string
-    timestamps()
-  end
-
-  def changeset(struct, params \\ %{}) do
-    struct
-    |> cast(params, [:name, :description])
-    |> validate_required([:name])
-  end
-end
-{% endhighlight %}
-
-Cuando se traen objetos de la base de datos en *Rails*, la operación tiene que hacer trabajo extra al instanciar cada uno de los objetos.
-
-Para validar los datos, hay que pasarlos a través de *changesets*. Es un poco más verboso que en *Rails*, pero es mucho más flexible.
-
-
-## Assets
-
-Rails implementó una herramienta específica para manejar el *assets pipeline*. Pero Phoenix piensa que hay que usar **la herramienta indicada para el trabajo indicado**.
-
-Para manejar assets estáticos, Phoenix usa por defecto usa un manejador de paquetes de Javascript muy fácil de configurar y usar llamado **brunch**. Cumple las mismas funciones que *Webpack*, *Grunt* o *Gulp*. Se puede cambiar por cualquiera de estos según las preferencias.
-
-Esto es muy poderoso, ya que las mejores herramientas de hoy en día para manejar assets funcionan en node.js.
-
-En Phoenix pueden usar todos los paquetes javascripts que existen en el mercado de forma muy sencilla. Si te gusta JS6 tenés un paquete para usarlo (Babel viene por defecto en Phoenix). Si querés usar *SCSS*,  *LESS*,  *PostCSS*, *CoffeeScript*, simplemente tenés que agregar el paquete al archivo de configuración de brunch.
-
-**Nota:** durante la meetup, Juan Manuel Ramallo dió una muy buena charla sobre [como usar PostCSS en Rails][postcss].
-
-
-## Live Reload
-
-Phoenix viene con **live-reload** para el desarrollo. Esto significa que tan pronto como modificás y guardás un archivo *.js* o *.css*, o el código de un template o una vista, este es automáticamente recargado en tu navegador (sin necesidad de actualizar la página).
-
-Una vez que agregas esta funcionalidad a tu workflow de desarrollo, es difícil volver atrás.
-
-## Canales
-
-Phoenix fue construido desde el primer día para enfrentarse a los retos de la moderna, altamente conectada web en tiempo real. Los canales traen conecciones en tiempo real, agnósticas en cuanto al transporte a tu aplicación, lo que puede escalar en millones de clientes usando tu aplicación en un único servidor.
-
-Es distinto a Rails en que históricamente, las funcionalidades de tiempo real no han tenido gran importancia.
-
-La web está evolucionando para incluir dispositivos conectados como teléfonos, relojes, tostadoras inteligentes. Phoenix es un framework que está preparado para poder evolucionar con nuevos protocolos.
-
-Rails entró hace poco en las funcionalidades de tiempo real con ActionCable. Phoenix tomó muchas de sus ideas de Rails, y hace no mucho Rails tomó esta idea de Phoenix.
-ActionCable suele venir con muchas dependencias como Faye, Celluloid, EventMachine y Redis.
-
-Como Phoenix corre sobre la máquina virtual de Erlang, Phoenix tiene todas estas funcionalidades en tiempo real de forma gratuita desde el comienzo.
-
-## Comunidad
-
-Algo que tienen en común Ruby y Elixir es que ambos tienen una comunidad increíble de programadores. La comunidad de Elixir es aún pequeña, pero está creciendo increíblemente cada día.
-
-
-Es posible
-Hay un mito de que la programación funcional es complicada. Y que hay que ser matemáticos, y que hay que entender cómo funcionan las monadas y los functors y hay que saber teoría de conjuntos y un montón de cosas más.
-
-No se preocupen. No es necesario saber nada de eso para programar en Elixir. De hecho, si en algún momento aprendieron (y siguen aprendiendo) a programar en Ruby están totalmente capacitados para aprender a programar en Elixir.
-
-Por supuesto que no va a ser fácil. Hay muchos conceptos nuevos que uno tiene que aprender. Todo cuesta al principio. En el camino van a tener muchas frustraciones, pero si se animan, a medida que vayan aprendiendo van a dejar todos los obstáculos detrás.
-
-
-## Cierre
-
-Hace casi 7 años que soy programador *Ruby on Rails*. Empecé trabajando en una empresa llamada [Xaver](http://www.xaver.com.ar/) y hace un poco más de 2 años trabajo en [Snappler](http://www.snappler.com/). La primera vez que use Ruby estaba increíblemente entusiasmado.
-
-Me encantaba la facilidad con la que podía escribir código, la expresividad y la elegancia. Y no usar puntos y comas al final de cada línea.
-
-En su momento había un artículo de cómo hacer un blog en 10 minutos usando *Ruby on Rails*. Unos minutos después tenía un blog funcionando. Un poco más de trabajo y había podido agregar estilos. Un poco más y la había logrado subir a *Heroku*.
-
-De repente podía hacer cosas. Parece tonto pero en su momento era muy importante. Podía ser un programador extremadamente productivo por mi cuenta.
-
-Hace tiempo que tenía muchas ganas de probar un lenguaje funcional y hace unos meses me topé con *Elixir* y *Phoenix*. Quedé maravillado con la facilidad de escribir código en *Elixir*, con todas las ventajas que ofrecía la programación funcional y con el poder de *Erlang*. Y de algún modo la historia se repitió. Encontré un artículo de cómo hacer un *chat room* en 10 minutos. A los pocos minutos tenía un *chat* completo funcionando en tiempo real.
-
-Con Elixir y Phoenix volví a sentir el entusiasmo que había sentido 7 años atrás.
-
-
-## Futuro
-
-Recientemente *Facebook* compró *Whatsapp* por **19 mil millones de dolares**. Whatsapp corre sobre la máquina virtual de *Erlang*, y cada computadora en la que corre el servidor de *Whatsapp* puede manejar **2 millones de conexiones** al mismo tiempo.
-
-Hoy en día *Whatsapp* tiene **900 millones de usuarios** y sólo **50 ingenieros**. Eso hace que **el ratio programador/cliente sea 1  por cada 18 millones**. Elixir y Phoenix tienen todo ese poder.
-
-La ley de Moore dejó de aplicar hace varios años. Para hacer computadoras más rápidas cada día las máquinas vienen con más y más procesadores. Elixir es capaz de aprovechar todo este potencial.
-
-La web está evolucionando. La web moderna es **altamente conectada** y necesita sistemas en tiempo real. Requiere incluir dispositivos conectados como teléfonos, relojes y sistemas embebidos. Necesita sistemas de alta disponibilidad. Sistemas escalables, tolerantes a fallos y distribuidos.
-
-*Phoenix* fue construido desde el primer día para enfrentarse a los retos de la web moderna y poder adaptarse a los nuevos desafíos que aparezcan. Las tecnologías avanzan muy rápidamente y en nuestro rubro es importante poder adaptarse a los nuevos requerimientos. Simplemente hay que vencer los miedos y animarnos. El futuro está al alcance de nuestras manos.
-
-Así que les pregunto: **¿Se animan a enfrentar los desafíos que propone la nueva web?**
-
-
-[diapositivas]:    https://docs.google.com/presentation/d/e/2PACX-1vSL2BEHcbjxCU0Ki8EViL7vStJT02XpCKQ66JBT46yKbB7ceteGcHtalnwdaHtskTbVhgU4KETApD6H/pub?start=false&loop=false&delayms=3000
-
-[nerves]: http://nerves-project.org/
-
-[postcss]: https://github.com/laplatarb/meetup-nov-2016/blob/master/postcss.md
-
-[laplatarb]: https://www.facebook.com/groups/laplatarb/
-
-[style-guide]: https://github.com/christopheradams/elixir_style_guide
+Así que les pregunto: **Nos animamos a enfrentar los desafíos de la nueva web?**
