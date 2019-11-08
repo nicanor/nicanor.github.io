@@ -15,7 +15,7 @@ visible: true
 }
 </style>
 
-Transcripción de la charla que dí el 7 de Noviembre para la [primera Elixir meetup de La Plata][https://elixir-la-plata.github.io/events/meetup-2019-11-07.html].
+Transcripción de la charla que dí el 7 de Noviembre para la [primera Elixir meetup de La Plata](https://elixir-la-plata.github.io/events/meetup-2019-11-07.html).
 
 [Acá pueden descargar las diapositivas]({{ site.url }}/img/elixir-meetup-pdf.pdf)
 
