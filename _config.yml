@@ -1,7 +1,7 @@
 title: nicanor.github.io
 description: "Mis opiniones y experiencias como programador web"
 author: "Nicanor Perera"
-author_description: "Experienced and enthusiastic web developer."
+author_description: "Un flaco al que le gusta mucho programar."
 exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock]
 plugins: ["jekyll-feed"]
 
@@ -9,7 +9,7 @@ url: https://nicanor.github.io
 
 permalink: /:categories/:year/:month/:title/
 
-email: nicanorperera@gmail.com
+email: nicanor@hey.com
 github_username: nicanor
 twitter_username: nicanorperera
 linkedin_username: nicanor-perera

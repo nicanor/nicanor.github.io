@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Acerca de mí
+title: Hola, soy Nicanor
 id: acerca-de-mi
 ---
 
-(Read in [english](/about-me)).
+<small>[Read in english](/about-me).</small>
 
 <img style="width:100%;" src="../img/nica.jpg"/>
 
-Hola. Mi nombre es Nicanor Perera y soy un desarrollador Ruby on Rails con más
-de <code id="years-of-experience"></code> años de experiencia.
+Hola. Mi nombre es Nicanor Perera y soy programador desde hace más
+de <code id="years-of-experience"></code> años.
 
 <script>
 function timeSince(date) {
@@ -20,30 +20,32 @@ var yearsOfExperience = timeSince(new Date('2010-01-01'));
 document.getElementById("years-of-experience").innerHTML = yearsOfExperience;
 </script>
 
-Me recibí de
-[Licenciado en Informática](http://info.unlp.edu.ar/carreras-de-grado-lic-en-informatica/)
-en la _Universidad Nacional de La Plata_.
 
-Actualmente trabajo para [Brandkit](https://www.brandkit.io/) como desarrollador Ruby on Rails.
+Hoy en día trabajo de forma remota para [Brandkit](https://www.brandkit.io/) como programador Elixir y Rails.
 Brandkit es una plataforma de [manejo digital de assets](https://www.brandkit.io/pages/why-dam)
 localizada en Nueva Zelanda.
 
-Mi anterior trabajo fue como desarrollador Ruby on Rails en
+Mi trabajo anterior fue como programador Ruby on Rails en
 [Harmoney](http://harmoney.co.nz), una empresa de _prestamos peer to peer_
 localizada en Auckland, Nueva Zelanda, donde viví por 1 año.
 
-Previamente trabajé para [Snappler](http://snappler.com/) durante 3 años como
-desarrollador Ruby on Rails y en [Xaver](http://www.xaver.com.ar) como desarrollador web.
+Y antes de eso trabajé para [Snappler](http://snappler.com/) durante 3 años como
+programador Ruby on Rails y en [Xaver](http://www.xaver.com.ar) como programador web.
 
-Siempre estoy interesado en nuevas tecnologías. Hoy en día estoy muy interesado
-en el lenguaje de programación [Elixir][elixir] y el framework web
-[Phoenix][phoenix].
+Hace unos años me recibí de _Licenciado en Informática_ en la [Universidad Nacional de La Plata][unlp].
 
+Me gusta mucho resolver problemas con computadoras,
+escribir código de calidad
+y leer sobre nuevas tecnologías.
 
-### Contactame:
+Organizo [meetups][meetup] y [cursos de Elixir][cursos] en la ciudad de La Plata.
+
+## Es por acá:
 * [{{ site.email }}]({{ site.email | prepend: "mailto:" }})
 * [{{ site.github_username | prepend: "github.com/" }}]({{ site.github_username | prepend: "https://github.com/" }})
 * [{{ site.twitter_username | prepend: "twitter.com/" }}]({{ site.twitter_username | prepend: "https://twitter.com/" }})
 
 [elixir]: http://elixir-lang.org/
-[phoenix]: http://www.phoenixframework.org/
+[meetup]: https://medium.com/snappler/una-meetup-con-gran-concurrencia-4c9a99aa1fc1
+[cursos]: https://elixir-la-plata.github.io/workshop/
+[unlp]: http://info.unlp.edu.ar/carreras-de-grado-lic-en-informatica/
