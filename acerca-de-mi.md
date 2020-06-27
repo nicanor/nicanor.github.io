@@ -34,8 +34,7 @@ programador Ruby on Rails y en [Xaver](http://www.xaver.com.ar) como programador
 
 Hace unos años me recibí de _Licenciado en Informática_ en la [Universidad Nacional de La Plata][unlp].
 
-Me gusta mucho resolver problemas con computadoras,
-escribir código de calidad
+Me gusta mucho resolver problemas con computadoras
 y leer sobre nuevas tecnologías.
 
 Organizo [meetups][meetup] y [cursos de Elixir][cursos] en la ciudad de La Plata.
