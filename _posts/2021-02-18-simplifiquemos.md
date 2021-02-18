@@ -7,39 +7,9 @@ location: La Plata
 visible: true
 ---
 
-<style>
-@media print {
-
-}
-</style>
-
 El Viernes 19 de Febrero de 2021 dí una charla virtual para el **Summer Training** de Snappler.
-Link a las diapositivas [...]
 
-A continuación la transcripción de la charla.
-
----------------------
-
-## Introducción
-
-Hola a todos.
-Mi nombre es Nicanor Perera.
-Soy programador Web.
-
-Trabajé en Snappler durante 3 años.
-Que fue una experiencia muy linda de mi vida.
-
-Hoy en día trabajo en Brandkit.io, una empresa de Manejo digital de Assets.
-
-Estoy acá porque Damián me pidió que de una charla para el **Summer Training**.
-
-Le pregunté de qué. Me dijo "De lo que quieras".
-Le pregunté cuanto tenía que durar. Me dijo "Lo que quieras".
-Le pregunté un par de cositas más, arreglamos para hoy, y acá estoy.
-
-Así que bueno, les voy a hablar de lo que yo quiera.
-
-La charla va a durar 30 minutos, y después de la charla pueden hacerme preguntas y podemos charlar de lo que ustedes quieran.
+A continuación les dejo la transcripción de la charla:
 
 ## Como escribir bien
 
@@ -108,7 +78,7 @@ Parte de nuestro trabajo como programadores es escribir.
 Escribimos emails, tareas, casos de uso, comentarios y documentación.
 
 Y también escribimos código de software.
-Y muchas de las reglas de las que hablé hasta ahoraaplican perfectamente al software, y de eso les voy a hablar hoy.
+Y muchas de las reglas de las que hablé hasta ahora aplican perfectamente al software, y de eso les voy a hablar hoy.
 
 ## On writting HTML well
 
@@ -545,7 +515,7 @@ Podría haberlo resuelto usando Ruby on Rails, Postgres, Heroku, React y Bootstr
 
 Este sitio no necesita mantenimiento. Lo actualizo más o menos una o dos veces al año para agregar alguna publicación.
 
-Si tengo que comparar la solución de Rails con esta solución, considero que esta solución es una solución superior.
+Si tengo que comparar la solución de Rails con esta solución, considero que esta solución es una solución superior. No a pesar de ser simple, sino como consecuencia de ser simple. Simplificar es la mejor forma de aumentar la calidad.
 
 Mi consejo es que se tomen su tiempo para simplificar la arquitectura.
 Esto es especialmente beneficioso en etapas tempranas de desarrollo.
