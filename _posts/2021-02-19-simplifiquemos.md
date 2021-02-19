@@ -462,7 +462,7 @@ Cuando le prestamos atención a la calidad del software desde el comienzo, podem
 
 ![Calidad](/img/charla-snappler/quality.png){:style="width: 100%"}
 
-Al principio tardamos más. Pero según Martin Fowler, se paga en semanas, no en meses:
+Al principio tardamos más. Pero según Martin Fowler, se paga en semanas, no en meses.
 
 Los desarrolladores no hacemos un buen trabajo en explicar esta situación.
 Decimos cosas como *"No nos dejan escribir codigo de calidad porque toma mucho tiempo"*, implicando que la calidad viene a un costo.
@@ -499,7 +499,7 @@ Estas herramientas no se usan por las dudas. Se usan a propósito habiendo ponde
 ### Simplificar desde el comienzo
 
 > My point today is that, if we wish to count lines of code, we should not regard them as “lines produced” but as “lines spent”: the current conventional wisdom is so foolish as to book that count on the wrong side of the ledger.
-> - Edsger W. Dijkstra:
+> - Edsger W. Dijkstra
 
 Edsger W. Dijkstra decía que no hay que contar las lineas de código como *lineas producidas*, sino como *lineas gastadas*.
 
