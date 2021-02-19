@@ -33,7 +33,7 @@ Uno de los consejos más importantes es usar palabras simples:
 Pero también usá palabras precisas:
 No digas que el presidente se fue de la empresa. ¿Renunció? ¿Se retiro? ¿Lo echaron?
 
-- Hablá en vos activa.
+- Hablá en voz activa.
 - Reducí la cantidad de adjetivos y adverbios.
 - Eliminá la suciedad en tus oraciones.
 - Escribí claro.
