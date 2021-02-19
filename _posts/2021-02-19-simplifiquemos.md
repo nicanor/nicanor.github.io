@@ -9,6 +9,9 @@ visible: true
 
 Transcripción de la charla que dí para el **Summer Training** de Snappler el 19 de Febrero de 2021.
 
+[Acá pueden descargar las diapositivas]({{ site.url }}/img/charla-snappler/charla-snappler-2021.pdf)
+
+
 ## Como escribir bien
 
 Uno de mis libros favoritos es **On writting well** de William Zinsser.
@@ -573,7 +576,7 @@ Lo que afecta nuestras vida y las de los que nos rodean.
 Lo que nos causa frustración. Y todo esto se retroalimenta.
 Y podemos terminar muy mal.
 
-Cuiden sus cabezas, que no vale la pena trabajar adentro de un agujero negro.
+Cuiden sus cabezas, que trabajar adentro de un agujero negro no vale la pena.
 
 ### Resolver problemas complejos
 
