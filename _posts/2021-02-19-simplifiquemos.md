@@ -7,24 +7,24 @@ location: La Plata
 visible: true
 ---
 
-El Viernes 19 de Febrero de 2021 dí una charla virtual para el **Summer Training** de Snappler.
-
-A continuación les dejo la transcripción de la charla:
+Transcripción de la charla que dí para el **Summer Training** de Snappler el 19 de Febrero de 2021.
 
 ## Como escribir bien
 
-El primer libro en el que pienso cuando me piden una recomendación es **On writting well**, de William Zinsser.
+Uno de mis libros favoritos es **On writting well** de William Zinsser.
+Es un libro que leo todos los años.
 
 William Zinsser fue un periodista y escritor Estadounidense, que se dedicó mucho al tema de la escritura.
 
-Ese libro, **On writing well** es un libro que leo todos los años. Está en Inglés, pero los consejos que dá aplican también al Español.
+El libro habla de cómo escribir bien.
+Está en Inglés, pero los consejos que dá aplican también al Español.
 
 Uno de los consejos más importantes es usar palabras simples:
 
 - No digas *denominación* si podés decir *nombre*.
 - No digas *sufragio* si podés decir *voto*.
 - No digas *con la finalidad de* si podés decir *para*.
-- No digas que *estás anticipando experimentar una precipitación considerable* cuando podés decir que *puede llover*.
+- No digas que *estás anticipando experimentar una precipitación considerable* si podés decir que *puede llover*.
 - No escribas complicado para parecer importante.
 
 Pero también usá palabras precisas:
