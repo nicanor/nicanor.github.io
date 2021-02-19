@@ -500,7 +500,7 @@ Estas herramientas no se usan por las dudas. Se usan a propósito habiendo ponde
 
 Edsger W. Dijkstra decía que no hay que contar las lineas de código como *lineas producidas*, sino como *lineas gastadas*.
 
-La mejor forma de simplificar el código es eliminando código.
+La mejor forma de simplificar el código es no escribiéndolo en primer lugar.
 
 Les voy a dar un ejemplo: Mi pagina web personal es un sitio web estático.
 Consiste en HTML, CSS y quizás una linea o dos de javascript.
