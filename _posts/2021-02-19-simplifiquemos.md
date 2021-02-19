@@ -58,7 +58,7 @@ Al día siguiente con la cabeza descansada volvía a leerlo. Se preguntaba: "Est
 
 **Según Zinsser, la esencia de escribir es reescribir**.
 
-La facultad de Ciencias Económicas de la Universidad de Córdoba tiene un buen ejemplo de reescritura. Tomaron el primero borrador de un texto y le aplicaron varias correcciones:
+La facultad de Ciencias Económicas de la Universidad de Córdoba tiene un buen ejemplo de reescritura. Tomaron el borrador de un texto y le aplicaron varias correcciones:
 
 ![Correcciones de FCE - UNC](/img/charla-snappler/correcciones.png){:style="width: 100%"}
 
