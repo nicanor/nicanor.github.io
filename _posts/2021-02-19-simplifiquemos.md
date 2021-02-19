@@ -7,7 +7,7 @@ location: La Plata
 visible: true
 ---
 
-Transcripción de la charla que dí para el **Summer Training** de Snappler el 19 de Febrero de 2021.
+Transcripción de la charla que dí para programadores de [Snappler](https://www.snappler.com/) el 19 de Febrero de 2021.
 
 [Acá pueden descargar las diapositivas]({{ site.url }}/img/charla-snappler/charla-snappler-2021.pdf)
 
