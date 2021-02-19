@@ -515,7 +515,9 @@ Podría haberlo resuelto usando Ruby on Rails, Postgres, Heroku, React y Bootstr
 
 Este sitio no necesita mantenimiento. Lo actualizo más o menos una o dos veces al año para agregar alguna publicación.
 
-Si tengo que comparar la solución de Rails con esta solución, considero que esta solución es una solución superior. No a pesar de ser simple, sino como consecuencia de ser simple. Simplificar es la mejor forma de aumentar la calidad.
+Si tengo que comparar la solución de Rails con esta solución, considero que esta solución es una solución superior. No a pesar de ser simple, sino como consecuencia de ser simple.
+
+Casi siempre, la solución más simple es también la mejor solución.
 
 Mi consejo es que se tomen su tiempo para simplificar la arquitectura.
 Esto es especialmente beneficioso en etapas tempranas de desarrollo.
