@@ -143,6 +143,8 @@ a:focus {
 .logo {
 	font-size: 1.25em;
 	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 @media(min-width: 21.25em) {
@@ -150,11 +152,6 @@ a:focus {
 		float: left;
 		font-size: 0.94em;
 	}
-}
-
-.logo a {
-	text-decoration: none;
-	font-weight: bold;
 }
 
 /**********************************************************
