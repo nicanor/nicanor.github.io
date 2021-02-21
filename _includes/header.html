@@ -1,6 +1,19 @@
 <header class="header" role="banner">
 	<div class="header-inner">
 		<a class="logo" href="{{ "/" | prepend: site.url }}">{{ site.title }}</a>
-		{% include navigation.html %}
+
+		<nav class="navigation">
+			<a class="{% if page.id == 'about' %}navigation-isActive{% endif%}"
+					href="/acerca-de-mi">Acerca de mi</a>
+
+			{% if site.github_username %}
+				<a href="https://github.com/{{ site.github_username }}" title="Github">Github</a>
+			{% endif %}
+
+			{% if site.linkedin_username %}
+				<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">LinkedIn</a>
+			{% endif %}
+		</nav>
+
 	</div>
 </header>
