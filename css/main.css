@@ -100,7 +100,7 @@ body {
 
 a:link,
 a:visited {
-	color: #222;
+	color: #eb4f40;
 }
 
 a:hover,
@@ -131,10 +131,20 @@ a:focus {
 	margin-right: auto;
 }
 
+.home-link:link,
+.home-link:visited {
+	color: #222;
+}
+
 .site-nav-link {
 	margin-left: 1rem;
 	margin-right: 1rem;
 	text-decoration: none;
+}
+
+.site-nav-link:link,
+.site-nav-link:visited {
+	color: #222;
 }
 
 .site-nav-link:hover,

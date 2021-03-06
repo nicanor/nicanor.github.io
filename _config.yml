@@ -1,7 +1,7 @@
 title: nicanor.github.io
 description: "Mis opiniones y experiencias como programador web"
 author: "Nicanor Perera"
-author_description: "Un flaco al que le gusta mucho programar."
+author_description: "Un flaco que juega a programar."
 exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock]
 plugins: ["jekyll-feed"]
 
