@@ -4,15 +4,13 @@ description: "Opiniones y experiencias de Nicanor Perera - Programador"
 id: home
 ---
 
-<div class="hero">
-  <div class="hero-inner">
-    <img class="hero-logo" src="/img/code.png" alt="">
-    <h1>{{ site.author }}</h1>
-    <p>{{ site.description }}</p>
-  </div>
-</div>
+<section class="hero">
+  <img class="hero-logo" src="/img/code.png" alt="">
+  <h1>{{ site.author }}</h1>
+  <p>{{ site.description }}</p>
+</section>
 
-<div class="articles">
+<section class="articles">
   <div class="articles-inner">
     <h2>Artículos</h2>
     <ul>
@@ -25,4 +23,4 @@ id: home
       {% endfor %}
     </ul>
   </div>
-</div>
+</section>
