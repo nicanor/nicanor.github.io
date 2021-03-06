@@ -1,18 +1,16 @@
-<header class="header" role="banner">
-	<nav class="navigation">
-		<a class="logo" href="{{ "/" | prepend: site.url }}">{{ site.title }}</a>
+<nav class="site-nav" role="banner">
+	<a class="logo" href="{{ "/" | prepend: site.url }}">{{ site.title }}</a>
 
-		<a class="header-link {% if page.id == 'about' %}header-link-isActive{% endif%}"
+	<a class="site-nav-link {% if (page.id == 'about' or page.id == 'acerca-de-mi') %}site-nav-link-active{% endif%}"
 			 href="/acerca-de-mi">Acerca de mi</a>
 
-		{% if site.github_username %}
-			<a class="header-link"
-				 href="https://github.com/{{ site.github_username }}" title="Github">Github</a>
-		{% endif %}
+	{% if site.github_username %}
+		<a class="site-nav-link"
+			 href="https://github.com/{{ site.github_username }}" title="Github">Github</a>
+	{% endif %}
 
-		{% if site.linkedin_username %}
-			<a class="header-link"
-				 href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">LinkedIn</a>
-		{% endif %}
-	</nav>
-</header>
+	{% if site.linkedin_username %}
+		<a class="site-nav-link"
+			 href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">LinkedIn</a>
+	{% endif %}
+</nav>
