@@ -249,7 +249,7 @@ Sea lo que sea que usemos, no hay razón para que toquemos el HTML.
 
 ### Usemos tags apropiados.
 
-Una práctica común entre programadores es usar `div` para todo.
+Una práctica común entre programadores es usar `<div>` para todo.
 
 ``` html
 <body>
@@ -314,19 +314,19 @@ Pero hoy en día HTML es muy expresivo, y tiene tags para todos los usos:
 </body>
 ```
 
-* Si el elemento es un encabezado, usá `header`.
-* Si es un elemento de navegación usá `nav`.
-* Si es el contenido principal de la página usá `main`
-* Si es el pié de página usá `footer`.
-* Si es un elemento que tiene sentido en si mismo usá `article`.
-* Si el elemento representa una parte de un todo mayor usá `section`.
-* Si es información extra o relacionada usá `aside`.
+* Si el elemento es un encabezado, usá `<header>`.
+* Si es un elemento de navegación usá `<nav>`.
+* Si es el contenido principal de la página usá `<main>`
+* Si es el pié de página usá `<footer>`.
+* Si es un elemento que tiene sentido en si mismo usá `<article>`.
+* Si el elemento representa una parte de un todo mayor usá `<section>`.
+* Si es información extra o relacionada usá `<aside>`.
 * A su vez un articulo o sección pueden también tener sus propios encabezados, pies, subsecciones, etc.
 
 Usar los tags adecuados mejora mucho la legibilidad.
 Es mucho más fácil visualizar donde empieza y termina cada elemento.
 
-La única razón para usar `div` es para romper las reglas.
+La única razón para usar `<div>` es para romper las reglas.
 O sea, cuando necesiten agregar un elemento sin valor semántico para lograr cierto efecto.
 Por ejemplo para usar una librería javascript:
 
