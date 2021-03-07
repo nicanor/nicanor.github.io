@@ -229,7 +229,7 @@ a:focus {
 
 .content pre {
 	font-family: Monaco,'Courier New','Courier',monospace;
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	background-color: #fafafa;
 	margin-bottom: 3rem;
 	padding: 2rem;
@@ -244,12 +244,10 @@ a:focus {
 @media(min-width: 37.5em) {
 	.content code {
 		font-size: 2.2rem;
-		color: #eb4f40;
 	}
 
 	.content pre {
 		font-size: 2rem;
-		margin-bottom: 45px;
 	}
 }
 
