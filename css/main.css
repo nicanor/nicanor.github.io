@@ -351,6 +351,14 @@ pre.terminal .danger {
   color: red;
 }
 
+.post-header {
+	text-align: center;
+}
+
+.web-logo {
+	width: 6rem;
+}
+
 /**********************************************************
 * Footer
 **********************************************************/

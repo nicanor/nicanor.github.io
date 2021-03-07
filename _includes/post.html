@@ -1,8 +1,12 @@
-<h1>{{ include.post.title }}</h1>
+<header class="post-header">
+  <img class="web-logo" src="/img/code.png" alt="Logo del sitio web">
 
-<p class="details">
-  - {{ include.post.date | date_to_string }}
-</p>
+  <h1>{{ include.post.title }}</h1>
+
+  <p class="details">
+    {{ include.post.date | date_to_string }}
+  </p>
+</header>
 
 {{ content }}
 
