@@ -4,9 +4,6 @@ title: About me
 id: about
 ---
 
-<small>[Leer en español](/acerca-de-mi).</small>
-
-
 <img style="width:100%;" src="../img/nica.jpg"/>
 
 Hi. My name is Nicanor Perera and I'm a web developer with more than

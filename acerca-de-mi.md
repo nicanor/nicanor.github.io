@@ -4,8 +4,6 @@ title: Hola, soy Nicanor
 id: acerca-de-mi
 ---
 
-<small>[Read in english](/about-me).</small>
-
 <img style="width:100%;" src="../img/nica.jpg"/>
 
 Hola. Mi nombre es Nicanor Perera y soy programador desde hace más
