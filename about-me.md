@@ -4,19 +4,10 @@ title: About me
 id: about
 ---
 
+<br>
 <img style="width:100%;" src="../img/nica.jpg"/>
 
-Hi. My name is Nicanor Perera and I'm a web developer with more than
-<code id="years-of-experience"></code> years of experience.
-
-<script>
-function timeSince(date) {
-  var miliseconds = Math.floor((new Date() - date));
-  return Math.floor(miliseconds / 31536000000);
-}
-var yearsOfExperience = timeSince(new Date('2010-01-01'));
-document.getElementById("years-of-experience").innerHTML = yearsOfExperience;
-</script>
+My name is Nicanor Perera and I'm a web developer.
 
 I'm currently working for [Brandkit](https://www.brandkit.io/) as an [Elixir][elixir] and Rails developer.
 

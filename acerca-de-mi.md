@@ -1,33 +1,22 @@
 ---
 layout: page
-title: Hola, soy Nicanor
+title: Acerca de mí
 id: acerca-de-mi
 ---
 
+<br>
 <img style="width:100%;" src="../img/nica.jpg"/>
 
-Hola. Mi nombre es Nicanor Perera y soy programador desde hace más
-de <code id="years-of-experience"></code> años.
-
-<script>
-function timeSince(date) {
-  var miliseconds = Math.floor((new Date() - date));
-  return Math.floor(miliseconds / 31536000000);
-}
-var yearsOfExperience = timeSince(new Date('2010-01-01'));
-document.getElementById("years-of-experience").innerHTML = yearsOfExperience;
-</script>
-
+Mi nombre es Nicanor Perera y soy programador web.
 
 Hoy en día trabajo de forma remota para [Brandkit](https://www.brandkit.io/) como programador Elixir y Rails.
-Brandkit es una plataforma de [manejo digital de assets](https://www.brandkit.io/pages/why-dam)
-localizada en Nueva Zelanda.
+Brandkit es una plataforma de manejo digital de assets en Nueva Zelanda.
 
 Mi trabajo anterior fue como programador Ruby on Rails en
 [Harmoney](http://harmoney.co.nz), una empresa de _prestamos peer to peer_
 localizada en Auckland, Nueva Zelanda, donde viví por 1 año.
 
-Y antes de eso trabajé para [Snappler](http://snappler.com/) durante 3 años como
+Y antes trabajé para [Snappler](http://snappler.com/) durante 3 años como
 programador Ruby on Rails y en [Xaver](http://www.xaver.com.ar) como programador web.
 
 Hace unos años me recibí de _Licenciado en Informática_ en la [Universidad Nacional de La Plata][unlp].
