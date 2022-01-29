@@ -40,7 +40,8 @@ No digas que el presidente se fue de la empresa. ¿Renunció? ¿Se retiro? ¿Lo 
 
 Según él, **el secreto de la buena escritura es reducir cada oración a sus componentes más limpios**, y para lograr eso hay que asegurarse que **cada palabra que esribís esté haciendo trabajo útil**.
 
-La facultad de Ciencias Económicas de la Universidad de Córdoba tiene un buen ejemplo de reescritura. Tomaron el borrador de un texto y le aplicaron varias correcciones:
+La facultad de Ciencias Económicas de la Universidad de Córdoba tiene un buen ejemplo.
+Tomaron el borrador de un texto y le aplicaron varias correcciones:
 
 ![Correcciones de FCE - UNC](/img/charla-snappler/correcciones.png){:style="width: 100%"}
 
