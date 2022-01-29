@@ -14,10 +14,10 @@ Transcripción de la charla que dí para programadores de [Snappler](https://www
 
 ## Como escribir bien
 
-Uno de mis libros favoritos es **On writting well** de William Zinsser.
-Es un libro que leo todos los años.
+Hace unos años me recomendaron leer el libro **On writting well**.
+Me gustó tanto que lo vuelvo a leer todos los años.
 
-William Zinsser fue un periodista y escritor Estadounidense, que se dedicó mucho al tema de la escritura.
+Fue escrito por un periodista y escritor Estadounidense llamado William Zinsser.
 
 El libro habla de cómo escribir bien.
 Está en Inglés, pero los consejos que dá aplican también al Español.
@@ -38,10 +38,6 @@ No digas que el presidente se fue de la empresa. ¿Renunció? ¿Se retiro? ¿Lo 
 - Eliminá la suciedad en tus oraciones.
 - Escribí claro.
 
-El decía que escribir es trabajo difícil.
-Que una sentencia clara no es un accidente.
-Muy pocas sentencias salen bien la primera vez, la segunda o incluso la tercera vez.
-
 Según él, **el secreto de la buena escritura es reducir cada oración a sus componentes más limpios**, y para lograr eso hay que asegurarse que **cada palabra que esribís esté haciendo trabajo útil**.
 
 La facultad de Ciencias Económicas de la Universidad de Córdoba tiene un buen ejemplo de reescritura. Tomaron el borrador de un texto y le aplicaron varias correcciones:
@@ -55,6 +51,10 @@ Cuando tienen que leer algo varias veces para entenderlo, es porque está escrit
 Estas personas se preguntaron: ¿Qué es lo que estoy queriendo decir? y después de aplicar varias correcciones terminaron con un texto mucho más fácil de procesar. Y yo creo que a este texto todavía se le pueden seguir aplicando correcciones.
 
 Según Zinsser, la mayoría de los borradores pueden ser cortados en un cincuenta porciento sin perder nada de información y sin perder la voz del escritor.
+
+El decía que escribir es trabajo difícil.
+Que una sentencia clara no es un accidente.
+Muy pocas sentencias salen bien la primera vez, la segunda o incluso la tercera vez.
 
 En el libro, Zinsser da como ejemplo un texto que ya había reescrito 4 o 5 veces, y todavía tenía más correcciones para hacerle.
 
@@ -596,9 +596,9 @@ No existe el 10X programador, o el "programador que programa tan eficientemente 
 Es un mito que le hace mucho daño a la profesión.
 
 No tenés que ser un genio para resolver problemas complejos.
-**Los problemas complejos lo resolvemos las personas comunes presentandonos a trabajar cada día**.
+**Los problemas complejos los resolvemos las personas comunes presentandonos a trabajar cada día**.
 
-Les aseguro que todas las personas pueden ser programadoras.
+Todas las personas podemos ser programadoras.
 Simplemente hay que presentarse a trabajar cada día, enfrentarnos a los problemas, pensar y descanzar bien.
 
 Si hacen eso, les aseguro que no hay problema que no puedan resolver.
