@@ -44,20 +44,6 @@ Muy pocas sentencias salen bien la primera vez, la segunda o incluso la tercera 
 
 Según él, **el secreto de la buena escritura es reducir cada oración a sus componentes más limpios**, y para lograr eso hay que asegurarse que **cada palabra que esribís esté haciendo trabajo útil**.
 
-En el libro él da como ejemplo un texto que ya había reescrito 4 o 5 veces, y todavía tenía más correcciones para hacerle.
-
-![Correcciones de Zinsser](/img/charla-snappler/zinsser.png){:style="width: 100%"}
-
-Según Zinsser, la mayoría de los borradores pueden ser cortados en un cincuenta porciento sin perder nada de información y sin perder la voz del escritor.
-
-Para escribir una nota periodística, él escribía un título, luego el primer párrafo, el segundo, el tercero. Y recién el tercero le gustaba. Entonces borraba los dos primeros, cambiaba el nombre del titulo y escribía un par de parrafos más.
-
-Se daba cuenta que los párrafos quedaban mejor si les cambiaba de orden. Corregía y lo reducía a la mitad. Separaba algunos parrafos en dos, o unía dos parrafos en uno. Y se iba a dormir.
-
-Al día siguiente con la cabeza descansada volvía a leerlo. Se preguntaba: "Estoy escribiendo lo que quiero decir?". Volvía a repetir el proceso una y otra vez, hasta que terminaba con el texto tal y como lo quería. Escribir una nota le podía tomar varios días
-
-**Según Zinsser, la esencia de escribir es reescribir**.
-
 La facultad de Ciencias Económicas de la Universidad de Córdoba tiene un buen ejemplo de reescritura. Tomaron el borrador de un texto y le aplicaron varias correcciones:
 
 ![Correcciones de FCE - UNC](/img/charla-snappler/correcciones.png){:style="width: 100%"}
@@ -68,12 +54,26 @@ Cuando tienen que leer algo varias veces para entenderlo, es porque está escrit
 
 Estas personas se preguntaron: ¿Qué es lo que estoy queriendo decir? y después de aplicar varias correcciones terminaron con un texto mucho más fácil de procesar. Y yo creo que a este texto todavía se le pueden seguir aplicando correcciones.
 
-No hace falta ser un genio de la escritura para escribir bien.
-La mayoría de los escritores que admiramos no son genios.
-Son personas comunes que lograron dominar su escritura a través de trabajo constante.
+Según Zinsser, la mayoría de los borradores pueden ser cortados en un cincuenta porciento sin perder nada de información y sin perder la voz del escritor.
+
+En el libro, Zinsser da como ejemplo un texto que ya había reescrito 4 o 5 veces, y todavía tenía más correcciones para hacerle.
+
+![Correcciones de Zinsser](/img/charla-snappler/zinsser.png){:style="width: 100%"}
+
+Para escribir una nota periodística, él escribía un título, luego el primer párrafo, el segundo, el tercero. Y recién el tercero le gustaba. Entonces borraba los dos primeros, cambiaba el nombre del titulo y escribía un par de parrafos más.
+
+Se daba cuenta que los párrafos quedaban mejor si les cambiaba de orden. Corregía y lo reducía a la mitad. Separaba algunos parrafos en dos, o unía dos parrafos en uno. Y se iba a dormir.
+
+Al día siguiente con la cabeza descansada volvía a leerlo. Se preguntaba: "¿Estoy escribiendo lo que quiero decir?". Volvía a repetir el proceso una y otra vez, hasta que terminaba con el texto tal y como lo quería. Escribir una nota le podía tomar varios días
+
+**Según Zinsser, la esencia de escribir es reescribir**.
 
 Borges era un obsesivo de la corrección.
 Tanto que decía que la razón por la que publicaba, era para dejar de corregir.
+
+Pero no hace falta ser un genio de la escritura para escribir bien.
+La mayoría de los escritores que admiramos no son genios.
+Son personas comunes que lograron dominar su escritura a través de trabajo constante.
 
 La buena escritura es el resultado de trabajo iterativo.
 
@@ -87,12 +87,15 @@ Y muchas de las reglas de las que hablé hasta ahora aplican perfectamente al so
 
 Primero voy a hablarles de como escribir HTML bien.
 
-¿Por qué? porque noto que mucha gente no le presta la atención que se merece.
-Hay personas que lo desestiman diciendo que escribir HTML no es programar.
+En nuestra industria no se le presta la atención que se merece.
+Y se lo desestima diciendo que escribir HTML no es programar.
 
-Es una lástima porque si le prestaran más atención escribirían software de mejor calidad.
+Yo creo que eso es un gran error.
 
-La regla más importante para escribir bien HTML es separar estructura de estilo.
+Una aplicación web mediana tiene cientos de archivos HTML.
+Escribir HTML bien es fundamental para lograr un código web mantenible.
+
+Para escribir bien HTML, la regla más importante es separar estructura de estilo.
 
 - El código HTML tiene que describir la estructura de nuestro sitio web.
 - El código CSS tiene que describir cómo se ve nuestro sitio web.
@@ -404,30 +407,29 @@ Antes era muy difícil hacer que un sitio web se viera bien en todos los navegad
 En ese sentido, Bootstrap era una ayuda gigante.
 Nos permitía armar sitios lindos sin preocuparnos tanto de problemas de compatibilidad.
 
-Pero hoy en día la situación cambió mucho.
-Los navegadores son mucho mas compatibles entre sí que antes.
+Pero hoy en día la situación cambió.
+Los navegadores son mucho mas compatibles entre sí.
 Y CSS tiene muchas facilidades que antes no tenía.
 
 Usar Bootstrap parece un atajo.
 Pero mi experiencia me ha demostrado que a la larga perjudica más que lo que ayuda.
-Boostrap rompe las reglas constantemente, y nos dificulta escribir HTML semántico, lo que nos lleva a escribir más código.
+Boostrap rompe las reglas constantemente, y nos dificulta escribir HTML semántico, lo que paradojicamente nos lleva a escribir más código CSS.
 
 Si escribimos menos HTML, el código CSS que necesitamos también se reduce un montón.
 Y es bastante lógico que pase esto: si tenemos menos etiquetas, tenemos menos clases para definir.
-
-Un libro que recomiendo mucho por si quieren profundizar sobre este tema es [Maintainable CSS](https://maintainablecss.com/) de Adam Silver.
-Lo pueden encontrar online y se lee en 20 minutos.
 
 Otra cosa que pasa cuando reducimos el HTML y el CSS es que todo el Javascript que usamos para manipular el DOM también se simplifica.
 Y es bastante lógico que pase esto. Si hay menos tags, necesitamos menos código para manipularlo.
 
 Y todo esto no sólo se traduce en código más fácil de leer y mantener, sino que también en mayor rendimiento de nuestros sitios web.
 
+Un libro que recomiendo mucho por si quieren profundizar sobre este tema es [Maintainable CSS](https://maintainablecss.com/) de Adam Silver.
+Lo pueden encontrar online y se lee en 20 minutos.
+
 
 ## ¿Vale la pena esforzarnos tanto?
 
 Martin Fowler (Un programador bastante conocido) intenta contestar esta pregunta en su conocido artículo titulado [¿Vale la pena hacer software de alta calidad?](https://martinfowler.com/articles/is-quality-worth-cost.html).
-
 
 Fowler diferencia calidad interna y externa.
 
@@ -447,7 +449,7 @@ Según Fowler, si tenemos dos sistemas idénticos, uno con mucha suciedad y otro
 La calidad interna hace más fácil mejorar el software.
 Los programadores pasamos la mayor parte de nuestro tiempo modificando código.
 Alta calidad interna hace que el código sea más fácil de leer, modificar y eliminar.
-Lo que se traduce en que agregar funcionales sea más rápido y barato.
+Lo que se traduce en que agregar funcionalidades sea más rápido y barato.
 Y eso **SÍ** es muy importante para los clientes.
 
 Si graficamos en el eje vertical las nuevas funcionalidades y en el eje horizontal el tiempo, tenemos:
@@ -479,7 +481,7 @@ Finalmente **es más barato hacer software de calidad**.
 ## Simplifiquemos nuestra arquitectura
 
 Los programadores tenemos una tendencia a la sobre-ingeniería.
-Queremos usar las cosas que usan Google, Facebook y Netflix.
+Queremos usar las herramientas que usan Google, Facebook y Netflix.
 
 Simple <----------------------------------------> Complejo
 
@@ -494,7 +496,8 @@ Los programadores somos muy buenos para entender el valor de todas nuestras herr
 Todas estas tecnologías tienen un costo de implementación y de mantenimiento, y si no tenemos cuidado pueden hacernos las vidas muy difíciles más adelante.
 
 Mi regla de oro para elegir una arquitectura o herramienta es que *se lo tiene que ganar*.
-Estas herramientas no se usan por las dudas. Se usan a propósito habiendo ponderado los beneficios y los costos.
+Estas herramientas no se usan por las dudas.
+Se usan a propósito habiendo ponderado los beneficios y los costos.
 
 ### Simplificar desde el comienzo
 
@@ -506,9 +509,10 @@ Edsger W. Dijkstra decía que no hay que contar las lineas de código como *line
 La mejor forma de simplificar el código es no escribiéndolo en primer lugar.
 
 Les voy a dar un ejemplo: Mi pagina web personal es un sitio web estático.
-Consiste en HTML, CSS y quizás una linea o dos de javascript.
+Consiste en HTML y CSS. No tiene ni una linea de javascript.
 
-Podría haberlo resuelto usando Ruby on Rails, Postgres, Heroku, React y Bootstrap. Pero elegí hacerlo con un sitio web estático.
+Podría haberlo resuelto usando Ruby on Rails, Postgres, Heroku, React y Bootstrap.
+Pero elegí hacerlo con un sitio web estático.
 
 - Como no tiene base de datos, no tengo que preocuparme por ataques de injeccion SQL, ni por diseñar la arquitectura de las tablas, ni de agregar índices, ni de mantenerla actualizarla.
 - Como lo subo a **github-pages** me sale gratis.
@@ -516,7 +520,8 @@ Podría haberlo resuelto usando Ruby on Rails, Postgres, Heroku, React y Bootstr
 - Como no uso Rails, no necesito preocuparme por mantenimiento de la aplicación, ni de vulnerabilidades en las librerías, ni de bugs.
 - Como no uso React ni AJAX ni routing del lado del cliente, ni javascript, no tengo que preocuparme por bugs del lado del cliente.
 
-Este sitio no necesita mantenimiento. Lo actualizo más o menos una o dos veces al año para agregar alguna publicación.
+Este sitio no necesita mantenimiento.
+Lo actualizo más o menos una o dos veces al año para agregar alguna publicación.
 
 Si tengo que comparar la solución de Rails con esta solución, considero que esta solución es una solución superior. No a pesar de ser simple, sino como consecuencia de ser simple.
 
@@ -544,39 +549,38 @@ Tuvo en cuenta la velocidad de la luz, la gravedad, las leyes de la termodinámi
 
 Pero no es lo mismo límite físico que límite práctico. Para llegar a esa velocidad es necesario comprimir la computadora a un tamaño minúsculo, formando un agujero negro. Para usar esta computadora tendríamos que estar adentro del agujero negro, donde moriríamos al instante.
 
+Yo no se ustedes, pero yo prefiero seguir vivo aunque mi computadora sea un poco más lenta.
+
 Nosotros los seres humanos también somos sistemas físicos.
 Lo que podemos y no podemos hacer también está dictado por las leyes de la física.
 
-Nuestros cerebros son limitados.
-Cuanto antes lo aceptemos, mejor nos va a ir.
+Nuestros cerebros también tienen límites.
+Hay una cantidad de información máxima que podemos procesar en un momento dado.
 
-El hecho de que nuestros cerebros son limitados es una razón más para simplificar.
+Esto es una razón más para simplificar.
 Mientras más simple sea un sistema, más fácil va a ser para nuestros cerebros entenderlo, modificarlo y mantenerlo.
 
-Nuestros cerebros tienen una cantidad de información máxima que pueden procesar en un momento dado.
+Pero el código es solamente el producto final.
+La mayor parte del trabajo pasa en nuestras cabezas.
+
+Si no cuidamos a nuestras cabezas por un tiempo prolongado podemos terminar con burn out.
+Cuando sufrimos burn out no podemos razonar correctamente.
+Nos transformamos en una peor versión de nosotros mismos.
+Lo que afecta nuestras vida y las de los que nos rodean.
+Lo que nos causa frustración y resentimiento.
+
+Es un circulo vicioso que puede hacer que terminemos muy mal.
 
 No se quemen la cabeza.
 
 Si no pueden resolver un problema, no trabajen 10 horas por día.
+Hagan una pausa. Salgan a caminar. Tomense una siesta.
+Denle tiempo al cerebro a procesar la información.
 Cierren la computadora cuando termina la jornada.
 El trabajo va a seguir esperandolos al día siguiente.
-Cuiden su cerebro, que es su herramienta de trabajo.
-
-Si se sienten cansados o agobiados hagan una pausa. Salgan a caminar. Tomense una siesta.
-Denle tiempo al cerebro a procesar la información.
-
-El código es solamente el producto final.
-Pero el 90% del trabajo pasa en la cabeza.
-Y una mente que no está descansada no puede razonar bien y no puede trabajar bien.
-
-Si no cuidamos a nuestras cabezas por un tiempo prolongado podemos terminar con BurnOut.
-Cuando sufrimos Burn Out no podemos razonar correctamente.
-Y nos transformamos en una peor versión de nosotros mismos.
-Lo que afecta nuestras vida y las de los que nos rodean.
-Lo que nos causa frustración. Y todo esto se retroalimenta.
-Y podemos terminar muy mal.
 
 Cuiden sus cabezas, que trabajar adentro de un agujero negro no vale la pena.
+
 
 ### Resolver problemas complejos
 
@@ -586,13 +590,15 @@ Y de repente al día siguiente lo resuelven en 15 minutos?
 
 No significa que perdieron el tiempo el día anterior.
 Todo ese tiempo de esfuerzo y frustración fue necesario para resolver el problema.
-Su cerebro necesitaba procesar toda esa información.
+Su cerebro necesitaba tiempo para procesar toda esa información.
 
-No existe el 10X programador, o el "programador que programa tan eficientemente como 10 programadores". Es un mito que le hace mucho daño a la profesión.
+No existe el 10X programador, o el "programador que programa tan eficientemente como 10 programadores".
+Es un mito que le hace mucho daño a la profesión.
 
-No tenés que ser un genio para resolver problemas complejos. **Los problemas complejos lo resolvemos las personas comunes presentandonos a trabajar cada día**.
+No tenés que ser un genio para resolver problemas complejos.
+**Los problemas complejos lo resolvemos las personas comunes presentandonos a trabajar cada día**.
 
 Les aseguro que todas las personas pueden ser programadoras.
-Simplemente hay que presentarse a trabajar cada día, enfrentarnos a los problemas y pensar.
+Simplemente hay que presentarse a trabajar cada día, enfrentarnos a los problemas, pensar y descanzar bien.
 
 Si hacen eso, les aseguro que no hay problema que no puedan resolver.
