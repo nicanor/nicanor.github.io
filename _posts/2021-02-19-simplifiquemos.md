@@ -7,94 +7,103 @@ location: La Plata
 visible: true
 ---
 
-Transcripción de la charla que dí para programadores de [Snappler](https://www.snappler.com/) el 19 de Febrero de 2021 y repetí el 31 de enero de 2022.
+Transcripción de la charla que dí en Agosto de 2022 en el Nerdearla 101.
+
+Originalmente preparé esta charla para programadores de [Snappler](https://www.snappler.com/) el 19 de Febrero de 2021 y la repetí el 31 de enero de 2022.
 
 [Acá pueden descargar las diapositivas]({{ site.url }}/img/charla-snappler/charla-snappler-2021.pdf)
 
 
-## Como escribir bien
+## Cómo escribir bien
 
-Hace unos años me recomendaron leer el libro **On writting well**.
-Me gustó tanto que lo vuelvo a leer todos los años.
+Escribir claro es fundamental para comunicarnos de manera efectiva.
 
-Fue escrito por un periodista y escritor Estadounidense llamado William Zinsser.
+Los programadores escribimos emails, tareas, tickets, casos de uso, comentarios, documentación y también escribimos código de software.
 
-El libro habla de cómo escribir bien.
-Está en Inglés, pero los consejos que dá aplican también al Español.
+Pero expresar una idea con palabras y que la persona que las lee entienda exactamente lo que quiero decir no es tarea fácil
 
-Uno de los consejos más importantes es usar palabras simples:
+Hace unos años estaba en la búsqueda de cómo escribir y comunicarme mejor.
 
-- No digas *denominación* si podés decir *nombre*.
-- No digas *sufragio* si podés decir *voto*.
-- No digas *con la finalidad de* si podés decir *para*.
-- No digas que *estás anticipando experimentar una precipitación considerable* si podés decir que *puede llover*.
-- No escribas complicado para parecer importante.
-
-Pero también usá palabras precisas:
-No digas que el presidente se fue de la empresa. ¿Renunció? ¿Se retiro? ¿Lo echaron?
+Los consejos más comunes que encontré para escribir claro fueron:
 
 - Hablá en voz activa.
 - Reducí la cantidad de adjetivos y adverbios.
-- Eliminá la suciedad en tus oraciones.
-- Escribí claro.
+- Usá palabras sencillas:
+  - No digas *denominación* si podés decir *nombre*.
+  - No digas *sufragio* si podés decir *voto*.
+  - No digas *con la finalidad de* si podés decir *para*.
+  - No escribas complicado para parecer importante. No digas que *estás anticipando experimentar una precipitación considerable* si podés decir que *puede llover*.
+- Pero también usá palabras precisas. No digas que el presidente se fue de la empresa. ¿Renunció, se retiró o lo echaron?
 
-Según él, **el secreto de la buena escritura es reducir cada oración a sus componentes más limpios**, y para lograr eso hay que asegurarse que **cada palabra que escribís esté haciendo trabajo útil**.
+Con el tiempo fui mejorando mi escritura, pero sentía que todavía me faltaba algo.
 
-La facultad de Ciencias Económicas de la Universidad de Córdoba tiene un buen ejemplo.
+Lo que me faltaba lo encontré en el libro **On writting well**. El libro habla de cómo escribir bien. Está en Inglés, pero los consejos que dá aplican también al Español. Es un libro que vuelvo a leer todos los años.
+
+Fue escrito por un periodista Estadounidense llamado William Zinsser.
+
+Según él, **el secreto de la buena escritura es reducir cada oración a sus componentes más limpios**, y para lograr eso hay que asegurarse que **cada palabra esté haciendo trabajo útil**.
+
+La facultad de Ciencias Económicas de la Universidad de Córdoba tiene [un buen ejemplo](https://ecptgu.eco.catedras.unc.edu.ar/unidad-1/en-las-instituciones/el-lenguaje-claro/).
 Tomaron el borrador de un texto y le aplicaron varias correcciones:
 
-![Correcciones de FCE - UNC](/img/charla-snappler/correcciones.png){:style="width: 100%"}
+> Ante la evidente necesidad de otorgar a la ciudadanía la atención con la calidad que ésta solicita y con la finalidad de crear un Gobierno de Calidad que brinde trámites y servicios que satisfagan las necesidades y expectativas de la ciudadanía, el Gobierno Federal está enfocando sus esfuerzos en fomentar programas que permitan transparentar e incrementar la calidad en los trámites y servicios de alto impacto ciudadano, a partir de la implantación de acciones de mejoras derivadas de la opinión ciudadana.
 
-El sujeto lo encuentran recién a la mitad del texto, y la parte más importante está por el final. Usa muchas palabras complicadas y es difícil de leer.
+Cuando tenemos que leer algo varias veces para entenderlo, es porque está escrito de forma complicada. El sujeto está en la mitad del texto, y la parte más importante está por el final. Hace juicios de valor, es impreciso y usa muchas palabras largas. Todo esto hace que sea difícil de leer.
 
-Cuando tienen que leer algo varias veces para entenderlo, es porque está escrito de forma complicada.
+Estas personas se preguntaron: ¿Qué es lo que estoy queriendo decir? y después de aplicar varias correcciones terminaron con un texto mucho más fácil de procesar:
 
-Estas personas se preguntaron: ¿Qué es lo que estoy queriendo decir? y después de aplicar varias correcciones terminaron con un texto mucho más fácil de procesar. Y yo creo que a este texto todavía se le pueden seguir aplicando correcciones.
+> El Gobierno Federal realiza acciones de mejora, derivadas de la opinión pública, para incrementar la  calidad de los trámites y servicios más utilizados por los ciudadanos.
 
-Según Zinsser, la mayoría de los borradores pueden ser cortados en un cincuenta porciento sin perder nada de información y sin perder la voz del escritor.
+Y yo creo que a este texto todavía se le pueden seguir aplicando correcciones. Si yo tuviera que reescribirlo, escribiría algo como esto:
 
-El decía que escribir es trabajo difícil.
-Que una sentencia clara no es un accidente.
+> El Gobierno Federal escuchó a los ciudadanos y mejorará los trámites y servicios que más usan.
+
+Una vez que quitamos la suciedad el texto es mucho más fácil de leer.
+
+Según Zinsser, escribir es trabajo difícil.
+Y una sentencia clara no es un accidente.
 Muy pocas sentencias salen bien la primera vez, la segunda o incluso la tercera vez.
 
-En el libro, Zinsser da como ejemplo un texto que ya había reescrito 4 o 5 veces, y todavía tenía más correcciones para hacerle.
-
-![Correcciones de Zinsser](/img/charla-snappler/zinsser.png){:style="width: 100%"}
+La mayoría de los borradores pueden ser cortados en un cincuenta porciento sin perder nada de información y sin perder la voz del escritor.
 
 Para escribir una nota periodística, él escribía un título, luego el primer párrafo, el segundo, el tercero. Y recién el tercero le gustaba. Entonces borraba los dos primeros, cambiaba el nombre del titulo y escribía un par de parrafos más.
 
-Se daba cuenta que los párrafos quedaban mejor si les cambiaba de orden. Corregía y lo reducía a la mitad. Separaba algunos parrafos en dos, o unía dos parrafos en uno. Y se iba a dormir.
+Se daba cuenta que los párrafos quedaban mejor si les cambiaba de orden. Corregía y lo reducía a la mitad. Separaba algunos parrafos en dos, o unía dos parrafos en uno.
+
+Y se iba a dormir.
 
 Al día siguiente con la cabeza descansada volvía a leerlo. Se preguntaba: "¿Estoy escribiendo lo que quiero decir?". Volvía a repetir el proceso una y otra vez, hasta que terminaba con el texto tal y como lo quería. Escribir una nota le podía tomar varios días
 
 **Según Zinsser, la esencia de escribir es reescribir**.
 
-Borges era un obsesivo de la corrección.
-Tanto que decía que la razón por la que publicaba, era para dejar de corregir.
-
 Pero no hace falta ser un genio de la escritura para escribir bien.
 La mayoría de los escritores que admiramos no son genios.
 Son personas comunes que lograron dominar su escritura a través de trabajo constante.
 
+Borges era un obsesivo de la corrección.
+Tanto que decía que la razón por la que publicaba, era para dejar de corregir.
+
 La buena escritura es el resultado de trabajo iterativo.
 
-Parte de nuestro trabajo como programadores es escribir.
-Escribimos emails, tareas, casos de uso, comentarios y documentación.
+La próxima vez que escriban un email, tarea, mensaje, comentario o documentación tomense unos minutos para corregirlo. Sus colegas lo van a agradecer.
 
-Y también escribimos código de software.
-Y muchas de las reglas de las que hablé hasta ahora aplican perfectamente al software, y de eso les voy a hablar hoy.
 
 ## On writting HTML well
 
-Primero voy a hablarles de como escribir HTML bien.
+Hoy voy a hablarles de cómo escribir HTML bien.
 
-En nuestra industria no se le presta la atención que se merece.
-Y se lo desestima diciendo que escribir HTML no es programar.
+Hay personas que desestiman HTML.
+Dicen que escribir HTML es fácil.
+Dicen que escribir HTML no es programar.
+No le prestan la atención que se merece.
 
-Yo creo que eso es un gran error.
+Y eso es un gran error.
+
+Cuando no cuidamos nuestro código, terminamos con HTML críptico, poco expresivo, poco accesible, muy anidado y difícil de entender. Mantener este código se vuelve una tarea tediosa y frustrante.
 
 Una aplicación web mediana tiene cientos de archivos HTML.
 Escribir HTML bien es fundamental para lograr un código web mantenible.
+
 
 Para escribir bien HTML, la regla más importante es separar estructura de estilo.
 
@@ -146,7 +155,7 @@ Los nombres de las clases no deberían darnos información sobre cómo un elemen
 </article>
 ```
 
-El código HTML no tiene que darme ni una pista de cómo se ven los elementos.
+El código HTML no tiene que darme ni una pista de cómo se ve una alerta.
 Esa información está en el archivo CSS:
 
 ``` css
@@ -162,7 +171,7 @@ Simplemente debemos cambiar el código CSS.
 
 ### No usemos clases de grid
 
-Las clases de grid, como **container**, **row**, **col-** y **offset-** tampoco cumplen la regla, porque describen cómo queremos que se distribuyan las partes de la página:
+Las clases de grid, como **container**, **row**, **col-** y **offset-**, muy comunes en Frameworks web como Bootstrap, tampoco cumplen la regla, porque describen cómo queremos que se distribuyan las partes de la página:
 
 ``` html
 <main class="book-page">
@@ -412,20 +421,12 @@ Pero hoy en día la situación cambió.
 Los navegadores son mucho mas compatibles entre sí.
 Y CSS tiene muchas facilidades que antes no tenía.
 
-Usar Bootstrap parece un atajo.
-Pero mi experiencia me ha demostrado que a la larga perjudica más que lo que ayuda.
-Boostrap rompe las reglas constantemente, y nos dificulta escribir HTML semántico, lo que paradojicamente nos lleva a escribir más código CSS.
+Usar Bootstrap parece un atajo pero a la larga perjudica más que lo que ayuda.
+Boostrap rompe las reglas constantemente, y nos dificulta escribir HTML semántico, lo que paradojicamente nos lleva a escribir más código CSS. Y es bastante lógico que pase esto: si tenemos más etiquetas, tenemos más clases para definir.
 
-Si escribimos menos HTML, el código CSS que necesitamos también se reduce un montón.
-Y es bastante lógico que pase esto: si tenemos menos etiquetas, tenemos menos clases para definir.
-
-Otra cosa que pasa cuando reducimos el HTML y el CSS es que todo el Javascript que usamos para manipular el DOM también se simplifica.
-Y es bastante lógico que pase esto. Si hay menos tags, necesitamos menos código para manipularlo.
+Otra cosa que pasa cuando reducimos el HTML y el CSS es que todo el Javascript que usamos para manipular el DOM también se simplifica. Y es bastante lógico que pase esto. Si hay menos etiquetas, necesitamos menos código para manipularlas.
 
 Y todo esto no sólo se traduce en código más fácil de leer y mantener, sino que también en mayor rendimiento de nuestros sitios web.
-
-Un libro que recomiendo mucho por si quieren profundizar sobre este tema es [Maintainable CSS](https://maintainablecss.com/) de Adam Silver.
-Lo pueden encontrar online y se lee en 20 minutos.
 
 
 ## ¿Vale la pena esforzarnos tanto?
@@ -439,23 +440,18 @@ Fowler diferencia calidad interna y externa.
 
 Fowler hace esta separación porque a simple vista pareciera que los clientes no aprecian la calidad interna. No les importa realmente si un modulo está bien nombrado. Les importa que su software haga lo que tiene que hacer.
 
-Según Fowler, baja calidad interna es sinónimo de suciedad o "cruft": cualquier cosa que sobra, que es redundante y se interpone en nuestro camino.
+Según Fowler, baja calidad interna es resultado de la suciedad: cualquier cosa que sobra, que es redundante y se interpone en nuestro camino.
 
 Según Martin Fowler, incluso los mejores equipos introducen pequeñas suciedades al código todo el tiempo. La suciedad en el código como la mala hierba, crece incontrolablemente y requiere esfuerzo eliminarla.
 
-Según Fowler, si tenemos dos sistemas idénticos, uno con mucha suciedad y otro sin suciedad, agregar funcionalidades nuevas en el primero demora mucho mas tiempo que en el segundo:
-
-![Suciedad](/img/charla-snappler/cruft.png){:style="width: 100%"}
+Según Fowler, si tenemos dos sistemas idénticos, uno con mucha suciedad y otro sin suciedad, agregar funcionalidades nuevas en el primero demora mucho mas tiempo que en el segundo.
 
 La calidad interna hace más fácil mejorar el software.
 Los programadores pasamos la mayor parte de nuestro tiempo modificando código.
 Alta calidad interna hace que el código sea más fácil de leer, modificar y eliminar.
 Lo que se traduce en que agregar funcionalidades sea más rápido y barato.
+
 Y eso **SÍ** es muy importante para los clientes.
-
-Si graficamos en el eje vertical las nuevas funcionalidades y en el eje horizontal el tiempo, tenemos:
-
-![Funcionalidades - Tiempo](/img/charla-snappler/features.png){:style="width: 100%"}
 
 A medida que crece el software, nos toma cada vez más y más tiempo agregar nuevas funcionalidades.
 
@@ -464,6 +460,9 @@ Esto pasa con mucha mas fuerza cuando no le prestamos atención a la calidad int
 Cuando le prestamos atención a la calidad del software desde el comienzo, podemos agregar nuevas funcionalidades mucho más rápido:
 
 ![Calidad](/img/charla-snappler/quality.png){:style="width: 100%"}
+
+**Hacer mi propio grafico**
+
 
 Al principio tardamos más. Pero según Martin Fowler, se paga en semanas, no en meses.
 
@@ -515,8 +514,7 @@ Consiste en HTML y CSS. No tiene ni una linea de javascript.
 Podría haberlo resuelto usando Ruby on Rails, Postgres, Heroku, React y Bootstrap.
 Pero elegí hacerlo con un sitio web estático.
 
-- Como no tiene base de datos, no tengo que preocuparme por ataques de injeccion SQL, ni por diseñar la arquitectura de las tablas, ni de agregar índices, ni de mantenerla actualizarla.
-- Como lo subo a **github-pages** me sale gratis.
+- Como no tiene base de datos, no tengo que preocuparme por ataques de injeccion SQL, ni por diseñar la arquitectura de las tablas, ni de agregar índices, ni de mantenerla actualizada.
 - Como uso git, tengo el historial de todos los cambios en mis publicaciones a mi disposición.
 - Como no uso Rails, no necesito preocuparme por mantenimiento de la aplicación, ni de vulnerabilidades en las librerías, ni de bugs.
 - Como no uso React ni AJAX ni routing del lado del cliente, ni javascript, no tengo que preocuparme por bugs del lado del cliente.
@@ -528,19 +526,18 @@ Si tengo que comparar la solución de Rails con esta solución, considero que es
 
 Casi siempre, la solución más simple es también la mejor solución.
 
-Mi consejo es que se tomen su tiempo para simplificar la arquitectura.
-Esto es especialmente beneficioso en etapas tempranas de desarrollo.
+Tomarnos el tiempo para simplificar la arquitectura es especialmente beneficioso en etapas tempranas de desarrollo.
 
 Dedicar una o dos semanas a simplificar la arquitectura parece un sacrificio muy grande. Pero si tenemos en cuenta que el software va a tener que ser mantenido durante varios años, una o dos semanas ya no parece tanto tiempo.
 
-Mientras antes empiecen a simplificar, más tiempo se van a ahorrar a largo plazo.
-Ustedes van a ser mas felices y sus clientes también van a ser más felices.
+Mientras antes empezamos a simplificar, más tiempo nos ahorramos a largo plazo.
+Nosotros vamos a ser más felices y nuestros clientes también van a ser más felices.
 
 ## Nuestros límites.
 
 Hay personas que estudian los limites teóricos de la computación. Por ejemplo que problemas son computables y cuales no.
 
-Un profesor de físicas del MIT quería calcular [los limites *físicos* de la computación](https://cds.cern.ch/record/396654/files/9908043.pdf).
+Un profesor de físicas del MIT quería calcular [los limites *físicos* de la computación](https://cds.cern.ch/record/396654/files/9908043.pdf). Esto es, hasta donde podemos llegar con los conocimientos que tenemos sobre el universo.
 
 Las computadoras son sistemas físicos: lo que pueden hacer y lo que no, está dictado por las leyes de la física. La velocidad a la que puede procesar información está limitada por su energía.
 
@@ -550,7 +547,7 @@ Tuvo en cuenta la velocidad de la luz, la gravedad, las leyes de la termodinámi
 
 Pero no es lo mismo límite físico que límite práctico. Para llegar a esa velocidad es necesario comprimir la computadora a un tamaño minúsculo, formando un agujero negro. Para usar esta computadora tendríamos que estar adentro del agujero negro, donde moriríamos al instante.
 
-Yo no se ustedes, pero yo prefiero seguir vivo aunque mi computadora sea un poco más lenta.
+Yo no se ustedes, pero yo prefiero seguir vivo aunque mi computadora sea más lenta.
 
 Nosotros los seres humanos también somos sistemas físicos.
 Lo que podemos y no podemos hacer también está dictado por las leyes de la física.
@@ -580,7 +577,9 @@ Denle tiempo al cerebro a procesar la información.
 Cierren la computadora cuando termina la jornada.
 El trabajo va a seguir esperandolos al día siguiente.
 
-Cuiden sus cabezas, que trabajar adentro de un agujero negro no vale la pena.
+Cuiden sus cabezas.
+
+Trabajar adentro de un agujero negro no vale la pena.
 
 
 ### Resolver problemas complejos
