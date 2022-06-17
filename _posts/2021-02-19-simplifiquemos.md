@@ -20,7 +20,7 @@ Escribir claro es fundamental para comunicarnos de manera efectiva.
 
 Los programadores escribimos emails, tareas, tickets, casos de uso, comentarios, documentación y también escribimos código de software.
 
-Pero expresar una idea con palabras y que la persona que las lee entienda exactamente lo que quiero decir no es tarea fácil
+Expresar una idea con palabras y que la persona que las lee entienda exactamente lo que quiero decir no es tarea fácil
 
 Hace unos años estaba en la búsqueda de cómo escribir y comunicarme mejor.
 
@@ -32,12 +32,12 @@ Los consejos más comunes que encontré para escribir claro fueron:
   - No digas *denominación* si podés decir *nombre*.
   - No digas *sufragio* si podés decir *voto*.
   - No digas *con la finalidad de* si podés decir *para*.
-  - No escribas complicado para parecer importante. No digas que *estás anticipando experimentar una precipitación considerable* si podés decir que *puede llover*.
+  - No escribas complicado para parecer importante. No digas que *estás anticipando experimentar una precipitación considerable* si podés decir que va a llover.
 - Pero también usá palabras precisas. No digas que el presidente se fue de la empresa. ¿Renunció, se retiró o lo echaron?
 
 Con el tiempo fui mejorando mi escritura, pero sentía que todavía me faltaba algo.
 
-Lo que me faltaba lo encontré en el libro **On writting well**. El libro habla de cómo escribir bien. Está en Inglés, pero los consejos que dá aplican también al Español. Es un libro que vuelvo a leer todos los años.
+Lo que me faltaba lo encontré en el libro **On writting well**. El libro habla de cómo escribir bien. Está en Inglés, pero los consejos que dá aplican también al Español.
 
 Fue escrito por un periodista Estadounidense llamado William Zinsser.
 
@@ -48,13 +48,13 @@ Tomaron el borrador de un texto y le aplicaron varias correcciones:
 
 > Ante la evidente necesidad de otorgar a la ciudadanía la atención con la calidad que ésta solicita y con la finalidad de crear un Gobierno de Calidad que brinde trámites y servicios que satisfagan las necesidades y expectativas de la ciudadanía, el Gobierno Federal está enfocando sus esfuerzos en fomentar programas que permitan transparentar e incrementar la calidad en los trámites y servicios de alto impacto ciudadano, a partir de la implantación de acciones de mejoras derivadas de la opinión ciudadana.
 
-Cuando tenemos que leer algo varias veces para entenderlo, es porque está escrito de forma complicada. El sujeto está en la mitad del texto, y la parte más importante está por el final. Hace juicios de valor, es impreciso y usa muchas palabras largas. Todo esto hace que sea difícil de leer.
+Yo tuve que leer el texto varias veces para entenderlo. Eso pasa porque está escrito de forma complicada. El sujeto está en la mitad del texto, y la parte más importante está por el final. Hace juicios de valor, es impreciso y usa muchas palabras largas. Todo esto hace que sea difícil de leer.
 
-Estas personas se preguntaron: ¿Qué es lo que estoy queriendo decir? y después de aplicar varias correcciones terminaron con un texto mucho más fácil de procesar:
+Estas personas se preguntaron: ¿Qué es lo que estoy queriendo decir? y después de aplicar varias correcciones terminaron con un texto más fácil de procesar:
 
 > El Gobierno Federal realiza acciones de mejora, derivadas de la opinión pública, para incrementar la  calidad de los trámites y servicios más utilizados por los ciudadanos.
 
-Y yo creo que a este texto todavía se le pueden seguir aplicando correcciones. Si yo tuviera que reescribirlo, escribiría algo como esto:
+Yo creo que a este texto todavía se le pueden seguir aplicando correcciones. Si yo tuviera que reescribirlo, escribiría algo como esto:
 
 > El Gobierno Federal escuchó a los ciudadanos y mejorará los trámites y servicios que más usan.
 
@@ -63,8 +63,6 @@ Una vez que quitamos la suciedad el texto es mucho más fácil de leer.
 Según Zinsser, escribir es trabajo difícil.
 Y una sentencia clara no es un accidente.
 Muy pocas sentencias salen bien la primera vez, la segunda o incluso la tercera vez.
-
-La mayoría de los borradores pueden ser cortados en un cincuenta porciento sin perder nada de información y sin perder la voz del escritor.
 
 Para escribir una nota periodística, él escribía un título, luego el primer párrafo, el segundo, el tercero. Y recién el tercero le gustaba. Entonces borraba los dos primeros, cambiaba el nombre del titulo y escribía un par de parrafos más.
 
@@ -85,32 +83,109 @@ Tanto que decía que la razón por la que publicaba, era para dejar de corregir.
 
 La buena escritura es el resultado de trabajo iterativo.
 
-La próxima vez que escriban un email, tarea, mensaje, comentario o documentación tomense unos minutos para corregirlo. Sus colegas lo van a agradecer.
+Los buenos escritores nunca escriben bien la primera vez.
+Empiezan con un borrador, y trabajan el texto hasta llegar al resultado deseado.
+
+La próxima vez que escriban un email, tarea, mensaje, comentario o documentación tomense unos minutos para corregirlo.
+Sus colegas lo van a agradecer.
 
 
 ## On writting HTML well
 
 Hoy voy a hablarles de cómo escribir HTML bien.
 
-Hay personas que desestiman HTML.
-Dicen que escribir HTML es fácil.
-Dicen que escribir HTML no es programar.
+Hay personas que lo desestiman.
+Dicen que escribirlo es fácil y que no es programar.
 No le prestan la atención que se merece.
 
 Y eso es un gran error.
 
-Cuando no cuidamos nuestro código, terminamos con HTML críptico, poco expresivo, poco accesible, muy anidado y difícil de entender. Mantener este código se vuelve una tarea tediosa y frustrante.
+Cuando no lo cuidamos terminamos con código críptico, poco expresivo, poco accesible, muy anidado y difícil de entender. Mantener ese código se vuelve una tarea tediosa y frustrante.
 
 Una aplicación web mediana tiene cientos de archivos HTML.
-Escribir HTML bien es fundamental para lograr un código web mantenible.
+Cuidarlos es fundamental para lograr un código web mantenible.
 
+Los consejos más comunes para escribirlo mejor son:
+- Reducir la cantidad de anidamientos
+- Usar nombres cortos para las clases
+- Comentar el código
+- Tener en cuenta la accesibilidad
+- Usar las etiquetas que corresponden
 
-Para escribir bien HTML, la regla más importante es separar estructura de estilo.
+No usemos `<div>` para todo:
+
+``` html
+<body>
+  <div class="site-header">
+    <a href="/">Mi sitio web</a>
+  </div>
+
+  <div class="site-nav">
+    <a class="site-nav-link" href="/">Home</a>
+    ...
+  </div>
+
+  <div class="site-main">
+    <div class="post">
+      <div>...</div>
+      <div>...</div>
+    </div>
+
+    <div class="post">
+      <div>...</div>
+      <div>...</div>
+      <div>...</div>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    Creado por ...
+  </div>
+</body>
+```
+
+Usemos `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`.
+
+``` html
+<body>
+  <header class="site-header">
+    <a href="/">Mi sitio web</a>
+  </header>
+
+  <nav class="site-nav">
+    <a class="site-nav-link" href="/">Home</a>
+    ...
+  </nav>
+
+  <main class="site-main">
+    <article class="post">
+      <header>...</header>
+      <section>...</section>
+    </article>
+
+    <article class="post">
+      <header>...</header>
+      <section>...</section>
+      <aside>...</aside>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    Creado por ...
+  </footer>
+</body>
+```
+
+Usar etiquetas adecuadas mejora la legibilidad.
+Es más fácil ver donde empieza y termina cada elemento.
+
+Pero **la regla más importante es separar estructura de estilo**.
 
 - El código HTML tiene que describir la estructura de nuestro sitio web.
 - El código CSS tiene que describir cómo se ve nuestro sitio web.
 
-Por ejemplo, miremos este código. Tenemos un artículo con texto *"Estás en peligro!"*. Y clases *color-red*. *pull-left* y *text-center*:
+Por ejemplo, miremos este código. Tenemos un artículo con texto *"Estás en peligro!"*.
+Y clases *color-red*. *pull-left* y *text-center*:
 
 ``` html
 <article class="color-red pull-left text-center">
@@ -128,26 +203,10 @@ No hay tanta diferencia entre esto y poner los estilos en linea:
 </article>
 ```
 
-En ambos casos, cuanto leo el código HTML recibo pistas de cómo se ve.
+En ambos casos recibo pistas de cómo se ve.
 Y eso es lo que queremos evitar.
 
-Si tengo que elegir entre esos dos ejemplos, prefiero los estilos en linea, porque por lo menos es explícito que está modificando los estilos. Y además no necesito definir las clases *color-red*. *pull-left* y *text-center*:
-
-``` css
-.pull-left{
-  float: left;
-}
-
-.color-red {
-  color: red;
-}
-
-.text-center {
-  text-align: center;
-}
-```
-
-Los nombres de las clases no deberían darnos información sobre cómo un elemento luce, sino que debería describir lo que el elemento representa:
+Los nombres de las clases no deberían darnos información sobre cómo un elemento luce, sino que debería describir lo que el elemento representa. En este caso el elemento representa una alerta:
 
 ``` html
 <article class="alert">
@@ -162,7 +221,7 @@ Esa información está en el archivo CSS:
 .alert {
   float: left;
   color: red;
-  text-align: center
+  text-align: center;
 }
 ```
 
@@ -171,7 +230,7 @@ Simplemente debemos cambiar el código CSS.
 
 ### No usemos clases de grid
 
-Las clases de grid, como **container**, **row**, **col-** y **offset-**, muy comunes en Frameworks web como Bootstrap, tampoco cumplen la regla, porque describen cómo queremos que se distribuyan las partes de la página:
+Las clases de grid, como **container**, **row**, **col-** y **offset-**, muy comunes en frameworks CSS como Bootstrap, tampoco cumplen la regla, porque describen cómo queremos que se distribuyan las partes de la página:
 
 ``` html
 <main class="book-page">
@@ -183,9 +242,9 @@ Las clases de grid, como **container**, **row**, **col-** y **offset-**, muy com
         </article>
       </div>
       <div class="col-md-4">
-        <div class="author-details">
+        <aside class="author-details">
         ...
-        </div>
+        </aside>
       </div>
     </div>
   </div>
@@ -196,9 +255,8 @@ En este ejemplo tenemos una página de un libro con información del libro y del
 El resto de las etiquetas son clases de grid, que nos dicen que la página se distribuye en dos columnas. Una de ancho 8, y otra de ancho 4.
 
 Y no queremos eso. Este documento tiene demasiada información de como se tiene que ver.
-Y como dijimos antes, el HTML tiene que abstraernos del estilo.
-
-Tenemos que lograr mover esa responsabilidad al CSS. El HTML debería ser simple:
+Tenemos que lograr mover esa responsabilidad al CSS.
+El HTML debería ser simple.
 
 ``` html
 <main class="book-page">
@@ -212,11 +270,9 @@ Tenemos que lograr mover esa responsabilidad al CSS. El HTML debería ser simple
 </main>
 ```
 
-Al igual que en la escritura, tenemos que reducir al HTML a sus componentes más limpios.
-
 Hoy en día es muy sencillo describir cómo distribuir los elementos en columnas usando sólo CSS.
-Podemos usar Float:
 
+Podemos usar Float:
 ``` css
 .book-page {
   display: block;
@@ -249,7 +305,6 @@ Podemos usar Flexbox:
 ```
 
 Podemos usar Grid CSS:
-
 ``` css
 .book-page {
   display: grid;
@@ -259,98 +314,6 @@ Podemos usar Grid CSS:
 ```
 
 Sea lo que sea que usemos, no hay razón para que toquemos el HTML.
-
-### Usemos tags apropiados.
-
-Una práctica común entre programadores es usar `<div>` para todo.
-
-``` html
-<body>
-  <div class="site-header">
-    <a href="/">Mi sitio web</a>
-  </div>
-
-  <div class="site-nav">
-    <a class="site-nav-link" href="/">Home</a>
-    ...
-  </div>
-
-  <div class="site-main">
-    <div class="post">
-      <div>...</div>
-      <div>...</div>
-    </div>
-
-    <div class="post">
-      <div>...</div>
-      <div>...</div>
-      <div>...</div>
-    </div>
-  </div>
-
-  <div class="site-footer">
-    Creado por ...
-  </div>
-</body>
-```
-
-Es una práctica que quedó del pasado, cuando no había tantos tags para elegir.
-Pero hoy en día HTML es muy expresivo, y tiene tags para todos los usos:
-
-``` html
-<body>
-  <header class="site-header">
-    <a href="/">Mi sitio web</a>
-  </header>
-
-  <nav class="site-nav">
-    <a class="site-nav-link" href="/">Home</a>
-    ...
-  </nav>
-
-  <main class="site-main">
-    <article class="post">
-      <header>...</header>
-      <section>...</section>
-    </article>
-
-    <article class="post">
-      <header>...</header>
-      <section>...</section>
-      <aside>...</aside>
-    </article>
-  </main>
-
-  <footer class="site-footer">
-    Creado por ...
-  </footer>
-</body>
-```
-
-* Si el elemento es un encabezado, usá `<header>`.
-* Si es un elemento de navegación usá `<nav>`.
-* Si es el contenido principal de la página usá `<main>`
-* Si es el pié de página usá `<footer>`.
-* Si es un elemento que tiene sentido en si mismo usá `<article>`.
-* Si el elemento representa una parte de un todo mayor usá `<section>`.
-* Si es información extra o relacionada usá `<aside>`.
-* A su vez un articulo o sección pueden también tener sus propios encabezados, pies, subsecciones, etc.
-
-Usar los tags adecuados mejora mucho la legibilidad.
-Es mucho más fácil visualizar donde empieza y termina cada elemento.
-
-La única razón para usar `<div>` es para romper las reglas.
-O sea, cuando necesiten agregar un elemento sin valor semántico para lograr cierto efecto.
-Por ejemplo para usar una librería javascript:
-
-``` html
-<!-- This div tag is needed for the typehead-js library to work -->
-<div class="typehead-container typehead-js">
-  <input type="text" class="typehead-input" />
-</div>
-```
-Cuando hagan cosas fuera de lo común, asegurense de agregar comentarios.
-
 
 ### Un ejemplo
 
@@ -379,7 +342,8 @@ Lo que hace todo el mundo es ir a la página web de Bootstrap y copiar el códig
 
 Tenemos una barra de navegación que usa el tag **nav**. Hasta ahí todo perfecto.
 
-Después tenemos un `container-fluid`, que como vimos no da ninguna información semántica. Podemos borrarlo.
+Después tenemos un `container-fluid`, que es una clase de Grid y no da ninguna información semántica.
+Y tenemos un `collapse`. Que en nuestro caso no necesitamos.
 
 Después tenemos una lista desordenada `ul` con clase `nav`.
 ¿Entonces, es un `nav` o es un `ul`?
@@ -389,7 +353,6 @@ Si navbar ya significa *barra de navegación*.
 ¿Qué significa?
 ¿Navegación dentro de la barra de navegación?
 No tiene sentido.
-También podemos borrarlo.
 
 A todo esto, es perfectamente válido tener una serie consecutiva de links `a` uno detrás del otro. No necesitamos usar `ul` y `li` para eso.
 
@@ -406,19 +369,18 @@ Lo único que necesitabamos era una barra de navegación con dos links:
 
 Esto es a lo que nos referimos cuando decimos que hay que **asegurarnos de que cada elemento haga trabajo útil**.
 
-Los tags `ul` y `li` no estaban haciendo trabajo útil.
 
 ### Amiguémonos con el CSS
 
 Muchos programadores piensan que escribir CSS es muy complicado.
 Yo creo que eso es un miedo que nos quedó de hace muchos años atrás.
-Antes era muy difícil hacer que un sitio web se viera bien en todos los navegadores.
 
-En ese sentido, Bootstrap era una ayuda gigante.
+Antes era muy difícil hacer que un sitio web se viera bien en todos los navegadores.
+Y Bootstrap era una ayuda gigante.
 Nos permitía armar sitios lindos sin preocuparnos tanto de problemas de compatibilidad.
 
-Pero hoy en día la situación cambió.
-Los navegadores son mucho mas compatibles entre sí.
+Pero la situación cambió.
+Los navegadores son mucho mas compatibles entre sí que antes.
 Y CSS tiene muchas facilidades que antes no tenía.
 
 Usar Bootstrap parece un atajo pero a la larga perjudica más que lo que ayuda.
@@ -426,50 +388,57 @@ Boostrap rompe las reglas constantemente, y nos dificulta escribir HTML semánti
 
 Otra cosa que pasa cuando reducimos el HTML y el CSS es que todo el Javascript que usamos para manipular el DOM también se simplifica. Y es bastante lógico que pase esto. Si hay menos etiquetas, necesitamos menos código para manipularlas.
 
-Y todo esto no sólo se traduce en código más fácil de leer y mantener, sino que también en mayor rendimiento de nuestros sitios web.
+Tener menos código mejora el rendimiento nuestros sitios web.
+
+Un buen código web es más fácil de leer y mantener.
+Mejora la accesibilidad de nuestros sitios web.
+Mejora la comunicación del equipo.
+Reduce las frustraciones.
+Hace que trabajar sea más placentero.
 
 
 ## ¿Vale la pena esforzarnos tanto?
 
-Martin Fowler (Un programador bastante conocido) intenta contestar esta pregunta en su conocido artículo titulado [¿Vale la pena hacer software de alta calidad?](https://martinfowler.com/articles/is-quality-worth-cost.html).
+El programador y autor Martin Fowler intenta contestar esta pregunta en su artículo: [¿Vale la pena hacer software de alta calidad?](https://martinfowler.com/articles/is-quality-worth-cost.html).
 
-Fowler diferencia calidad interna y externa.
+Él diferencia calidad interna y externa.
 
-- La calidad interna es la que es sólo visible para los programadores. Ejemplos de calidad interna es la limpieza del código, que tan buena es la arquitectura general, si se usan buenos nombres o si se separa correctamente en módulos.
-- La calidad externa es lo que puede ver el cliente. Por ejemplo la interfáz de usuario, o si hay defectos en el software.
+- La calidad interna es la que es sólo visible para los programadores: Si el código es limpio, si la arquitectura es buena, si se usan buenos nombres o si se separa bien en módulos.
+- La calidad externa es lo que puede ver el cliente: Si la interfáz de usuario es buena, o si hay defectos en el software.
 
-Fowler hace esta separación porque a simple vista pareciera que los clientes no aprecian la calidad interna. No les importa realmente si un modulo está bien nombrado. Les importa que su software haga lo que tiene que hacer.
+A simple vista pareciera que los clientes no aprecian la calidad interna.
+No les importa realmente si un módulo está bien nombrado.
+Les importa que su software haga lo que tiene que hacer.
 
-Según Fowler, baja calidad interna es resultado de la suciedad: cualquier cosa que sobra, que es redundante y se interpone en nuestro camino.
+Baja calidad interna es resultado de la suciedad: cualquier cosa que sobra, que es redundante y se interpone en nuestro camino.
 
-Según Martin Fowler, incluso los mejores equipos introducen pequeñas suciedades al código todo el tiempo. La suciedad en el código como la mala hierba, crece incontrolablemente y requiere esfuerzo eliminarla.
+Según Martin Fowler, incluso los mejores equipos introducen pequeñas suciedades al código todo el tiempo. La suciedad en el código es como la mala hierba. Crece incontrolablemente y requiere esfuerzo eliminarla.
 
-Según Fowler, si tenemos dos sistemas idénticos, uno con mucha suciedad y otro sin suciedad, agregar funcionalidades nuevas en el primero demora mucho mas tiempo que en el segundo.
+Si tenemos dos sistemas idénticos, uno con mucha suciedad y otro sin suciedad, agregar funcionalidades nuevas en el primero demora mucho más tiempo que en el segundo.
 
-La calidad interna hace más fácil mejorar el software.
-Los programadores pasamos la mayor parte de nuestro tiempo modificando código.
 Alta calidad interna hace que el código sea más fácil de leer, modificar y eliminar.
-Lo que se traduce en que agregar funcionalidades sea más rápido y barato.
-
+Y que agregar funcionalidades sea más rápido y barato.
 Y eso **SÍ** es muy importante para los clientes.
 
 A medida que crece el software, nos toma cada vez más y más tiempo agregar nuevas funcionalidades.
 
 Esto pasa con mucha mas fuerza cuando no le prestamos atención a la calidad interna del software.
 
-Cuando le prestamos atención a la calidad del software desde el comienzo, podemos agregar nuevas funcionalidades mucho más rápido:
+Cuando le prestamos atención a la calidad del software desde el comienzo, podemos ir mucho más rápido:
 
 ![Calidad](/img/charla-snappler/quality.png){:style="width: 100%"}
 
 **Hacer mi propio grafico**
-
 
 Al principio tardamos más. Pero según Martin Fowler, se paga en semanas, no en meses.
 
 Los desarrolladores no hacemos un buen trabajo en explicar esta situación.
 Decimos cosas como *"No nos dejan escribir codigo de calidad porque toma mucho tiempo"*, implicando que la calidad viene a un costo.
 
-Pero no es así. El costo de escribir código de calidad es negativo.
+Pero no es así.
+
+**El costo de escribir código de calidad es negativo.**
+
 Las horas que invierto hoy en simplificar el código, las recupero con creces en pocas semanas.
 
 El código malo es malo para todos.
@@ -500,9 +469,6 @@ Estas herramientas no se usan por las dudas.
 Se usan a propósito habiendo ponderado los beneficios y los costos.
 
 ### Simplificar desde el comienzo
-
-> My point today is that, if we wish to count lines of code, we should not regard them as “lines produced” but as “lines spent”: the current conventional wisdom is so foolish as to book that count on the wrong side of the ledger.
-> - Edsger W. Dijkstra
 
 Edsger W. Dijkstra decía que no hay que contar las lineas de código como *lineas producidas*, sino como *lineas gastadas*.
 
@@ -539,7 +505,7 @@ Hay personas que estudian los limites teóricos de la computación. Por ejemplo 
 
 Un profesor de físicas del MIT quería calcular [los limites *físicos* de la computación](https://cds.cern.ch/record/396654/files/9908043.pdf). Esto es, hasta donde podemos llegar con los conocimientos que tenemos sobre el universo.
 
-Las computadoras son sistemas físicos: lo que pueden hacer y lo que no, está dictado por las leyes de la física. La velocidad a la que puede procesar información está limitada por su energía.
+Las computadoras son sistemas físicos: lo que pueden hacer y lo que no, está dictado por las leyes de la física. La velocidad a la que pueden procesar información está limitada por su energía.
 
 Este profesor quería decifrar a qué velocidad podía ir la última notebook que construyamos. Calculó cuanta energía podía meterse en una notebook de 1 kg de peso.
 
@@ -547,7 +513,7 @@ Tuvo en cuenta la velocidad de la luz, la gravedad, las leyes de la termodinámi
 
 Pero no es lo mismo límite físico que límite práctico. Para llegar a esa velocidad es necesario comprimir la computadora a un tamaño minúsculo, formando un agujero negro. Para usar esta computadora tendríamos que estar adentro del agujero negro, donde moriríamos al instante.
 
-Yo no se ustedes, pero yo prefiero seguir vivo aunque mi computadora sea más lenta.
+Yo no se ustedes, pero para mí no vale la pena. Yo prefiero seguir vivo aunque mi computadora sea más lenta.
 
 Nosotros los seres humanos también somos sistemas físicos.
 Lo que podemos y no podemos hacer también está dictado por las leyes de la física.
@@ -564,7 +530,7 @@ La mayor parte del trabajo pasa en nuestras cabezas.
 Si no cuidamos a nuestras cabezas por un tiempo prolongado podemos terminar con burn out.
 Cuando sufrimos burn out no podemos razonar correctamente.
 Nos transformamos en una peor versión de nosotros mismos.
-Lo que afecta nuestras vida y las de los que nos rodean.
+Lo que afecta nuestras vidas y las de los que nos rodean.
 Lo que nos causa frustración y resentimiento.
 
 Es un circulo vicioso que puede hacer que terminemos muy mal.
@@ -592,13 +558,22 @@ No significa que perdieron el tiempo el día anterior.
 Todo ese tiempo de esfuerzo y frustración fue necesario para resolver el problema.
 Su cerebro necesitaba tiempo para procesar toda esa información.
 
-No existe el 10X programador, o el "programador que programa tan eficientemente como 10 programadores".
+Hay un mito muy difundido en nuestra industria que es el del programador 10X.
+O "aquella persona que programa tan eficientemente como 10 programadores".
+
 Es un mito que le hace mucho daño a la profesión.
+Hace que las personas pensemos que no estamos a la altura.
+Nos provoca sindrome del impostor.
+Nos hace preguntarnos si podemos resolver los problemas tan difíciles de nuestros clientes.
+Si realmente podemos ser programadores.
+
+Pero el programador 10X no existe.
 
 No tenés que ser un genio para resolver problemas complejos.
+
 **Los problemas complejos los resolvemos las personas comunes presentandonos a trabajar cada día**.
 
 Todas las personas podemos ser programadoras.
-Simplemente hay que presentarse a trabajar cada día, enfrentarnos a los problemas, pensar y descanzar bien.
+Simplemente hay que presentarse a trabajar, enfrentarnos a los problemas, pensar y descanzar bien.
 
 Si hacen eso, les aseguro que no hay problema que no puedan resolver.
