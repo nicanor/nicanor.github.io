@@ -11,7 +11,7 @@ Transcripción de la charla que dí en Agosto de 2022 en el Nerdearla 101.
 
 Originalmente preparé esta charla para programadores de [Snappler](https://www.snappler.com/) el 19 de Febrero de 2021 y la repetí el 31 de enero de 2022.
 
-[Acá pueden descargar las diapositivas]({{ site.url }}/img/charla-snappler/charla-snappler-2021.pdf)
+[Acá pueden descargar las diapositivas]({{ site.url }}/img/Nerdearla-101.pdf)
 
 
 ## Cómo escribir bien
