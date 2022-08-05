@@ -428,8 +428,6 @@ Cuando le prestamos atención a la calidad del software desde el comienzo, podem
 
 ![Calidad](/img/charla-snappler/quality.png){:style="width: 100%"}
 
-**Hacer mi propio grafico**
-
 Al principio tardamos más. Pero según Martin Fowler, se paga en semanas, no en meses.
 
 Los desarrolladores no hacemos un buen trabajo en explicar esta situación.
