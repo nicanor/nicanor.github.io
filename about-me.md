@@ -9,12 +9,9 @@ id: about
 
 My name is Nicanor Perera and I'm a web developer.
 
-I'm currently working for [Brandkit](https://www.brandkit.io/) as an [Elixir][elixir] and Rails developer.
+I work for [Brandkit](https://www.brandkit.com) as an [Elixir][elixir] developer.
 
-Before that, I worked for [Harmoney](http://harmoney.co.nz), [Snappler](http://snappler.com/)
-and [Xaver](http://www.xaver.com.ar).
-
-I have a degree in computer science from *La Plata's National University*.
+I have a degree in computer science from *UNLP*.
 
 I'm always interested in new technologies.
 

@@ -1,25 +1,27 @@
 <footer class="footer">
 
-   <p><a href="/about-me">{{ site.author }}</a></p>
-
-   <p>¿Querés recibir novedades por e-mail? <a href="https://world.hey.com/{{ site.hey_username }}">Subscribite por acá</a></p>
+   <p>¿Querés recibir novedades por e-mail? <a
+         href="https://world.hey.com/{{ site.hey_username }}">Subscribite</a></p>
 
    <p><a href="{{ '/feed.xml' | prepend: site.url }}">Feed</a>
 
-   {% if site.github_username %}
-      - <a href="https://github.com/{{ site.github_username }}" title="Github">Github</a>
-   {% endif %}
+      {% if site.github_username %}
+      - <a href="https://github.com/{{ site.github_username }}"
+         title="Github">Github</a>
+      {% endif %}
 
-   {% if site.linkedin_username %}
-      - <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">LinkedIn</a>
-   {% endif %}
+      {% if site.linkedin_username %}
+      - <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"
+         title="LinkedIn">LinkedIn</a>
+      {% endif %}
 
-   {% if site.twitter_username %}
-      - <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">Twitter</a>
-   {% endif %}
+      {% if site.twitter_username %}
+      - <a href="https://twitter.com/{{ site.twitter_username }}"
+         title="Twitter">Twitter</a>
+      {% endif %}
 
-   {% if site.license %}
+      {% if site.license %}
       - <a href="{{ site.license_url }}">License</a>
-   {% endif %}
+      {% endif %}
 
-</footer>
+   </footer>
