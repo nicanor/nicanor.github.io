@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>¡A Bailar!</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #170F2E;
+    --bg-2: #1F1640;
+    --surface: #2A1D52;
+    --surface-2: #34266406;
+    --text: #F6F1FF;
+    --muted: #B3A6DE;
+    --accent: #FF3E8E;
+    --accent-ink: #170F2E;
+    --gold: #FFC93C;
+    --danger: #FF6B6B;
+    --ok: #2FE0C4;
+    --ring: 0 0 0 3px var(--bg), 0 0 0 6px var(--gold);
+    --tile-1: #FF3E8E;
+    --tile-2: #FFC93C;
+    --tile-3: #2FE0C4;
+    --tile-4: #4EA8FF;
+    --tile-5: #FF7A50;
+    --tile-6: #B98BFF;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  body {
+    font-family: 'Nunito', system-ui, sans-serif;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(255,62,142,0.20), transparent 42%),
+      radial-gradient(circle at 88% 82%, rgba(79,168,255,0.18), transparent 45%),
+      radial-gradient(circle at 90% 10%, rgba(255,201,60,0.14), transparent 40%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fredoka', system-ui, sans-serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  [hidden] { display: none !important; }
+
+  button { font-family: inherit; cursor: pointer; }
+  button:focus-visible, a:focus-visible, input:focus-visible {
+    outline: none;
+    box-shadow: var(--ring);
+    border-radius: 12px;
+  }
+
+  a { color: var(--gold); }
+
+  /* ---------- Header ---------- */
+  header.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 18px;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand .disco {
+    font-size: 34px;
+    line-height: 1;
+    filter: drop-shadow(0 4px 10px rgba(255,62,142,0.45));
+  }
+
+  .brand h1 {
+    font-size: clamp(22px, 4.2vw, 30px);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  .icon-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    border: 1px solid #ffffff22;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .icon-btn:hover { background: var(--bg-2); transform: translateY(-1px); }
+  .icon-btn:active { transform: translateY(0); }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 24px;
+  }
+
+  /* ---------- Setup card ---------- */
+  .setup-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 24px;
+  }
+
+  .card {
+    background: linear-gradient(180deg, var(--surface), var(--bg-2));
+    border: 1px solid #ffffff17;
+    border-radius: 24px;
+    padding: 28px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
+  }
+
+  .card h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .card p.hint {
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .field label {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .field input {
+    background: #0000002e;
+    border: 1px solid #ffffff26;
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+  }
+  .field input::placeholder { color: #ffffff55; }
+
+  .readonly-box {
+    background: #00000038;
+    border: 1px dashed #ffffff33;
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    color: var(--gold);
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .readonly-box button {
+    flex: none;
+    border: none;
+    background: #ffffff14;
+    color: var(--text);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 12.5px;
+    font-weight: 800;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 20px;
+    font-weight: 800;
+    font-size: 15.5px;
+    width: 100%;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+    box-shadow: 0 10px 24px -8px rgba(255,62,142,0.65);
+  }
+  .btn-primary:hover { filter: brightness(1.06); }
+  .btn-secondary {
+    background: #ffffff14;
+    color: var(--text);
+    border: 1px solid #ffffff26;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    text-decoration: underline;
+    padding: 6px 0;
+    width: auto;
+    font-size: 13.5px;
+    font-weight: 700;
+  }
+
+  .steps {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .steps li {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .steps li b { color: var(--text); }
+  .steps .num {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--accent-ink);
+    font-weight: 800;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .status-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+  .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--danger);
+  }
+  .dot.ok { background: var(--ok); }
+
+  /* ---------- Jukebox grid ---------- */
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .toolbar .who {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .toolbar .who b { color: var(--gold); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+    padding-bottom: 140px; /* room for the now-playing bar */
+  }
+
+  .tile {
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    aspect-ratio: 1 / 1;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    color: var(--accent-ink);
+    font-family: 'Fredoka', sans-serif;
+    overflow: hidden;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 0 10px 22px -12px rgba(0,0,0,0.55);
+  }
+  .tile:hover { transform: translateY(-3px) scale(1.015); }
+  .tile:active { transform: translateY(0) scale(0.98); }
+
+  .tile .emoji {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 30px;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+  }
+
+  .tile .title {
+    font-size: clamp(15px, 2.4vw, 18px);
+    font-weight: 600;
+    line-height: 1.15;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+  }
+
+  .tile.example::before {
+    content: 'EJEMPLO';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    background: rgba(0,0,0,0.28);
+    color: #fff;
+    padding: 3px 7px;
+    border-radius: 999px;
+  }
+
+  .tile.playing {
+    box-shadow: 0 0 0 4px var(--gold), 0 14px 28px -12px rgba(0,0,0,0.6);
+  }
+  .tile.playing .bars {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 24px;
+  }
+  .tile.playing .bars span {
+    width: 4px;
+    background: var(--accent-ink);
+    border-radius: 2px;
+    animation: bounce 0.9s ease-in-out infinite;
+  }
+  .tile.playing .bars span:nth-child(2) { animation-delay: 0.15s; }
+  .tile.playing .bars span:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes bounce {
+    0%, 100% { height: 6px; }
+    50% { height: 22px; }
+  }
+
+  .tile-1 { background: var(--tile-1); }
+  .tile-2 { background: var(--tile-2); }
+  .tile-3 { background: var(--tile-3); }
+  .tile-4 { background: var(--tile-4); }
+  .tile-5 { background: var(--tile-5); }
+  .tile-6 { background: var(--tile-6); }
+
+  .empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    color: var(--muted);
+    padding: 40px 16px;
+  }
+  .empty-state .disco { font-size: 44px; }
+
+  /* ---------- Now playing bar ---------- */
+  .now-playing {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 14px max(16px, env(safe-area-inset-left, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-right, 0px));
+    background: linear-gradient(180deg, #17102be0, #0f0a20f5);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #ffffff1c;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .now-playing .swatch {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--accent-ink);
+  }
+
+  .now-playing .meta {
+    flex: 1;
+    min-width: 0;
+  }
+  .now-playing .meta .label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .now-playing .meta .name {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .transport {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: none;
+  }
+  .transport button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffff16;
+    color: var(--text);
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .transport button.play-pause {
+    width: 54px;
+    height: 54px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 20px;
+  }
+
+  /* ---------- Settings panel ---------- */
+  .panel-backdrop {
+    position: fixed;
+    inset: 0;
+    background: #05030fcc;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 20;
+  }
+  @media (min-width: 640px) {
+    .panel-backdrop { align-items: center; }
+  }
+
+  .panel {
+    background: var(--bg-2);
+    border: 1px solid #ffffff1a;
+    border-radius: 24px 24px 0 0;
+    width: 100%;
+    max-width: 560px;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 22px;
+    padding-bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  }
+  @media (min-width: 640px) {
+    .panel { border-radius: 24px; max-height: 80vh; }
+  }
+
+  .panel h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .panel .panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .panel p.hint { color: var(--muted); font-size: 13.5px; margin: 6px 0 18px; line-height: 1.5; }
+
+  .song-row {
+    display: grid;
+    grid-template-columns: 44px 1fr 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ffffff12;
+  }
+  .song-row input {
+    background: #00000030;
+    border: 1px solid #ffffff22;
+    border-radius: 10px;
+    padding: 8px 10px;
+    color: var(--text);
+    font-size: 13.5px;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+  }
+  .song-row .emoji-input { text-align: center; padding: 8px 4px; }
+  .song-row .del {
+    background: transparent;
+    border: none;
+    color: var(--danger);
+    font-size: 18px;
+    width: 32px;
+  }
+  .col-labels {
+    display: grid;
+    grid-template-columns: 44px 1fr 1fr auto;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 6px;
+  }
+
+  .panel-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .panel-actions .btn { width: auto; flex: 1; }
+
+  .toast {
+    position: fixed;
+    top: calc(16px + env(safe-area-inset-top, 0px));
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    border: 1px solid #ffffff26;
+    color: var(--text);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 700;
+    z-index: 40;
+    box-shadow: 0 12px 30px -12px rgba(0,0,0,0.6);
+  }
+
+  @media (max-width: 420px) {
+    .col-labels { display: none; }
+    .song-row { grid-template-columns: 36px 1fr auto; grid-template-areas: "emoji title del" "emoji uri del"; }
+    .song-row .emoji-input { grid-area: emoji; }
+    .song-row input[data-f="title"] { grid-area: title; }
+    .song-row input[data-f="uri"] { grid-area: uri; font-size: 12px; }
+    .song-row .del { grid-area: del; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="disco">🪩</span>
+      <h1>¡A Bailar!</h1>
+    </div>
+    <button class="icon-btn" id="btn-settings" title="Editar canciones" aria-label="Editar canciones" hidden>⚙️</button>
+  </header>
+
+  <main>
+
+    <!-- Setup / login state -->
+    <section class="setup-wrap" id="view-setup">
+      <div class="card">
+        <h2>Conectá tu cuenta de Spotify</h2>
+        <p class="hint">Se necesita una cuenta <b style="color:var(--text)">Spotify Premium</b> para reproducir canciones completas desde acá.</p>
+
+        <ol class="steps">
+          <li><span class="num">1</span><span>Entrá a <a href="https://developer.spotify.com/dashboard" target="_blank" rel="noopener">developer.spotify.com/dashboard</a> y creá una app gratis (cualquier nombre).</span></li>
+          <li><span class="num">2</span><span>En la configuración de esa app, agregá esta <b>Redirect URI</b> exacta:</span></li>
+        </ol>
+
+        <div class="readonly-box" style="margin-bottom:18px;">
+          <span id="redirect-uri-display">—</span>
+          <button id="btn-copy-redirect" type="button">Copiar</button>
+        </div>
+
+        <ol class="steps" start="3">
+          <li><span class="num">3</span><span>Copiá el <b>Client ID</b> que te muestra el dashboard y pegalo acá:</span></li>
+        </ol>
+
+        <div class="field">
+          <label for="client-id-input">Client ID de Spotify</label>
+          <input type="text" id="client-id-input" placeholder="Ej: 8f7a2b1c9d4e...">
+        </div>
+
+        <button class="btn btn-primary" id="btn-connect">🎧 Conectar con Spotify</button>
+
+        <div class="status-line">
+          <span class="dot" id="status-dot"></span>
+          <span id="status-text">Todavía no conectado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jukebox state -->
+    <section id="view-jukebox" hidden style="display:flex; flex-direction:column; gap:16px;">
+      <div class="toolbar">
+        <span class="who">Conectado como <b id="who-name">—</b></span>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+  </main>
+
+  <!-- Now playing bar -->
+  <div class="now-playing" id="now-playing" hidden>
+    <div class="swatch" id="np-swatch">🎵</div>
+    <div class="meta">
+      <div class="label" id="np-label">Sonando</div>
+      <div class="name" id="np-name">—</div>
+    </div>
+    <div class="transport">
+      <button id="btn-prev" aria-label="Anterior">⏮</button>
+      <button class="play-pause" id="btn-playpause" aria-label="Pausar / reproducir">⏸</button>
+      <button id="btn-next" aria-label="Siguiente">⏭</button>
+    </div>
+  </div>
+
+  <!-- Settings / song editor panel -->
+  <div class="panel-backdrop" id="panel-backdrop" hidden>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Editar canciones</h2>
+        <button class="icon-btn" id="btn-close-panel" aria-label="Cerrar">✕</button>
+      </div>
+      <p class="hint">Pegá el link de Spotify de cada canción (click derecho en la canción dentro de Spotify → Compartir → Copiar enlace de la canción). Elegí un emoji corto para identificarla rápido.</p>
+
+      <div class="col-labels">
+        <span>Emoji</span><span>Título</span><span>Link de Spotify</span><span></span>
+      </div>
+      <div id="song-list"></div>
+
+      <div class="panel-actions">
+        <button class="btn btn-secondary" id="btn-add-song" type="button">➕ Agregar canción</button>
+      </div>
+      <div class="panel-actions">
+        <button class="btn btn-primary" id="btn-save-songs" type="button">Guardar</button>
+      </div>
+      <button class="btn-ghost" id="btn-disconnect" type="button" style="margin-top:14px;">Desconectar cuenta de Spotify</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============ Storage helpers (per-device, best-effort) ============ */
+  function safeGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+  function safeSet(key, val) { try { localStorage.setItem(key, val); } catch (e) {} }
+  function safeRemove(key) { try { localStorage.removeItem(key); } catch (e) {} }
+  function safeGetJSON(key, fallback) {
+    try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }
+    catch (e) { return fallback; }
+  }
+  function safeSetJSON(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
+
+  const REDIRECT_URI = window.location.origin + window.location.pathname;
+  document.getElementById('redirect-uri-display').textContent = REDIRECT_URI;
+  document.getElementById('btn-copy-redirect').addEventListener('click', function () {
+    navigator.clipboard && navigator.clipboard.writeText(REDIRECT_URI).then(function () {
+      showToast('Copiado ✔');
+    }).catch(function () {});
+  });
+
+  const EXAMPLE_SONGS = [
+    { emoji: '🦄', title: 'Ejemplo: Baby Shark', uri: 'https://open.spotify.com/track/5Hj8ugKcuQoHKZUJ13NgcO' },
+    { emoji: '🌈', title: 'Ejemplo: Let It Go', uri: 'https://open.spotify.com/track/1jSc1Y3jwt6RQlUcVGVAt7' },
+    { emoji: '🐝', title: 'Ejemplo: La abeja', uri: '' }
+  ];
+
+  const TILE_CLASSES = ['tile-1', 'tile-2', 'tile-3', 'tile-4', 'tile-5', 'tile-6'];
+
+  function getSongs() {
+    return safeGetJSON('ab_songs', EXAMPLE_SONGS);
+  }
+  function setSongs(songs) { safeSetJSON('ab_songs', songs); }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.hidden = false;
+    clearTimeout(showToast._h);
+    showToast._h = setTimeout(function () { t.hidden = true; }, 2200);
+  }
+
+  /* ============ PKCE helpers ============ */
+  function randomString(len) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let out = '';
+    const values = crypto.getRandomValues(new Uint8Array(len));
+    for (let i = 0; i < len; i++) out += chars[values[i] % chars.length];
+    return out;
+  }
+
+  function base64UrlEncode(buffer) {
+    let str = '';
+    const bytes = new Uint8Array(buffer);
+    for (let i = 0; i < bytes.byteLength; i++) str += String.fromCharCode(bytes[i]);
+    return btoa(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+
+  async function sha256(plain) {
+    const data = new TextEncoder().encode(plain);
+    return crypto.subtle.digest('SHA-256', data);
+  }
+
+  async function makeCodeChallenge(verifier) {
+    const hashed = await sha256(verifier);
+    return base64UrlEncode(hashed);
+  }
+
+  function extractTrackId(input) {
+    if (!input) return null;
+    const trimmed = input.trim();
+    let m = trimmed.match(/track[/:]([a-zA-Z0-9]{10,})/);
+    if (m) return m[1].split('?')[0];
+    return null;
+  }
+
+  /* ============ Auth state ============ */
+  const Auth = {
+    get accessToken() { return safeGet('ab_access_token'); },
+    get refreshToken() { return safeGet('ab_refresh_token'); },
+    get expiresAt() { return Number(safeGet('ab_expires_at') || 0); },
+    get clientId() { return safeGet('ab_client_id'); },
+
+    save(tokenResponse) {
+      safeSet('ab_access_token', tokenResponse.access_token);
+      if (tokenResponse.refresh_token) safeSet('ab_refresh_token', tokenResponse.refresh_token);
+      safeSet('ab_expires_at', String(Date.now() + (tokenResponse.expires_in * 1000) - 30000));
+    },
+
+    clear() {
+      ['ab_access_token', 'ab_refresh_token', 'ab_expires_at', 'ab_code_verifier'].forEach(safeRemove);
+    },
+
+    isLoggedIn() { return !!this.accessToken && !!this.refreshToken; },
+
+    async ensureFreshToken() {
+      if (Date.now() < this.expiresAt) return this.accessToken;
+      return this.doRefresh();
+    },
+
+    async doRefresh() {
+      const clientId = this.clientId;
+      const refreshToken = this.refreshToken;
+      if (!clientId || !refreshToken) throw new Error('no-session');
+
+      const body = new URLSearchParams({
+        grant_type: 'refresh_token',
+        refresh_token: refreshToken,
+        client_id: clientId
+      });
+
+      const res = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+      });
+      if (!res.ok) throw new Error('refresh-failed');
+      const json = await res.json();
+      this.save(json);
+      return json.access_token;
+    }
+  };
+
+  async function startLogin() {
+    const clientId = document.getElementById('client-id-input').value.trim();
+    if (!clientId) {
+      setStatus(false, 'Pegá primero el Client ID.');
+      return;
+    }
+    safeSet('ab_client_id', clientId);
+
+    const verifier = randomString(64);
+    safeSet('ab_code_verifier', verifier);
+    const challenge = await makeCodeChallenge(verifier);
+
+    const params = new URLSearchParams({
+      client_id: clientId,
+      response_type: 'code',
+      redirect_uri: REDIRECT_URI,
+      code_challenge_method: 'S256',
+      code_challenge: challenge,
+      scope: 'streaming user-read-email user-read-private'
+    });
+
+    window.location.href = 'https://accounts.spotify.com/authorize?' + params.toString();
+  }
+
+  async function finishLoginIfNeeded() {
+    const url = new URL(window.location.href);
+    const code = url.searchParams.get('code');
+    const error = url.searchParams.get('error');
+
+    if (error) {
+      setStatus(false, 'Spotify rechazó la conexión: ' + error);
+      history.replaceState({}, '', REDIRECT_URI);
+      return;
+    }
+    if (!code) return;
+
+    const clientId = Auth.clientId;
+    const verifier = safeGet('ab_code_verifier');
+    history.replaceState({}, '', REDIRECT_URI);
+
+    if (!clientId || !verifier) {
+      setStatus(false, 'Se perdió la sesión de conexión, probá de nuevo.');
+      return;
+    }
+
+    setStatus(false, 'Conectando…');
+
+    const body = new URLSearchParams({
+      client_id: clientId,
+      grant_type: 'authorization_code',
+      code: code,
+      redirect_uri: REDIRECT_URI,
+      code_verifier: verifier
+    });
+
+    try {
+      const res = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+      });
+      if (!res.ok) throw new Error('token-exchange-failed');
+      const json = await res.json();
+      Auth.save(json);
+      safeRemove('ab_code_verifier');
+      setStatus(true, 'Conectado ✔');
+      enterJukebox();
+    } catch (e) {
+      setStatus(false, 'No se pudo conectar. Revisá el Client ID y volvé a intentar.');
+    }
+  }
+
+  function setStatus(ok, text) {
+    document.getElementById('status-dot').classList.toggle('ok', ok);
+    document.getElementById('status-text').textContent = text;
+  }
+
+  /* ============ Spotify Web Playback SDK ============ */
+  let player = null;
+  let deviceId = null;
+  let currentUri = null;
+  let sdkReadyResolve;
+  const sdkReady = new Promise(function (resolve) { sdkReadyResolve = resolve; });
+
+  window.onSpotifyWebPlaybackSDKReady = function () {
+    sdkReadyResolve();
+  };
+
+  function loadSpotifySdkScript() {
+    if (document.getElementById('spotify-sdk-script')) return;
+    const s = document.createElement('script');
+    s.id = 'spotify-sdk-script';
+    s.src = 'https://sdk.scdn.co/spotify-player.js';
+    document.head.appendChild(s);
+  }
+
+  async function initPlayer() {
+    loadSpotifySdkScript();
+    await sdkReady;
+
+    player = new Spotify.Player({
+      name: '¡A Bailar! 🪩',
+      getOAuthToken: function (cb) {
+        Auth.ensureFreshToken().then(cb).catch(function () { cb(''); });
+      },
+      volume: 0.9
+    });
+
+    player.addListener('ready', function (data) {
+      deviceId = data.device_id;
+      showToast('Listo para reproducir 🎶');
+    });
+
+    player.addListener('not_ready', function () { deviceId = null; });
+
+    player.addListener('player_state_changed', function (state) {
+      if (!state) return;
+      updateNowPlayingUI(state);
+    });
+
+    player.addListener('initialization_error', function (e) { showToast('Error iniciando el reproductor.'); });
+    player.addListener('authentication_error', function (e) { showToast('La sesión de Spotify expiró, reconectá.'); });
+    player.addListener('account_error', function (e) { showToast('Hace falta una cuenta Spotify Premium.'); });
+
+    await player.connect();
+  }
+
+  async function playUri(uri, meta) {
+    const token = await Auth.ensureFreshToken();
+    if (!deviceId) { showToast('El reproductor todavía está iniciando, esperá un segundo…'); return; }
+
+    currentUri = uri;
+    updateNowPlayingCard(meta);
+
+    await fetch('https://api.spotify.com/v1/me/player/play?device_id=' + deviceId, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ uris: [uri] })
+    });
+  }
+
+  function updateNowPlayingCard(meta) {
+    document.getElementById('now-playing').hidden = false;
+    document.getElementById('np-name').textContent = meta.title;
+    document.getElementById('np-swatch').textContent = meta.emoji || '🎵';
+    document.getElementById('np-swatch').className = 'swatch ' + meta.tileClass;
+    highlightPlayingTile(meta.uri);
+  }
+
+  function highlightPlayingTile(uri) {
+    document.querySelectorAll('.tile').forEach(function (el) {
+      const isPlaying = el.dataset.uri === uri;
+      el.classList.toggle('playing', isPlaying);
+      const bars = el.querySelector('.bars');
+      if (isPlaying && !bars) {
+        const b = document.createElement('div');
+        b.className = 'bars';
+        b.innerHTML = '<span></span><span></span><span></span>';
+        el.appendChild(b);
+      } else if (!isPlaying && bars) {
+        bars.remove();
+      }
+    });
+  }
+
+  function updateNowPlayingUI(state) {
+    const btn = document.getElementById('btn-playpause');
+    btn.textContent = state.paused ? '▶' : '⏸';
+    document.getElementById('np-label').textContent = state.paused ? 'Pausado' : 'Sonando';
+  }
+
+  document.getElementById('btn-playpause').addEventListener('click', function () {
+    if (player) player.togglePlay();
+  });
+  document.getElementById('btn-next').addEventListener('click', function () { playRelative(1); });
+  document.getElementById('btn-prev').addEventListener('click', function () { playRelative(-1); });
+
+  function playRelative(delta) {
+    const songs = getSongs().filter(function (s) { return extractTrackId(s.uri); });
+    if (!songs.length || !currentUri) return;
+    const idx = songs.findIndex(function (s) { return spotifyUriFrom(s.uri) === currentUri; });
+    const next = songs[(idx + delta + songs.length) % songs.length];
+    playUri(spotifyUriFrom(next.uri), toMeta(next, (idx + delta + songs.length) % songs.length));
+  }
+
+  function spotifyUriFrom(link) {
+    const id = extractTrackId(link);
+    return id ? 'spotify:track:' + id : null;
+  }
+
+  function toMeta(song, index) {
+    return {
+      title: song.title || 'Sin título',
+      emoji: song.emoji || '🎵',
+      uri: spotifyUriFrom(song.uri),
+      tileClass: TILE_CLASSES[index % TILE_CLASSES.length]
+    };
+  }
+
+  /* ============ Jukebox grid rendering ============ */
+  function renderGrid() {
+    const grid = document.getElementById('grid');
+    const songs = getSongs();
+    grid.innerHTML = '';
+
+    if (!songs.length) {
+      grid.replaceWith(emptyState());
+      return;
+    }
+
+    songs.forEach(function (song, i) {
+      const uri = spotifyUriFrom(song.uri);
+      const tile = document.createElement('button');
+      tile.type = 'button';
+      tile.className = 'tile ' + TILE_CLASSES[i % TILE_CLASSES.length] + (isExample(song) ? ' example' : '');
+      tile.dataset.uri = uri || '';
+      tile.innerHTML =
+        '<span class="emoji">' + (song.emoji || '🎵') + '</span>' +
+        '<span class="title">' + escapeHtml(song.title || 'Sin título') + '</span>';
+
+      tile.addEventListener('click', function () {
+        if (!uri) { showToast('A esta canción le falta el link de Spotify.'); return; }
+        playUri(uri, toMeta(song, i));
+      });
+
+      grid.appendChild(tile);
+    });
+  }
+
+  function isExample(song) {
+    return EXAMPLE_SONGS.some(function (e) { return e.title === song.title; });
+  }
+
+  function emptyState() {
+    const div = document.createElement('div');
+    div.className = 'empty-state';
+    div.id = 'grid';
+    div.innerHTML = '<div class="disco">🪩</div><h3>Todavía no hay canciones</h3><p>Tocá el ⚙️ de arriba para agregar las primeras.</p>';
+    return div;
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  /* ============ Settings panel ============ */
+  function openPanel() {
+    renderSongEditor();
+    document.getElementById('panel-backdrop').hidden = false;
+  }
+  function closePanel() { document.getElementById('panel-backdrop').hidden = true; }
+
+  document.getElementById('btn-settings').addEventListener('click', openPanel);
+  document.getElementById('btn-close-panel').addEventListener('click', closePanel);
+  document.getElementById('panel-backdrop').addEventListener('click', function (e) {
+    if (e.target === this) closePanel();
+  });
+
+  function renderSongEditor() {
+    const list = document.getElementById('song-list');
+    list.innerHTML = '';
+    getSongs().forEach(function (song) { list.appendChild(songRow(song)); });
+  }
+
+  function songRow(song) {
+    const row = document.createElement('div');
+    row.className = 'song-row';
+    row.innerHTML =
+      '<input class="emoji-input" data-f="emoji" maxlength="4" value="' + escapeHtml(song.emoji || '🎵') + '">' +
+      '<input data-f="title" placeholder="Título" value="' + escapeHtml(song.title || '') + '">' +
+      '<input data-f="uri" placeholder="Link de open.spotify.com/track/..." value="' + escapeHtml(song.uri || '') + '">' +
+      '<button class="del" type="button" aria-label="Borrar">✕</button>';
+    row.querySelector('.del').addEventListener('click', function () { row.remove(); });
+    return row;
+  }
+
+  document.getElementById('btn-add-song').addEventListener('click', function () {
+    document.getElementById('song-list').appendChild(songRow({ emoji: '🎵', title: '', uri: '' }));
+  });
+
+  document.getElementById('btn-save-songs').addEventListener('click', function () {
+    const rows = document.querySelectorAll('#song-list .song-row');
+    const songs = [];
+    rows.forEach(function (row) {
+      const emoji = row.querySelector('[data-f="emoji"]').value.trim();
+      const title = row.querySelector('[data-f="title"]').value.trim();
+      const uri = row.querySelector('[data-f="uri"]').value.trim();
+      if (title) songs.push({ emoji: emoji, title: title, uri: uri });
+    });
+    setSongs(songs);
+    renderGrid();
+    closePanel();
+    showToast('Canciones guardadas ✔');
+  });
+
+  document.getElementById('btn-disconnect').addEventListener('click', function () {
+    if (player) { try { player.disconnect(); } catch (e) {} }
+    Auth.clear();
+    closePanel();
+    location.reload();
+  });
+
+  /* ============ View switching ============ */
+  function enterJukebox() {
+    document.getElementById('view-setup').hidden = true;
+    document.getElementById('view-jukebox').hidden = false;
+    document.getElementById('btn-settings').hidden = false;
+    renderGrid();
+    initPlayer();
+    loadProfileName();
+  }
+
+  async function loadProfileName() {
+    try {
+      const token = await Auth.ensureFreshToken();
+      const res = await fetch('https://api.spotify.com/v1/me', {
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+      if (!res.ok) return;
+      const json = await res.json();
+      document.getElementById('who-name').textContent = json.display_name || json.id || '—';
+    } catch (e) {}
+  }
+
+  document.getElementById('btn-connect').addEventListener('click', startLogin);
+
+  /* ============ Boot ============ */
+  (async function boot() {
+    const ci = Auth.clientId;
+    if (ci) document.getElementById('client-id-input').value = ci;
+
+    await finishLoginIfNeeded();
+
+    if (Auth.isLoggedIn()) {
+      setStatus(true, 'Conectado ✔');
+      enterJukebox();
+    }
+  })();
+
+})();
+</script>
+</body>
+</html>
